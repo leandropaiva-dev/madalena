@@ -1,37 +1,37 @@
 const ITEMS = [
   {
     n: "01",
-    title: "Design & Sampling",
-    body: "Our studio partners with your team from the first sketch. Every sample is organized, documented and accessible at every stage — a true development partner, not just a supplier.",
+    title: "Feasibility & Quotation",
+    body: "We review your brief, including measurements, gauge, construction and intended result, and flag concerns before development starts. Alongside this, we provide an estimated quotation based on yarn, quantities and target parameters, so cost is never a surprise later. This avoids avoidable prototypes and development starting without price awareness.",
   },
   {
     n: "02",
-    title: "Knitting",
-    body: "Where the magic happens. Programs developed on our STOLL M1plus system, custom-built for each sample, on flat machines with gauges 3, 5, 7, 10 and 12.",
+    title: "Yarn & Development",
+    body: "We evaluate yarn options, including handfeel, composition, certification, price and availability, against your target and colour needs. Once approved, we move into programming, gauge, structure, fit and assembly. This protects the intended result before it becomes a finished garment.",
   },
   {
     n: "03",
-    title: "Confection",
-    body: "Closely connected to knitting, confection is where everything comes together — strong organization and modern machinery upholding the standards our clients expect.",
+    title: "Approval & Planning",
+    body: "You review the prototype and we track every adjustment through to sign-off. With delivery window and yarn confirmed, we plan capacity and timing, including off-peak production where useful. This keeps changes controlled and protects your delivery window.",
   },
   {
     n: "04",
-    title: "Quality Control",
-    body: "Checkpoints at every stage of production monitor consistency and verify compliance — skilled craftsmanship combined with modern technology, delivering reliability and trust.",
+    title: "Production & Quality Control",
+    body: "Knitting, washing, linking, sewing, assembly and quality checks happen under one roof, in our own facilities in Portugal. Every piece is checked against approved specifications before it moves forward. One factory, one accountable partner.",
   },
   {
     n: "05",
-    title: "Fitting & Finishing",
-    body: "Measured, shaped, steamed and folded with care. Each garment leaves the atelier ready to represent your brand — precise, calm, complete.",
+    title: "Delivery & Reruns",
+    body: "Final review, packing and shipment follow your agreed date. Once a style is proven, future runs can build on the existing program and known yarn behaviour, allowing more focused replenishment, subject to yarn availability and schedule.",
   },
 ];
 
 const MEDIA = [
-  { src: "/images/cap-design.jpg", alt: "Design and sampling" },
-  { src: "/images/cap-knitting.jpg", alt: "STOLL knitting machine" },
-  { src: "/images/cap-confection.jpg", alt: "Confection detail" },
-  { src: "/images/cap-quality.jpg", alt: "Quality control measuring" },
-  { src: "/images/cap-fitting.jpg", alt: "Fitting on mannequin" },
+  { src: "/images/cap-design.jpg", alt: "Feasibility and quotation" },
+  { src: "/images/cap-knitting.jpg", alt: "Yarn and development" },
+  { src: "/images/cap-confection.jpg", alt: "Approval and planning" },
+  { src: "/images/cap-quality.jpg", alt: "Production and quality control" },
+  { src: "/images/cap-fitting.jpg", alt: "Delivery and reruns" },
 ];
 
 export default function Capabilities() {
@@ -41,7 +41,7 @@ export default function Capabilities() {
         <div className="caps__grid">
           <div>
             <div className="label" style={{ marginBottom: "26px" }}>
-              From yarn to garment — our capabilities
+              From yarn to garment — how we work
             </div>
             <div className="caps__list" id="capsList">
               {ITEMS.map((it, i) => (

@@ -18,13 +18,19 @@ export default function Hero() {
             <span>in contemporary</span>
           </span>
           <span className="line">
-            <span>knitwear.</span>
+            <span>knitwear</span>
           </span>
         </h1>
         <div className="hero__sub rv" id="heroSub">
           <span>Made in Portugal</span>
           <span>From yarn to garment</span>
           <span>GOTS · RWS · GRS · OCS</span>
+        </div>
+        <div className="hero__cta rv" id="heroCta">
+          <a className="btn" href="#contact" data-hover="">
+            <span>Start a Project</span>
+            <i></i>
+          </a>
         </div>
       </div>
       <div className="hero__scroll">
