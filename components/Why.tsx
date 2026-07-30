@@ -1,23 +1,23 @@
 const ITEMS = [
   {
     n: "01",
-    title: "Technology & Excellence",
-    body: "STOLL programming, modern flat machines and technical development refined over two decades of specialized knitwear manufacturing.",
+    title: "Decision support",
+    body: "We review yarn, gauge, construction, fit and measurements before development begins. When something is unlikely to produce the intended result, we raise it, explain why and propose alternatives for your approval.",
   },
   {
     n: "02",
-    title: "Bespoke Production",
-    body: "Every program is custom-built around your sample. We don't produce catalogues — we build your collection, stitch by stitch.",
+    title: "Own-facility accountability",
+    body: "Programming, knitting, washing, linking, sewing, assembly, finishing, quality control and packing are carried out in our own facilities in Portugal. One structure, one accountable partner.",
   },
   {
     n: "03",
-    title: "Customer Focus",
-    body: "Direct access to our team at every stage. We collaborate, advise, adjust, solve and refine — a partner, not a supplier.",
+    title: "Commercial understanding",
+    body: "Yarn affects price, availability and certification. Gauge affects weight and production. We ask about target consumer, target price, quantities and timing, because a style only works if it is commercially usable.",
   },
   {
     n: "04",
-    title: "Certified Partner",
-    body: "GOTS, RWS, GRS and OCS certified. The confidence of a fully certified supply chain, audited by Ecocert Greenlife.",
+    title: "Continuity",
+    body: "Once a style has been developed and produced, future runs build on the existing program, measurements and known yarn behaviour. This reduces repeated development, subject to yarn availability and scheduling.",
   },
 ];
 
@@ -27,7 +27,8 @@ export default function Why() {
       <div className="sect-head">
         <span className="sect-head__num">Why us</span>
         <h2 className="sect-head__title">
-          Small enough to care, <em>expert enough to deliver.</em>
+          We advise, adjust, solve and refine: <em>directly with the teams</em> who make
+          your knitwear.
         </h2>
       </div>
       <div className="why__grid">

@@ -9,19 +9,20 @@ export default function Studio() {
         <div className="studio__body">
           <div className="label">The Studio Design</div>
           <h2 className="rv">
-            The creative heart of our factory.{" "}
-            <em>Creating tomorrow&apos;s knits.</em>
+            Creativity connected to manufacturability.{" "}
+            <em>Client-specific knitwear development.</em>
           </h2>
           <p className="rv">
-            Innovation and technical expertise come together to transform ideas
-            into unique designs. With a specialized team and state-of-the-art
-            equipment, we develop exclusive knits that combine aesthetics,
-            functionality and quality.
+            Studio Design supports client-specific development: translating
+            references, sketches and early-stage concepts into knitwear that can
+            be made. We develop technical routes, knit structures, measurements
+            and fit.
           </p>
           <p className="rv">
-            Our goal is to anticipate trends, create customized solutions, and
-            support our clients through every stage of development — from concept
-            to final production.
+            Some clients arrive with a complete tech pack. Others arrive with a
+            reference and a target price. Both are workable starting points.
+            Where commissioned, we can contribute to a specific collection:
+            always within the client&apos;s creative direction.
           </p>
           <div className="studio__sig rv">madalena beça</div>
         </div>

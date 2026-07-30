@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Cursor from "@/components/Cursor";
+import Nav from "@/components/Nav";
 
 export const metadata: Metadata = {
   title: "Madalena Beça Knitwear — Quiet Excellence in Contemporary Knitwear",
@@ -14,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Cursor />
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }

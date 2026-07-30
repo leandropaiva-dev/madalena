@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="hero__grain"></div>
       <div className="hero__inner">
         <div className="hero__kicker rv" id="heroKicker">
-          Knitwear manufacturing partner — since 1998
+          Flat-knit development and manufacturing: since 1998
         </div>
         <h1 className="hero__title" id="heroTitle">
           <span className="line">
@@ -24,10 +24,10 @@ export default function Hero() {
         <div className="hero__sub rv" id="heroSub">
           <span>Made in Portugal</span>
           <span>From yarn to garment</span>
-          <span>GOTS · RWS · GRS · OCS</span>
+          <span>For premium brands</span>
         </div>
         <div className="hero__cta rv" id="heroCta">
-          <a className="btn" href="#contact" data-hover="">
+          <a className="btn" href="/contacts" data-hover="">
             <span>Start a Project</span>
             <i></i>
           </a>

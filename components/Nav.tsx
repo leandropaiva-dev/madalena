@@ -1,13 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const LINKS = [
-  { href: "#craft", label: "Craft" },
-  { href: "#capabilities", label: "How We Work" },
-  { href: "#studio", label: "Studio" },
-  { href: "#responsibility", label: "Responsibility" },
-  { href: "#gallery", label: "Editorial" },
+  { href: "/about", label: "About MBK" },
+  { href: "/how-we-work", label: "How We Work" },
+  { href: "/responsibility", label: "Responsibility" },
+  { href: "/journal", label: "Journal" },
 ];
 
 export default function Nav() {
@@ -26,20 +26,20 @@ export default function Nav() {
             <span />
             <span />
           </button>
-          <a className="nav__logo" href="#top" data-hover="">
+          <Link className="nav__logo" href="/" data-hover="">
             madalena<small>beça knitwear</small>
-          </a>
+          </Link>
         </div>
         <div className="nav__links">
           {LINKS.map((l) => (
-            <a href={l.href} data-hover="" key={l.href}>
+            <Link href={l.href} data-hover="" key={l.href}>
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
-        <a className="nav__cta" href="#contact" data-hover="">
-          Let&apos;s talk
-        </a>
+        <Link className="nav__cta" href="/contacts" data-hover="">
+          Contacts
+        </Link>
       </nav>
 
       {/* mobile menu overlay */}
@@ -53,13 +53,13 @@ export default function Nav() {
         </button>
         <div className="navmenu__links">
           {LINKS.map((l) => (
-            <a href={l.href} key={l.href}>
+            <Link href={l.href} key={l.href}>
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="navmenu__foot">
-          <a href="#contact">Let&apos;s talk</a>
+          <Link href="/contacts">Contacts</Link>
         </div>
       </div>
     </>

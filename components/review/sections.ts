@@ -14,6 +14,7 @@ export const REVIEW_SECTIONS: ReviewSection[] = [
   { id: "studio", label: "Studio" },
   { id: "gallery", label: "Gallery" },
   { id: "why", label: "Why us" },
+  { id: "journal", label: "Journal" },
   { id: "contact", label: "Contact" },
 ];
 

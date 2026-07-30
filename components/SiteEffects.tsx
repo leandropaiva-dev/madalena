@@ -530,33 +530,37 @@ function init(
     })();
 
     /* ============ CERTS PARALLAX ============ */
-    gsap.to("#certsBg", {
-      yPercent: 16,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#responsibility",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    /* ============ STUDIO IMAGE PARALLAX ============ */
-    gsap.fromTo(
-      "#studioImg",
-      { scale: 1.18, yPercent: -6 },
-      {
-        scale: 1,
-        yPercent: 4,
+    if (document.getElementById("certsBg")) {
+      gsap.to("#certsBg", {
+        yPercent: 16,
         ease: "none",
         scrollTrigger: {
-          trigger: "#studio",
+          trigger: "#responsibility",
           start: "top bottom",
           end: "bottom top",
           scrub: true,
         },
-      }
-    );
+      });
+    }
+
+    /* ============ STUDIO IMAGE PARALLAX ============ */
+    if (document.getElementById("studioImg")) {
+      gsap.fromTo(
+        "#studioImg",
+        { scale: 1.18, yPercent: -6 },
+        {
+          scale: 1,
+          yPercent: 4,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#studio",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    }
 
     /* ============ HORIZONTAL GALLERY ============ */
     (() => {
@@ -579,17 +583,19 @@ function init(
     })();
 
     /* ============ HERO TITLE PARALLAX OUT ============ */
-    gsap.to(".hero__inner", {
-      yPercent: -14,
-      opacity: 0.25,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
+    if (document.querySelector(".hero__inner")) {
+      gsap.to(".hero__inner", {
+        yPercent: -14,
+        opacity: 0.25,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
 
     ScrollTrigger.refresh();
   });

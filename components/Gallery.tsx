@@ -22,10 +22,16 @@ export default function Gallery() {
       <div className="gal__pin" id="galPin">
         <div className="gal__head">
           <h2>
-            Editorial <em>moments</em>
+            The MBK <em>Journal</em>
           </h2>
-          <div className="label" style={{ color: "rgba(250,247,241,.4)" }}>
-            Drag through the collection —
+          <div className="gal__head-side">
+            <div className="label" style={{ color: "rgba(250,247,241,.4)" }}>
+              Notes from the factory floor
+            </div>
+            <a className="btn btn--light" href="/journal" data-hover="">
+              <span>Read the Journal</span>
+              <i></i>
+            </a>
           </div>
         </div>
         <div className="gal__track" id="galTrack">

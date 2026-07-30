@@ -10,7 +10,7 @@ export default function Contact() {
           className="label"
           style={{ color: "rgba(250,247,241,.4)", marginBottom: "4vh" }}
         >
-          Let&apos;s contact
+          Start a Project
         </div>
         <h2 className="contact__title rv">
           Let&apos;s knit <em>tomorrow</em> together.
@@ -51,7 +51,7 @@ export default function Contact() {
         </div>
       </div>
       <div className="footer">
-        <span>© Madalena Beça Têxtil, Lda — Since 1998</span>
+        <span>© Madalena Beça Têxtil, Lda: Since 1998</span>
         <span>Quiet excellence in contemporary knitwear</span>
         <span>Made in Portugal</span>
       </div>
