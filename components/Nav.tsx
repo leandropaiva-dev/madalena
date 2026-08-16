@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const SECTIONS = [
   { hash: "#craft", label: "Craft" },
-  { hash: "#capabilities", label: "Capabilities" },
+  { hash: "#capabilities", label: "How We Work" },
   { hash: "#studio", label: "Studio" },
   { hash: "#responsibility", label: "Responsibility" },
   { hash: "#gallery", label: "Editorial" },

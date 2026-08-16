@@ -290,12 +290,18 @@ function init(
           { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
           "-=.55"
         )
+        .to(
+          "#heroCta",
+          { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+          "-=.55"
+        )
         .set("#loader", { display: "none" });
     })();
 
     /* ============ GENERIC REVEALS ============ */
     document.querySelectorAll(".rv").forEach((el) => {
-      if (el.id === "heroKicker" || el.id === "heroSub") return;
+      if (el.id === "heroKicker" || el.id === "heroSub" || el.id === "heroCta")
+        return;
       gsap.to(el, {
         opacity: 1,
         y: 0,
