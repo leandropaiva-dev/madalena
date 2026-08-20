@@ -23,7 +23,7 @@ const ITEMS = [
 
 export default function Why() {
   return (
-    <section className="why section" id="why">
+    <section className="why section">
       <div className="sect-head">
         <span className="sect-head__num">Why us</span>
         <h2 className="sect-head__title">

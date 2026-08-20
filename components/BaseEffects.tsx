@@ -133,6 +133,27 @@ function init(gsap: Gsap, ScrollTrigger: ST, Lenis: LenisCtor): () => void {
       });
     });
 
+    /* ---- generic image parallax (same feel as the home studio image) ---- */
+    if (!prefersReduced) {
+      document.querySelectorAll<HTMLElement>("[data-parallax]").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { scale: 1.14, yPercent: -6 },
+          {
+            scale: 1,
+            yPercent: 5,
+            ease: "none",
+            scrollTrigger: {
+              trigger: el.parentElement ?? el,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      });
+    }
+
     ScrollTrigger.refresh();
   });
 

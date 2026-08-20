@@ -1,15 +1,15 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const SECTIONS = [
-  { hash: "#craft", label: "Craft" },
-  { hash: "#capabilities", label: "How We Work" },
-  { hash: "#studio", label: "Studio" },
-  { hash: "#responsibility", label: "Responsibility" },
-  { hash: "#gallery", label: "Editorial" },
+const LINKS = [
+  { href: "/about", label: "About" },
+  { href: "/how-we-work", label: "How We Work" },
+  { href: "/studio", label: "Studio" },
+  { href: "/sustainability", label: "Sustainability" },
+  { href: "/journal", label: "Journal" },
 ];
 
 export default function Nav() {
@@ -17,24 +17,8 @@ export default function Nav() {
   const pathname = usePathname();
   const onHome = pathname === "/";
 
-  // On the homepage keep plain <a href="#x"> so the Lenis smooth-scroll
-  // handler in SiteEffects picks it up. Elsewhere use a Next <Link href="/#x">
-  // so we navigate home first, then jump to the section.
-  const hashLink = (
-    hash: string,
-    label: ReactNode,
-    className?: string,
-    key?: string
-  ): ReactNode =>
-    onHome ? (
-      <a href={hash} className={className} data-hover="" key={key}>
-        {label}
-      </a>
-    ) : (
-      <Link href={`/${hash}`} className={className} data-hover="" key={key}>
-        {label}
-      </Link>
-    );
+  const isActive = (href: string) =>
+    href === "/journal" ? pathname.startsWith("/journal") : pathname === href;
 
   return (
     <>
@@ -60,12 +44,22 @@ export default function Nav() {
           )}
         </div>
         <div className="nav__links">
-          {SECTIONS.map((s) => hashLink(s.hash, s.label, undefined, s.hash))}
-          <Link href="/journal" data-hover="">
-            Journal
-          </Link>
+          {LINKS.map((l) => (
+            <Link
+              href={l.href}
+              className={isActive(l.href) ? "is-active" : undefined}
+              aria-current={isActive(l.href) ? "page" : undefined}
+              data-hover=""
+              key={l.href}
+            >
+              {l.label}
+            </Link>
+          ))}
         </div>
-        {hashLink("#contact", "Let’s talk", "nav__cta")}
+        {/* Contact lives at the foot of every page, so this always scrolls in-page. */}
+        <a className="nav__cta" href="#contact" data-hover="">
+          Let’s talk
+        </a>
       </nav>
 
       {/* mobile menu overlay */}
@@ -78,10 +72,19 @@ export default function Nav() {
           Close
         </button>
         <div className="navmenu__links">
-          {SECTIONS.map((s) => hashLink(s.hash, s.label, undefined, s.hash))}
-          <Link href="/journal">Journal</Link>
+          {LINKS.map((l) => (
+            <Link
+              href={l.href}
+              aria-current={isActive(l.href) ? "page" : undefined}
+              key={l.href}
+            >
+              {l.label}
+            </Link>
+          ))}
         </div>
-        <div className="navmenu__foot">{hashLink("#contact", "Let’s talk")}</div>
+        <div className="navmenu__foot">
+          <a href="#contact">Let’s talk</a>
+        </div>
       </div>
     </>
   );

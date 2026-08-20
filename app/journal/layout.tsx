@@ -1,6 +1,6 @@
 import Cursor from "@/components/Cursor";
 import Nav from "@/components/Nav";
-import JournalFooter from "@/components/journal/JournalFooter";
+import Contact from "@/components/Contact";
 import BaseEffects from "@/components/BaseEffects";
 
 export default function JournalLayout({
@@ -13,7 +13,7 @@ export default function JournalLayout({
       <Cursor />
       <Nav />
       <main>{children}</main>
-      <JournalFooter />
+      <Contact />
       <BaseEffects />
     </>
   );

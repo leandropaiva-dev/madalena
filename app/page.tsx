@@ -11,8 +11,6 @@ import Gallery from "@/components/Gallery";
 import Why from "@/components/Why";
 import Contact from "@/components/Contact";
 import SiteEffects from "@/components/SiteEffects";
-// TEMPORARY — copywriting review layer. Remove before launch.
-import ReviewLayer from "@/components/review/ReviewLayer";
 
 export default function Home() {
   return (
@@ -30,7 +28,6 @@ export default function Home() {
       <Why />
       <Contact />
       <SiteEffects />
-      <ReviewLayer />
     </>
   );
 }

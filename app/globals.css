@@ -69,6 +69,8 @@ html.lenis,html.lenis body{height:auto}
 .nav__links a{position:relative;padding:4px 0;opacity:.85}
 .nav__links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.77,0,.18,1)}
 .nav__links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav__links a.is-active{opacity:1}
+.nav__links a.is-active::after{transform:scaleX(1);transform-origin:left}
 .nav__cta{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 22px;border-radius:40px;transition:background .4s,color .4s}
 .nav__cta:hover{background:#fff;color:#000}
 .nav__left{display:flex;align-items:center;gap:16px}
@@ -357,3 +359,50 @@ html.lenis,html.lenis body{height:auto}
 .jr-foot__base{max-width:1500px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 44px;display:flex;
   flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:10px;letter-spacing:.3em;
   text-transform:uppercase;color:var(--warmgrey)}
+
+/* ============ INSTITUTIONAL PAGE HELPERS ============ */
+/* section background rhythm */
+.sect--cream{background:var(--cream)}
+.sect--wool{background:var(--wool)}
+
+/* small qualifier note at the end of a text block */
+.note{margin-top:12px;font-size:12.5px;line-height:1.75;letter-spacing:.02em;
+  color:rgba(28,25,19,.5);max-width:480px}
+
+/* sticky editorial lead column (About block 1) — flat on mobile */
+.about-lead{position:sticky;top:120px;align-self:start}
+@media(max-width:900px){.about-lead{position:static}}
+
+/* certification detail cards (Sustainability) */
+.certgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,40px);
+  max-width:1500px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.certcard{border:1px solid rgba(28,25,19,.14);border-radius:10px;background:var(--wool);
+  padding:clamp(28px,3vw,46px)}
+.certcard__head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.certcard__head b{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.6vw,40px)}
+.certcard__head span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--warmgrey)}
+.certcard__since{margin-top:8px;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--softbrown)}
+.certcard dl{margin-top:28px;display:flex;flex-direction:column;gap:18px}
+.certcard dt{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--warmgrey);margin-bottom:6px}
+.certcard dd{font-size:14px;line-height:1.7;color:rgba(28,25,19,.72);letter-spacing:.01em}
+@media(max-width:800px){.certgrid{grid-template-columns:1fr}}
+
+/* closing CTA band — page-specific invitation, bridges into the contact footer */
+.cta{background:var(--wool);color:var(--ink);text-align:center;
+  padding:14vh clamp(20px,5vw,72px);border-top:1px solid rgba(28,25,19,.1)}
+.cta__label{color:var(--warmgrey);margin-bottom:3vh}
+.cta__txt{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.4vw,62px);
+  line-height:1.15;max-width:18ch;margin:0 auto;letter-spacing:-.005em}
+.cta__txt em{font-family:var(--script);font-style:normal;color:var(--softbrown)}
+.cta__btn{margin-top:44px}
+
+/* swatch strip — the "wall of yarns and swatches" band */
+.swatches{background:var(--cream);padding:0 clamp(20px,5vw,72px) 18vh}
+.swatches__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,20px);
+  max-width:1500px;margin:0 auto}
+.swatches figure{overflow:hidden;border-radius:8px}
+.swatches img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.9);
+  transition:transform 1.2s cubic-bezier(.19,1,.22,1)}
+.swatches figure:hover img{transform:scale(1.05)}
+.swatches figcaption{margin-top:14px;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--warmgrey)}
+@media(max-width:700px){.swatches__grid{grid-template-columns:1fr}}
