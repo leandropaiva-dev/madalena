@@ -373,19 +373,19 @@ html.lenis,html.lenis body{height:auto}
 .about-lead{position:sticky;top:120px;align-self:start}
 @media(max-width:900px){.about-lead{position:static}}
 
-/* certification detail cards (Sustainability) */
-.certgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,40px);
-  max-width:1500px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
-.certcard{border:1px solid rgba(28,25,19,.14);border-radius:10px;background:var(--wool);
-  padding:clamp(28px,3vw,46px)}
-.certcard__head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-.certcard__head b{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.6vw,40px)}
-.certcard__head span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--warmgrey)}
-.certcard__since{margin-top:8px;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--softbrown)}
-.certcard dl{margin-top:28px;display:flex;flex-direction:column;gap:18px}
-.certcard dt{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--warmgrey);margin-bottom:6px}
-.certcard dd{font-size:14px;line-height:1.7;color:rgba(28,25,19,.72);letter-spacing:.01em}
-@media(max-width:800px){.certgrid{grid-template-columns:1fr}}
+/* certification sections (Sustainability) — one full section per standard */
+.certsec__full{margin-top:2px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--warmgrey)}
+.certsec__since{margin-top:14px;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--softbrown)}
+.certfields{display:flex;flex-direction:column;gap:24px}
+.certfields dt{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--warmgrey);margin-bottom:7px}
+.certfields dd{font-size:15px;line-height:1.75;color:rgba(28,25,19,.72);letter-spacing:.01em;max-width:560px}
+/* zig-zag: reversed sections put the explanation on the left (desktop only;
+   DOM stays identity-first so mobile still reads name → explanation) */
+@media(min-width:901px){
+  .certsec--rev .studio__grid{grid-template-columns:1.1fr .9fr}
+  .certsec--rev .studio__body{grid-column:2}
+  .certsec--rev .certfields{grid-column:1;grid-row:1}
+}
 
 /* closing CTA band — page-specific invitation, bridges into the contact footer */
 .cta{background:var(--wool);color:var(--ink);text-align:center;

@@ -82,8 +82,8 @@ export default function AboutPage() {
           <div className="studio__imgwrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/craft-women.jpg"
-              alt="The same family since 1998 — the next generation working alongside the first"
+              src="/tatianacomamae.jpg"
+              alt="Tatiana with her mother on the factory floor — the same family since 1998"
               data-parallax=""
             />
           </div>

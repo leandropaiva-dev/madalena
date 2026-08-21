@@ -148,48 +148,66 @@ export default function SustainabilityPage() {
       {/* ---- certified supply chain (reuses the home Certs section) ---- */}
       <Certs />
 
-      {/* ---- certification detail, one card per standard ---- */}
-      <section className="section sect--cream" style={{ padding: "16vh 0" }}>
+      {/* ---- standards intro ---- */}
+      <section className="section sect--cream" style={{ padding: "15vh 0 3vh" }}>
         <div className="sect-head">
           <span className="sect-head__num">The standards</span>
           <h2 className="sect-head__title">
             Four certifications, <em>one traceable chain.</em>
           </h2>
         </div>
-        <div className="certgrid">
-          {CERTS.map((c) => (
-            <article className="certcard rv" key={c.name}>
-              <div className="certcard__head">
-                <b>{c.name}</b>
-                <span>{c.full}</span>
+      </section>
+
+      {/* ---- one full section per certification ---- */}
+      {CERTS.map((c, i) => (
+        <section
+          className={`section ${
+            i % 2 === 0 ? "sect--wool" : "sect--cream certsec--rev"
+          }`}
+          style={{ padding: "11vh 0" }}
+          key={c.name}
+        >
+          <div className="studio__grid" style={{ alignItems: "start" }}>
+            <div className="studio__body">
+              <div className="label">
+                Certification {String(i + 1).padStart(2, "0")}
               </div>
-              <div className="certcard__since">{c.since}</div>
-              <dl>
-                <div>
-                  <dt>What it covers</dt>
-                  <dd>{c.covers}</dd>
-                </div>
-                <div>
-                  <dt>What it requires of us</dt>
-                  <dd>{c.requires}</dd>
-                </div>
-                <div>
-                  <dt>What it gives your brand</dt>
-                  <dd>{c.gives}</dd>
-                </div>
-                <div>
-                  <dt>Condition</dt>
-                  <dd>{c.condition}</dd>
-                </div>
-              </dl>
-            </article>
-          ))}
-        </div>
+              <h2 className="rv" style={{ margin: "14px 0 0" }}>
+                {c.name}
+              </h2>
+              <div className="certsec__full rv">{c.full}</div>
+              <div className="certsec__since rv">{c.since}</div>
+            </div>
+            <dl className="certfields rv">
+              <div>
+                <dt>What it covers</dt>
+                <dd>{c.covers}</dd>
+              </div>
+              <div>
+                <dt>What it requires of us</dt>
+                <dd>{c.requires}</dd>
+              </div>
+              <div>
+                <dt>What it gives your brand</dt>
+                <dd>{c.gives}</dd>
+              </div>
+              <div>
+                <dt>Condition</dt>
+                <dd>{c.condition}</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+      ))}
+
+      {/* ---- Ecocert licence ---- */}
+      <section
+        className="section sect--cream"
+        style={{ padding: "3vh 0 12vh", textAlign: "center" }}
+      >
         <p
           className="rv"
           style={{
-            textAlign: "center",
-            marginTop: "7vh",
             fontSize: "10.5px",
             letterSpacing: ".34em",
             textTransform: "uppercase",
