@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+// TEMPORARY — copy-review overlay (Supabase-backed). Remove before launch.
+import ReviewLayer from "@/components/review/ReviewLayer";
 
 export const metadata: Metadata = {
   title: "Madalena Beça Knitwear — Quiet Excellence in Contemporary Knitwear",
@@ -14,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <ReviewLayer />
+      </body>
     </html>
   );
 }
