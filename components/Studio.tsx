@@ -4,7 +4,7 @@ export default function Studio() {
       <div className="studio__grid">
         <div className="studio__imgwrap">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/studio-yarn.jpg" alt="Yarn cones" id="studioImg" />
+          <img src="/images/studio-yarn.jpg" alt="Comparing yarn shades from a swatch card" id="studioImg" />
         </div>
         <div className="studio__body">
           <div className="label">The Studio Design</div>

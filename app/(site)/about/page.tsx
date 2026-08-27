@@ -7,12 +7,12 @@ export const metadata: Metadata = {
 };
 
 const GALLERY = [
-  { src: "/images/cap-design.jpg", alt: "Programming in STOLL M1plus", cap: "Programming" },
-  { src: "/images/cap-knitting.jpg", alt: "Flat knitting", cap: "Knitting" },
-  { src: "/images/cap-confection.jpg", alt: "Garment assembly", cap: "Assembly" },
-  { src: "/images/cap-quality.jpg", alt: "Quality control", cap: "Quality control" },
-  { src: "/images/cap-fitting.jpg", alt: "Finishing and fit", cap: "Finishing" },
-  { src: "/images/gal-05.jpg", alt: "Packing in our own facilities", cap: "Packing" },
+  { src: "/images/cap-design.jpg", alt: "Programming a knit pattern in STOLL M1plus", cap: "Programming" },
+  { src: "/images/cap-knitting.jpg", alt: "Yarn guide feeders on a flatbed knitting machine", cap: "Knitting" },
+  { src: "/images/cap-confection.jpg", alt: "Linking a knitted panel by hand on an industrial machine", cap: "Assembly" },
+  { src: "/images/cap-quality.jpg", alt: "Measuring a finished sweater during quality control", cap: "Quality control" },
+  { src: "/images/cap-fitting.jpg", alt: "Hand-finishing the seam of a knitted garment", cap: "Finishing" },
+  { src: "/images/factory-packing.jpg", alt: "Folded knitwear packed and ready for dispatch", cap: "Packing" },
 ];
 
 export default function AboutPage() {

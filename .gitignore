@@ -26,3 +26,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw photo source files (not used directly by the site; see public/images/)
+/public/MalhasMadalenas/

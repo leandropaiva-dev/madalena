@@ -30,9 +30,9 @@ const PROCESS = [
 ];
 
 const SWATCHES = [
-  { src: "/images/gal-02.jpg", alt: "Stitch structure swatch", cap: "Stitch structures" },
-  { src: "/images/gal-06.jpg", alt: "Yarn and swatch development", cap: "Swatch development" },
-  { src: "/images/gal-10.jpg", alt: "Fit and measurement work on a finished piece", cap: "Fit & measurement" },
+  { src: "/images/studio-swatch-1.jpg", alt: "Round texture swatches pinned to a mood board", cap: "Stitch structures" },
+  { src: "/images/studio-swatch-2.jpg", alt: "Pointing out a texture swatch on a mood board", cap: "Swatch development" },
+  { src: "/images/studio-swatch-3.jpg", alt: "Reviewing a knit sample against the pattern on a tablet", cap: "Fit & measurement" },
 ];
 
 export default function StudioPage() {
@@ -163,7 +163,7 @@ export default function StudioPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/studio-yarn.jpg"
-              alt="A wall of yarns and swatches"
+              alt="Comparing yarn shades from a swatch card"
               data-parallax=""
             />
           </div>
