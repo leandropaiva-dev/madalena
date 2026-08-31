@@ -12,12 +12,12 @@ export default function Manifesto() {
           <span>Year of foundation.</span>
         </div>
         <div className="stat rv">
-          <b data-count="28">28</b>
-          <span>Years of accumulated technical and commercial experience.</span>
+          <b data-count="4">4</b>
+          <span>Internationally recognised textile certifications.</span>
         </div>
         <div className="stat rv">
-          <b data-count="12">12</b>
-          <span>Countries where our knitwear reaches.</span>
+          <b data-count="15">15</b>
+          <span>Countries our knitwear has been exported to.</span>
         </div>
         <div className="stat rv">
           <b>

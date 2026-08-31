@@ -53,8 +53,7 @@ html.lenis,html.lenis body{height:auto}
 /* ============ LOADER ============ */
 .loader{position:fixed;inset:0;z-index:2000;background:var(--cream);display:flex;
   align-items:center;justify-content:center;flex-direction:column;gap:26px}
-.loader__logo{font-family:var(--serif);font-size:clamp(26px,4vw,44px);letter-spacing:.04em}
-.loader__logo em{font-family:var(--script);font-style:normal;font-size:1.25em;margin-right:.08em}
+.loader__logo img{display:block;height:clamp(64px,9vw,104px);width:auto;margin:0 auto}
 .loader__bar{width:min(280px,60vw);height:1px;background:rgba(28,25,19,.18);position:relative;overflow:hidden}
 .loader__bar i{position:absolute;inset:0;background:var(--ink);transform:scaleX(0);transform-origin:left}
 .loader__pct{font-size:11px;letter-spacing:.4em;color:var(--warmgrey)}
@@ -63,8 +62,10 @@ html.lenis,html.lenis body{height:auto}
 .nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;
   justify-content:space-between;padding:26px clamp(20px,4vw,56px);
   mix-blend-mode:difference;color:#fff}
-.nav__logo{font-family:var(--serif);font-size:20px;letter-spacing:.06em;line-height:1}
-.nav__logo small{display:block;font-family:var(--sans);font-size:8.5px;letter-spacing:.52em;margin-top:5px;opacity:.75;text-transform:uppercase}
+.nav__logo{display:flex;align-items:center;line-height:1}
+.nav__logoMark{display:block;height:56px;aspect-ratio:246/235;background-color:currentColor;
+  -webkit-mask:url(/logo-madalena.webp) center/contain no-repeat;
+  mask:url(/logo-madalena.webp) center/contain no-repeat}
 .nav__links{display:flex;gap:34px;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase}
 .nav__links a{position:relative;padding:4px 0;opacity:.85}
 .nav__links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.77,0,.18,1)}
@@ -218,7 +219,8 @@ html.lenis,html.lenis body{height:auto}
 .certs__quote em{font-family:var(--script);font-style:normal;color:var(--sand)}
 .certs__badges{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:8vh}
 .badge{border:1px solid rgba(250,247,241,.4);border-radius:60px;padding:16px 30px;
-  font-size:11px;letter-spacing:.3em;text-transform:uppercase;display:flex;gap:14px;align-items:baseline;backdrop-filter:blur(4px);transition:background .4s,color .4s}
+  font-size:11px;letter-spacing:.3em;text-transform:uppercase;display:flex;gap:14px;align-items:baseline;backdrop-filter:blur(4px);transition:background .4s,color .4s;
+  background:none;color:inherit;font-family:inherit;cursor:pointer}
 .badge b{font-weight:500}
 .badge span{opacity:.6;font-size:10px}
 .badge:hover{background:var(--wool);color:var(--ink)}
@@ -413,19 +415,44 @@ html.lenis,html.lenis body{height:auto}
 .cmt-empty{font-family:var(--serif);font-size:22px;color:var(--warmgrey);padding:9vh 0}
 .cmt-state{padding:12vh 0;text-align:center;color:var(--warmgrey);font-size:14px;letter-spacing:.02em}
 
-/* certification sections (Sustainability) — one full section per standard */
-.certsec__full{margin-top:2px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--warmgrey)}
-.certsec__since{margin-top:14px;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--softbrown)}
+/* certification fields (used inside the accordion panel below) */
 .certfields{display:flex;flex-direction:column;gap:24px}
 .certfields dt{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--warmgrey);margin-bottom:7px}
 .certfields dd{font-size:15px;line-height:1.75;color:rgba(28,25,19,.72);letter-spacing:.01em;max-width:560px}
-/* zig-zag: reversed sections put the explanation on the left (desktop only;
-   DOM stays identity-first so mobile still reads name → explanation) */
-@media(min-width:901px){
-  .certsec--rev .studio__grid{grid-template-columns:1.1fr .9fr}
-  .certsec--rev .studio__body{grid-column:2}
-  .certsec--rev .certfields{grid-column:1;grid-row:1}
-}
+
+/* ============ CERTIFICATION ACCORDION ============ */
+.certacc{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,72px);border-top:1px solid rgba(28,25,19,.14)}
+.certacc__item{border-bottom:1px solid rgba(28,25,19,.14)}
+.certacc__row{width:100%;display:flex;align-items:baseline;gap:clamp(14px,3vw,34px);
+  padding:clamp(20px,4vh,38px) 0;background:none;border:0;cursor:pointer;text-align:left;
+  color:var(--ink);font-family:var(--sans)}
+.certacc__num{font-size:11px;letter-spacing:.3em;color:var(--warmgrey);width:22px;flex:none}
+.certacc__name{font-family:var(--serif);font-weight:400;font-size:clamp(36px,6vw,86px);
+  line-height:1;letter-spacing:-.01em;flex:none;transition:color .35s}
+.certacc__row:hover .certacc__name{color:var(--softbrown)}
+.certacc__full{font-size:13px;letter-spacing:.05em;color:rgba(28,25,19,.55);flex:1;display:none}
+.certacc__since{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--warmgrey);flex:none;display:none}
+@media(min-width:700px){.certacc__full{display:block}}
+@media(min-width:980px){.certacc__since{display:block}}
+.certacc__plus{position:relative;width:22px;height:22px;flex:none}
+.certacc__plus::before,.certacc__plus::after{content:'';position:absolute;background:var(--ink);
+  transition:transform .4s cubic-bezier(.77,0,.18,1),opacity .4s}
+.certacc__plus::before{left:0;top:50%;width:100%;height:1px;transform:translateY(-50%)}
+.certacc__plus::after{top:0;left:50%;width:1px;height:100%;transform:translateX(-50%)}
+.certacc__plus.is-open::after{opacity:0;transform:translateX(-50%) rotate(90deg)}
+.certacc__panelWrap{display:grid;grid-template-rows:0fr;
+  transition:grid-template-rows .5s cubic-bezier(.77,0,.18,1)}
+.certacc__panelWrap.is-open{grid-template-rows:1fr}
+.certacc__panel{overflow:hidden}
+.certacc__panelWrap .certfields{padding:0 0 clamp(28px,5vh,52px);max-width:640px}
+
+/* ---- ecocert callout (prominent, sits right below the accordion) ---- */
+.ecocert{max-width:640px;margin:9vh auto 0;padding:clamp(38px,6vh,60px) clamp(24px,4vw,56px);
+  border:1px solid rgba(28,25,19,.16);text-align:center}
+.ecocert__label{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--warmgrey)}
+.ecocert__name{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,40px);
+  margin-top:14px;letter-spacing:-.01em}
+.ecocert__licence{margin-top:16px;font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--softbrown)}
 
 /* closing CTA band — page-specific invitation, bridges into the contact footer */
 .cta{background:var(--wool);color:var(--ink);text-align:center;
@@ -446,3 +473,28 @@ html.lenis,html.lenis body{height:auto}
 .swatches figure:hover img{transform:scale(1.05)}
 .swatches figcaption{margin-top:14px;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--warmgrey)}
 @media(max-width:700px){.swatches__grid{grid-template-columns:1fr}}
+
+/* ============ ENQUIRY FORM ============ */
+.enquiry{padding:6vh clamp(20px,5vw,72px) 18vh}
+.enquiry__form{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+.enquiry__row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px)}
+@media(max-width:700px){.enquiry__row{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:12px}
+.field label{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--warmgrey)}
+.field__hint{margin-top:-8px;font-size:12.5px;color:rgba(28,25,19,.55)}
+.field input,.field select,.field textarea{
+  width:100%;background:none;border:0;border-bottom:1px solid rgba(28,25,19,.26);
+  border-radius:0;padding:12px 2px;font-family:var(--sans);font-weight:300;font-size:15.5px;
+  color:var(--ink);transition:border-color .35s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
+.field textarea{resize:vertical;min-height:120px;line-height:1.6}
+.field select{appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23A79E8F' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 4px center}
+.field--file input{border:1px dashed rgba(28,25,19,.26);padding:16px;font-size:13px}
+.field__file{font-size:12.5px;color:var(--softbrown)}
+.enquiry__submit{align-self:flex-start;margin-top:8px}
+.enquiry__submit:disabled{opacity:.55;cursor:default}
+.enquiry__success{max-width:560px;margin:8vh auto;text-align:center}
+.enquiry__success h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,44px);letter-spacing:-.01em}
+.enquiry__success p{margin-top:18px;font-size:15.5px;line-height:1.8;color:rgba(28,25,19,.68)}

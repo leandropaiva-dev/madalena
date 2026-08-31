@@ -34,12 +34,22 @@ export default function Nav() {
             <span />
           </button>
           {onHome ? (
-            <a className="nav__logo" href="#top" data-hover="">
-              madalena<small>beça knitwear</small>
+            <a
+              className="nav__logo"
+              href="#top"
+              aria-label="Madalena Beça Knitwear — Home"
+              data-hover=""
+            >
+              <span className="nav__logoMark" aria-hidden="true" />
             </a>
           ) : (
-            <Link className="nav__logo" href="/" data-hover="">
-              madalena<small>beça knitwear</small>
+            <Link
+              className="nav__logo"
+              href="/"
+              aria-label="Madalena Beça Knitwear — Home"
+              data-hover=""
+            >
+              <span className="nav__logoMark" aria-hidden="true" />
             </Link>
           )}
         </div>
@@ -56,10 +66,9 @@ export default function Nav() {
             </Link>
           ))}
         </div>
-        {/* Contact lives at the foot of every page, so this always scrolls in-page. */}
-        <a className="nav__cta" href="#contact" data-hover="">
+        <Link className="nav__cta" href="/start-a-project" data-hover="">
           Let’s talk
-        </a>
+        </Link>
       </nav>
 
       {/* mobile menu overlay */}
@@ -83,7 +92,7 @@ export default function Nav() {
           ))}
         </div>
         <div className="navmenu__foot">
-          <a href="#contact">Let’s talk</a>
+          <Link href="/start-a-project">Let’s talk</Link>
         </div>
       </div>
     </>

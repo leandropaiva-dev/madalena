@@ -10,10 +10,10 @@ export default function Contact() {
           className="label"
           style={{ color: "rgba(250,247,241,.4)", marginBottom: "4vh" }}
         >
-          Let&apos;s contact
+          Get in touch
         </div>
         <h2 className="contact__title rv">
-          Let&apos;s knit <em>tomorrow</em> together.
+          Where your next <em>knit</em> begins.
         </h2>
         <div className="contact__rows">
           <a
@@ -23,10 +23,6 @@ export default function Contact() {
           >
             <span>Email</span>
             <b>info@malhasmadalena.com</b>
-          </a>
-          <a className="contact__row rv" href="tel:+351919534493" data-hover="">
-            <span>Phone</span>
-            <b>+351 919 534 493</b>
           </a>
           <a
             className="contact__row rv"
@@ -40,19 +36,19 @@ export default function Contact() {
           </a>
           <a
             className="contact__row rv"
-            href="https://www.madalenabecaknitwear.com"
+            href="https://www.linkedin.com/company/madalenabecaknitwear/"
             target="_blank"
             rel="noopener"
             data-hover=""
           >
-            <span>Website</span>
-            <b>madalenabecaknitwear.com</b>
+            <span>LinkedIn</span>
+            <b>madalenabecaknitwear</b>
           </a>
         </div>
       </div>
       <div className="footer">
         <span>© Madalena Beça Têxtil, Lda — Since 1998</span>
-        <span>Quiet excellence in contemporary knitwear</span>
+        <span>Flat knitwear manufacturing in Portugal since 1998.</span>
         <span>Made in Portugal</span>
       </div>
     </section>

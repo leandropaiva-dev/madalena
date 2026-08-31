@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Certs from "@/components/Certs";
+import CertAccordion from "@/components/CertAccordion";
 
 export const metadata: Metadata = {
   title: "Sustainability — Certifications · Madalena Beça Knitwear",
@@ -158,64 +159,16 @@ export default function SustainabilityPage() {
         </div>
       </section>
 
-      {/* ---- one full section per certification ---- */}
-      {CERTS.map((c, i) => (
-        <section
-          className={`section ${
-            i % 2 === 0 ? "sect--wool" : "sect--cream certsec--rev"
-          }`}
-          style={{ padding: "11vh 0" }}
-          key={c.name}
-        >
-          <div className="studio__grid" style={{ alignItems: "start" }}>
-            <div className="studio__body">
-              <div className="label">
-                Certification {String(i + 1).padStart(2, "0")}
-              </div>
-              <h2 className="rv" style={{ margin: "14px 0 0" }}>
-                {c.name}
-              </h2>
-              <div className="certsec__full rv">{c.full}</div>
-              <div className="certsec__since rv">{c.since}</div>
-            </div>
-            <dl className="certfields rv">
-              <div>
-                <dt>What it covers</dt>
-                <dd>{c.covers}</dd>
-              </div>
-              <div>
-                <dt>What it requires of us</dt>
-                <dd>{c.requires}</dd>
-              </div>
-              <div>
-                <dt>What it gives your brand</dt>
-                <dd>{c.gives}</dd>
-              </div>
-              <div>
-                <dt>Condition</dt>
-                <dd>{c.condition}</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-      ))}
+      {/* ---- certifications accordion ---- */}
+      <section className="section sect--cream" style={{ padding: "0 0 3vh" }}>
+        <CertAccordion certs={CERTS} />
 
-      {/* ---- Ecocert licence ---- */}
-      <section
-        className="section sect--cream"
-        style={{ padding: "3vh 0 12vh", textAlign: "center" }}
-      >
-        <p
-          className="rv"
-          style={{
-            fontSize: "10.5px",
-            letterSpacing: ".34em",
-            textTransform: "uppercase",
-            color: "var(--warmgrey)",
-          }}
-        >
-          Certified by Ecocert Greenlife — Licence 270713
-        </p>
+        {/* ---- Ecocert licence — the standalone, high-contrast callout ---- */}
+        <div className="ecocert rv">
+          <div className="ecocert__label">Certified by</div>
+          <div className="ecocert__name">Ecocert Greenlife</div>
+          <div className="ecocert__licence">Licence 270713</div>
+        </div>
       </section>
 
       {/* ---- closing CTA (bridges into the contact footer) ---- */}
@@ -224,7 +177,7 @@ export default function SustainabilityPage() {
         <p className="cta__txt rv">
           Discuss certification. <em>We will confirm the route for your project.</em>
         </p>
-        <a className="btn cta__btn rv" href="#contact" data-hover="">
+        <a className="btn cta__btn rv" href="/start-a-project" data-hover="">
           <span>Discuss certification</span>
           <i />
         </a>

@@ -190,7 +190,7 @@ export default function StudioPage() {
           Brief Studio Design.{" "}
           <em>Tell us where your product currently stands.</em>
         </p>
-        <a className="btn cta__btn rv" href="#contact" data-hover="">
+        <a className="btn cta__btn rv" href="/start-a-project" data-hover="">
           <span>Start a Project</span>
           <i />
         </a>

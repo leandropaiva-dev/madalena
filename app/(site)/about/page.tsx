@@ -7,12 +7,12 @@ export const metadata: Metadata = {
 };
 
 const GALLERY = [
-  { src: "/images/cap-design.jpg", alt: "Programming a knit pattern in STOLL M1plus", cap: "Programming" },
-  { src: "/images/cap-knitting.jpg", alt: "Yarn guide feeders on a flatbed knitting machine", cap: "Knitting" },
-  { src: "/images/cap-confection.jpg", alt: "Linking a knitted panel by hand on an industrial machine", cap: "Assembly" },
-  { src: "/images/cap-quality.jpg", alt: "Measuring a finished sweater during quality control", cap: "Quality control" },
-  { src: "/images/cap-fitting.jpg", alt: "Hand-finishing the seam of a knitted garment", cap: "Finishing" },
-  { src: "/images/factory-packing.jpg", alt: "Folded knitwear packed and ready for dispatch", cap: "Packing" },
+  { src: "/images/about-programming.jpg", alt: "Programming a knit pattern at the workstation", cap: "Programming" },
+  { src: "/images/about-knitting.jpg", alt: "Operating a circular knitting machine", cap: "Knitting" },
+  { src: "/images/about-assembly.jpg", alt: "Linking a knitted panel by hand on an industrial machine", cap: "Assembly" },
+  { src: "/images/about-quality.jpg", alt: "Measuring a finished sweater during quality control", cap: "Quality control" },
+  { src: "/images/about-finishing.jpg", alt: "Hand-finishing the edge of a knitted garment", cap: "Finishing" },
+  { src: "/images/about-packing.jpg", alt: "Folded knitwear packed and ready for dispatch", cap: "Packing" },
 ];
 
 export default function AboutPage() {
@@ -152,7 +152,7 @@ export default function AboutPage() {
         <p className="cta__txt rv">
           We work best with brands that <em>intend to stay.</em>
         </p>
-        <a className="btn cta__btn rv" href="#contact" data-hover="">
+        <a className="btn cta__btn rv" href="/start-a-project" data-hover="">
           <span>Start a conversation</span>
           <i />
         </a>

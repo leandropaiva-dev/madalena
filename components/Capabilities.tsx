@@ -1,37 +1,37 @@
 const ITEMS = [
   {
     n: "01",
-    title: "Feasibility & Quotation",
-    body: "We review your brief, including measurements, gauge, construction and intended result, and flag concerns before development starts. Alongside this, we provide an estimated quotation based on yarn, quantities and target parameters, so cost is never a surprise later. This avoids avoidable prototypes and development starting without price awareness.",
+    title: "Review & Quotation",
+    body: "We begin by reviewing the project and confirming the route forward. Where relevant, technical considerations are raised before sampling begins, while quotation is aligned with the agreed product, yarn and quantities. This creates a clear foundation for development and production.",
   },
   {
     n: "02",
-    title: "Yarn & Development",
-    body: "We evaluate yarn options, including handfeel, composition, certification, price and availability, against your target and colour needs. Once approved, we move into programming, gauge, structure, fit and assembly. This protects the intended result before it becomes a finished garment.",
+    title: "Development & Sampling",
+    body: "Depending on the project, we can work from complete technical specifications or support earlier stages of knitwear development. Sampling brings the product into form, allowing construction, fit and finish to be assessed and refined before production.",
   },
   {
     n: "03",
     title: "Approval & Planning",
-    body: "You review the prototype and we track every adjustment through to sign-off. With delivery window and yarn confirmed, we plan capacity and timing, including off-peak production where useful. This keeps changes controlled and protects your delivery window.",
+    body: "Once the product is approved, we align the requirements for production and plan according to the agreed quantities and delivery window. Where timing allows, we can also explore production outside traditional peak periods — creating greater flexibility for the brand while helping us build more balanced production throughout the year.",
   },
   {
     n: "04",
     title: "Production & Quality Control",
-    body: "Knitting, washing, linking, sewing, assembly and quality checks happen under one roof, in our own facilities in Portugal. Every piece is checked against approved specifications before it moves forward. One factory, one accountable partner.",
+    body: "Production and quality control remain closely connected within our own facilities in Portugal. Each style follows its approved specifications throughout production, with quality monitored across the process before final release.",
   },
   {
     n: "05",
-    title: "Delivery & Reruns",
-    body: "Final review, packing and shipment follow your agreed date. Once a style is proven, future runs can build on the existing program and known yarn behaviour, allowing more focused replenishment, subject to yarn availability and schedule.",
+    title: "Delivery & Reorders",
+    body: "Following final control, garments are prepared and shipped according to the agreed delivery schedule. For established styles, reorders can build on work already developed and approved, allowing brands to replenish successful products with greater flexibility and, where possible, lower quantities.",
   },
 ];
 
 const MEDIA = [
-  { src: "/images/cap-design.jpg", alt: "Feasibility and quotation" },
-  { src: "/images/cap-knitting.jpg", alt: "Yarn and development" },
+  { src: "/images/cap-design.jpg", alt: "Review and quotation" },
+  { src: "/images/cap-knitting.jpg", alt: "Development and sampling" },
   { src: "/images/cap-confection.jpg", alt: "Approval and planning" },
   { src: "/images/cap-quality.jpg", alt: "Production and quality control" },
-  { src: "/images/cap-fitting.jpg", alt: "Delivery and reruns" },
+  { src: "/images/cap-fitting.jpg", alt: "Delivery and reorders" },
 ];
 
 export default function Capabilities() {

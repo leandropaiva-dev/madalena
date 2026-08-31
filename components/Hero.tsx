@@ -5,9 +5,11 @@ export default function Hero() {
       <div className="hero__veil"></div>
       <div className="hero__grain"></div>
       <div className="hero__inner">
+        {/* Hidden for now — see conversation with client.
         <div className="hero__kicker rv" id="heroKicker">
           Knitwear manufacturing partner — since 1998
         </div>
+        */}
         <h1 className="hero__title" id="heroTitle">
           <span className="line">
             <span>
@@ -27,7 +29,7 @@ export default function Hero() {
           <span>GOTS · RWS · GRS · OCS</span>
         </div>
         <div className="hero__cta rv" id="heroCta">
-          <a className="btn" href="#contact" data-hover="">
+          <a className="btn" href="/start-a-project" data-hover="">
             <span>Start a Project</span>
             <i></i>
           </a>

@@ -1,38 +1,11 @@
 import type { Metadata } from "next";
+import Capabilities from "@/components/Capabilities";
 
 export const metadata: Metadata = {
   title: "How We Work — MBK · Madalena Beça Knitwear",
   description:
     "From programming and knitting to assembly, quality control and packing — produced in our own facilities in Penafiel, Portugal. One factory, one accountable partner.",
 };
-
-const STEPS = [
-  {
-    n: "01",
-    title: "Feasibility & Quotation",
-    body: "We review your brief — measurements, gauge, construction and intended result — and flag concerns before development starts. Alongside this, we provide an estimated quotation based on yarn, quantities and target parameters, so cost is never a surprise later.",
-  },
-  {
-    n: "02",
-    title: "Yarn & Development",
-    body: "We evaluate yarn options — handfeel, composition, certification, price and availability — against your target and colour needs. Once approved, we move into programming, gauge, structure, fit and assembly.",
-  },
-  {
-    n: "03",
-    title: "Approval & Planning",
-    body: "You review the prototype and we track every adjustment through to sign-off. With delivery window and yarn confirmed, we plan capacity and timing, including off-peak production where useful.",
-  },
-  {
-    n: "04",
-    title: "Production & Quality Control",
-    body: "Knitting, washing, linking, sewing, assembly and quality checks happen under one roof, in our own facilities in Portugal. Every piece is checked against approved specifications before it moves forward.",
-  },
-  {
-    n: "05",
-    title: "Delivery & Reruns",
-    body: "Final review, packing and shipment follow your agreed date. Once a style is proven, future runs can build on the existing program and known yarn behaviour, allowing more focused replenishment.",
-  },
-];
 
 export default function HowWeWorkPage() {
   return (
@@ -52,39 +25,7 @@ export default function HowWeWorkPage() {
         </div>
       </header>
 
-      {/* ---- block 1: the process (reuses the home "how we work" list) ---- */}
-      <section className="section sect--wool" style={{ padding: "16vh 0" }}>
-        <div className="sect-head">
-          <span className="sect-head__num">The process</span>
-          <h2 className="sect-head__title">
-            Five stages, <em>one factory.</em>
-          </h2>
-        </div>
-        <div
-          className="caps__list"
-          style={{
-            maxWidth: "980px",
-            margin: "0 auto",
-            padding: "0 clamp(20px,5vw,72px)",
-          }}
-        >
-          {STEPS.map((it) => (
-            <div
-              className="caps__item is-active rv"
-              style={{ cursor: "default" }}
-              key={it.n}
-            >
-              <h3>
-                <i>{it.n}</i>
-                {it.title}
-              </h3>
-              <p>{it.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ---- block 2: made in our own facilities ---- */}
+      {/* ---- block 1: made in our own facilities (same background as the hero, so it reads as one continuous opening) ---- */}
       <section className="studio section sect--cream">
         <div className="studio__grid">
           <div className="studio__imgwrap">
@@ -130,8 +71,11 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
+      {/* ---- block 2: the process (identical pinned sequence as the homepage) ---- */}
+      <Capabilities />
+
       {/* ---- block 3: craft ---- */}
-      <section className="studio section sect--wool">
+      <section className="studio section sect--cream">
         <div
           className="studio__grid"
           style={{ gridTemplateColumns: "1.1fr .9fr" }}
@@ -184,7 +128,7 @@ export default function HowWeWorkPage() {
         <p className="cta__txt rv">
           The partner you brief is <em>the partner who makes it.</em>
         </p>
-        <a className="btn cta__btn rv" href="#contact" data-hover="">
+        <a className="btn cta__btn rv" href="/start-a-project" data-hover="">
           <span>Start a Project</span>
           <i />
         </a>

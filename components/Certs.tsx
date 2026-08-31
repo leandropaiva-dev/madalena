@@ -1,3 +1,7 @@
+"use client";
+
+import { useRouter, usePathname } from "next/navigation";
+
 const BADGES = [
   { name: "GOTS", year: "2017" },
   { name: "RWS", year: "2022" },
@@ -6,6 +10,18 @@ const BADGES = [
 ];
 
 export default function Certs() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  function openCert(name: string) {
+    const slug = name.toLowerCase();
+    if (pathname === "/sustainability") {
+      window.dispatchEvent(new CustomEvent("cert:open", { detail: { slug } }));
+    } else {
+      router.push(`/sustainability#cert-${slug}`);
+    }
+  }
+
   return (
     <section className="certs section" id="responsibility">
       <div
@@ -27,10 +43,15 @@ export default function Certs() {
         </div>
         <div className="certs__badges">
           {BADGES.map((b, i) => (
-            <div className="badge rv" data-hover="" key={i}>
+            <button
+              className="badge rv"
+              data-hover=""
+              key={i}
+              onClick={() => openCert(b.name)}
+            >
               <b>{b.name}</b>
               <span>{b.year}</span>
-            </div>
+            </button>
           ))}
         </div>
         <div className="certs__lic rv">

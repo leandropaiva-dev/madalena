@@ -7,9 +7,14 @@
  * replace the `posts` array with a `fetch()` inside those functions.
  */
 
-export type Category = "Partnerships" | "Blog" | "Notícias";
+export type Category = "Know-how" | "Materials" | "Responsibility" | "News";
 
-export const categories: Category[] = ["Partnerships", "Blog", "Notícias"];
+export const categories: Category[] = [
+  "Know-how",
+  "Materials",
+  "Responsibility",
+  "News",
+];
 
 export interface JournalPost {
   slug: string;
@@ -30,7 +35,7 @@ const posts: JournalPost[] = [
     title: "A partnership woven in trust",
     excerpt:
       "What it means to be a development partner rather than a supplier — and why the best collections begin long before the first stitch.",
-    category: "Partnerships",
+    category: "Know-how",
     date: "2026-06-18",
     cover: "/images/studio-yarn.jpg",
     author: "Madalena Beça",
@@ -52,7 +57,7 @@ const posts: JournalPost[] = [
     title: "From sketch to shelf, together",
     excerpt:
       "A look inside the development studio, where drawings become programs and programs become the pieces you'll wear.",
-    category: "Partnerships",
+    category: "Know-how",
     date: "2026-04-02",
     cover: "/images/cap-design.jpg",
     author: "Studio Team",
@@ -71,7 +76,7 @@ const posts: JournalPost[] = [
     title: "Co-creating a responsible supply chain",
     excerpt:
       "Certification is a floor, not a ceiling. How we work with partners to make responsibility a shared, everyday practice.",
-    category: "Partnerships",
+    category: "Responsibility",
     date: "2026-01-27",
     cover: "/images/certs-bg.jpg",
     author: "Madalena Beça",
@@ -91,7 +96,7 @@ const posts: JournalPost[] = [
     title: "The quiet craft of gauge",
     excerpt:
       "Gauges 3 to 12, and what each one does to a knit. A short field guide to the numbers behind the fabric.",
-    category: "Blog",
+    category: "Know-how",
     date: "2026-05-21",
     cover: "/images/cap-knitting.jpg",
     author: "Studio Team",
@@ -111,7 +116,7 @@ const posts: JournalPost[] = [
     title: "Notes on undyed yarn",
     excerpt:
       "The unhurried beauty of natural tones — and why we keep returning to the undyed palette.",
-    category: "Blog",
+    category: "Materials",
     date: "2026-03-09",
     cover: "/images/gal-02.jpg",
     author: "Madalena Beça",
@@ -129,7 +134,7 @@ const posts: JournalPost[] = [
     title: "Why we knit slowly",
     excerpt:
       "In an industry built for speed, a case for the deliberate pace of small, expert making.",
-    category: "Blog",
+    category: "Know-how",
     date: "2025-12-14",
     cover: "/images/craft-women.jpg",
     author: "Madalena Beça",
@@ -148,7 +153,7 @@ const posts: JournalPost[] = [
     title: "New STOLL machines arrive at the atelier",
     excerpt:
       "An investment in capacity and finesse: our flat-knitting fleet grows, widening the range of what we can make.",
-    category: "Notícias",
+    category: "News",
     date: "2026-07-30",
     cover: "/images/cap-confection.jpg",
     author: "Madalena Beça",
@@ -166,7 +171,7 @@ const posts: JournalPost[] = [
     title: "OCS certification renewed for 2026",
     excerpt:
       "Our Organic Content Standard certification has been renewed, keeping our certified chain complete for another year.",
-    category: "Notícias",
+    category: "Responsibility",
     date: "2026-02-11",
     cover: "/images/gal-08.jpg",
     author: "Madalena Beça",
@@ -183,7 +188,7 @@ const posts: JournalPost[] = [
     title: "Madalena Beça at Première Vision",
     excerpt:
       "We'll be showing new knit developments and meeting partners old and new. Come say hello.",
-    category: "Notícias",
+    category: "News",
     date: "2025-11-05",
     cover: "/images/gal-04.jpg",
     author: "Studio Team",

@@ -31,8 +31,8 @@ export default function JournalListing({
           Notes from the <em>atelier</em>.
         </h1>
         <p className="jr-hero__sub rv">
-          Partnerships, craft and news — the quiet story behind the knitwear,
-          told one entry at a time.
+          Know-how, materials, responsibility and news — the quiet story
+          behind the knitwear, told one entry at a time.
         </p>
       </header>
 

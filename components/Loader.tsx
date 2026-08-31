@@ -2,16 +2,8 @@ export default function Loader() {
   return (
     <div className="loader" id="loader">
       <div className="loader__logo">
-        <em>m</em>adalena{" "}
-        <span
-          style={{
-            fontSize: ".5em",
-            letterSpacing: ".4em",
-            color: "var(--warmgrey)",
-          }}
-        >
-          — knitwear
-        </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-madalena.webp" alt="Madalena Beça Knitwear" />
       </div>
       <div className="loader__bar">
         <i id="loaderBar"></i>

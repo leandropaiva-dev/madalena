@@ -25,9 +25,11 @@ export default function BaseEffects() {
 
   useEffect(() => {
     // We own the scroll (Lenis), so stop the browser from restoring a previous
-    // position and jump to the top of every new route immediately.
+    // position and jump to the top of every new route immediately — unless the
+    // URL carries a hash (e.g. /sustainability#cert-gots), in which case the
+    // Lenis setup below jumps straight to that section instead.
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-    window.scrollTo(0, 0);
+    if (!window.location.hash) window.scrollTo(0, 0);
 
     let disposed = false;
     let cleanupFn: (() => void) | null = null;
@@ -79,7 +81,12 @@ function init(gsap: Gsap, ScrollTrigger: ST, Lenis: LenisCtor): () => void {
   let lenisRaf: ((time: number) => void) | null = null;
   if (!prefersReduced) {
     lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-    lenis.scrollTo(0, { immediate: true }); // start the new page at the top
+    // Start the new page at the top — or, if the URL carries a hash, jump
+    // straight to that section (e.g. landing on /sustainability#cert-gots).
+    const hashTarget = window.location.hash
+      ? document.getElementById(window.location.hash.slice(1))
+      : null;
+    lenis.scrollTo(hashTarget ?? 0, { immediate: true });
     lenis.on("scroll", ScrollTrigger.update);
     lenisRaf = (time: number) => lenis!.raf(time * 1000);
     gsap.ticker.add(lenisRaf);
@@ -95,6 +102,16 @@ function init(gsap: Gsap, ScrollTrigger: ST, Lenis: LenisCtor): () => void {
       });
     });
   }
+
+  // Badges (e.g. the certification badges) dispatch this to jump to and open
+  // a matching section elsewhere on the page — see Certs.tsx / CertAccordion.tsx.
+  on(window, "cert:open", (e) => {
+    const slug = (e as CustomEvent<{ slug: string }>).detail?.slug;
+    const target = slug && document.getElementById(`cert-${slug}`);
+    if (!target) return;
+    if (lenis) lenis.scrollTo(target);
+    else target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 
   const ctx = gsap.context(() => {
     /* ---- cursor ---- */
@@ -132,6 +149,38 @@ function init(gsap: Gsap, ScrollTrigger: ST, Lenis: LenisCtor): () => void {
         scrollTrigger: { trigger: el, start: "top 90%" },
       });
     });
+
+    /* ---- capabilities pinned sequence (same behaviour as the homepage) ---- */
+    (() => {
+      const items = [
+        ...document.querySelectorAll<HTMLElement>(".caps__item"),
+      ];
+      const imgs = [
+        ...document.querySelectorAll<HTMLElement>(".caps__media img"),
+      ];
+      const count = document.getElementById("capsCount");
+      if (!items.length || !count) return;
+      let current = 0;
+      function setStep(i: number) {
+        if (i === current) return;
+        current = i;
+        items.forEach((el, k) => el.classList.toggle("is-active", k === i));
+        imgs.forEach((el, k) => el.classList.toggle("is-on", k === i));
+        count!.textContent = String(i + 1).padStart(2, "0");
+      }
+      items.forEach((el, i) => on(el, "click", () => setStep(i)));
+      ScrollTrigger.create({
+        trigger: "#capsPin",
+        start: "top top",
+        end: "+=" + items.length * 85 + "%",
+        pin: true,
+        scrub: true,
+        onUpdate: (self) =>
+          setStep(
+            Math.min(items.length - 1, Math.floor(self.progress * items.length))
+          ),
+      });
+    })();
 
     /* ---- generic image parallax (same feel as the home studio image) ---- */
     if (!prefersReduced) {
