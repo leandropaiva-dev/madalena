@@ -237,6 +237,8 @@ html.lenis,html.lenis body{height:auto}
 .studio__body p{font-size:15.5px;line-height:1.85;color:rgba(28,25,19,.68);max-width:480px;margin-bottom:20px;letter-spacing:.02em}
 .studio__sig{margin-top:40px;font-family:var(--script);font-size:34px;color:var(--softbrown)}
 @media(max-width:900px){.studio__grid{grid-template-columns:1fr}}
+.studio__grid--wide-text{grid-template-columns:1.1fr .9fr}
+@media(max-width:900px){.studio__grid--wide-text{grid-template-columns:1fr}}
 
 /* ============ GALLERY ============ */
 .gal{background:var(--charcoal);color:var(--wool);overflow:hidden}

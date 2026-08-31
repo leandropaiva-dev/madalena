@@ -123,10 +123,7 @@ export default function StudioPage() {
 
       {/* ---- block 3: yarn, development & technique (reversed) ---- */}
       <section className="studio section sect--cream">
-        <div
-          className="studio__grid"
-          style={{ gridTemplateColumns: "1.1fr .9fr" }}
-        >
+        <div className="studio__grid studio__grid--wide-text">
           <div className="studio__body">
             <div className="label">Yarn, development &amp; technique</div>
             <h2 className="rv">

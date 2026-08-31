@@ -68,10 +68,7 @@ export default function HowWeWorkPage() {
 
       {/* ---- block 3: craft ---- */}
       <section className="studio section sect--cream">
-        <div
-          className="studio__grid"
-          style={{ gridTemplateColumns: "1.1fr .9fr" }}
-        >
+        <div className="studio__grid studio__grid--wide-text">
           <div className="studio__body">
             <div className="label">Craft</div>
             <h2 className="rv">
