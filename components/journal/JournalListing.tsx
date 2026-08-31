@@ -28,11 +28,16 @@ export default function JournalListing({
       <header className="jr-hero">
         <div className="label rv">Journal</div>
         <h1 className="jr-hero__title rv">
-          Notes from the <em>atelier</em>.
+          Notes on knitwear, manufacturing and{" "}
+          <em>what we learn along the way.</em>
         </h1>
         <p className="jr-hero__sub rv">
-          Know-how, materials, responsibility and news — the quiet story
-          behind the knitwear, told one entry at a time.
+          Technical knowledge, materials, responsible manufacturing and
+          perspectives from inside Madalena Beça Knitwear.
+        </p>
+        <p className="jr-hero__sub rv">
+          A place to share what is worth knowing — and occasionally, what is
+          new.
         </p>
       </header>
 

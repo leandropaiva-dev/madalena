@@ -472,6 +472,8 @@ html.lenis,html.lenis body{height:auto}
   transition:transform 1.2s cubic-bezier(.19,1,.22,1)}
 .swatches figure:hover img{transform:scale(1.05)}
 .swatches figcaption{margin-top:14px;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--warmgrey)}
+.swatches figcaption b{display:block;font-weight:500;color:var(--ink);margin-bottom:5px}
+.swatches figcaption span{display:block;font-size:11px;letter-spacing:.04em;text-transform:none;color:var(--warmgrey)}
 @media(max-width:700px){.swatches__grid{grid-template-columns:1fr}}
 
 /* ============ ENQUIRY FORM ============ */

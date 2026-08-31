@@ -15,12 +15,10 @@ export default function HowWeWorkPage() {
         <div className="jr-hero">
           <div className="label rv">How we work</div>
           <h1 className="jr-hero__title rv">
-            From yarn to garment, <em>under one roof.</em>
+            From development to production, <em>under one roof.</em>
           </h1>
           <p className="jr-hero__sub rv">
-            Development, production and quality control within one factory
-            structure — one accountable partner for the garment, and a direct
-            line to the people making it.
+            Every brand works differently. So do we.
           </p>
         </div>
       </header>
@@ -42,30 +40,24 @@ export default function HowWeWorkPage() {
               Made in our <em>own facilities.</em>
             </h2>
             <p className="rv">
-              From programming and knitting to garment assembly, quality control
-              and packing — produced in our own facilities in Penafiel, Portugal.
+              Development, programming, knitting, garment assembly, finishing
+              and quality control come together within our facilities in
+              Penafiel, Portugal.
             </p>
             <p className="rv">
-              Each style is programmed in STOLL M1plus for the gauge and
-              construction it requires. Our flat machines cover gauges 3, 5, 7, 10
-              and 12, which allows a brand to move between heavy constructions and
-              fine-gauge product without changing manufacturer.
+              Keeping the core stages of knitwear production closely connected
+              gives our teams direct visibility over the product from
+              development through to completion — and gives our clients one
+              accountable manufacturing partner throughout.
             </p>
             <p className="rv">
-              Development, production and quality control sit within one factory
-              structure. Checkpoints are placed across the process — yarn and
-              colour behaviour, measurements after washing, workmanship at linking
-              and assembly, and conformity before packing — so that a deviation is
-              identified while it can still be corrected, rather than at final
-              inspection.
-            </p>
-            <p className="rv">
-              Producing in Europe, in our own facilities, means the partner you
-              brief is the partner who makes the garment.
+              Our machinery supports a broad range of gauges and
+              constructions, allowing us to produce across different product
+              categories, weights and seasons.
             </p>
             <p className="note rv">
-              Specialised services such as embroidery, printing or garment-dye
-              processes may be carried out by selected external partners.
+              Specialised processes outside our facilities are entrusted to
+              selected partners when required.
             </p>
           </div>
         </div>
@@ -86,29 +78,26 @@ export default function HowWeWorkPage() {
               What time in one place <em>produces.</em>
             </h2>
             <p className="rv">
-              Madalena Beça Knitwear has developed and produced flat knitwear
-              since 1998, in the same place, as a family company.
+              Madalena Beça Knitwear has been developing and producing flat
+              knitwear since 1998.
             </p>
             <p className="rv">
-              What a factory inherits is not equipment. It is a body of knowledge
-              that only accumulates by staying: how a particular yarn behaves after
-              washing, which measurements need adjusting before they reach the
-              knitting program, where a construction tends to fail at linking,
-              which gauge holds a shape and which one drops it.
+              Over time, technical knowledge becomes judgement: the ability to
+              recognise what deserves a closer look, anticipate potential
+              challenges and bring experience into a project at the moments
+              where it can make a difference.
             </p>
             <p className="rv">
-              That knowledge sits with the people who develop and make the
-              product, and it is applied to a client&rsquo;s first sample rather
-              than discovered on the fourth. It is also what allows a technical
-              concern to be raised early — the most useful thing a factory can
-              offer, and the difference between a prototype that teaches you
-              something and a prototype that costs you a season.
+              We work from each brand&rsquo;s creative and technical
+              direction, contributing our manufacturing perspective whenever
+              we believe it can help protect the intended result, simplify
+              development or avoid unnecessary iterations.
             </p>
             <p className="rv">
-              The same continuity applies to a relationship. Knowledge accumulates
-              across collections: the longer we work with a brand, the more
-              informed the judgement becomes, and the fewer decisions have to be
-              made twice.
+              And as partnerships grow, so does our understanding of each
+              brand. Collection after collection, familiarity with its
+              product, standards and ways of working makes collaboration
+              increasingly fluid, informed and efficient.
             </p>
           </div>
           <div className="studio__imgwrap">

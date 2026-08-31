@@ -8,14 +8,6 @@ export const metadata: Metadata = {
     "Certifications are not badges — they are documented proof of how we choose to produce. Certified to GOTS, GRS, RWS and OCS, audited by Ecocert Greenlife, with a traceable supply chain.",
 };
 
-const MEANS = [
-  "Fibre eligibility established before development begins, not after",
-  "Traceability you can document rather than describe",
-  "Transaction documentation to support your own claims",
-  "Audited processes, verified annually",
-  "Production aligned with the requirements of the European premium market",
-];
-
 const CERTS = [
   {
     name: "GOTS",
@@ -72,78 +64,86 @@ export default function SustainabilityPage() {
         <div className="jr-hero">
           <div className="label rv">Sustainability</div>
           <h1 className="jr-hero__title rv">
-            Our certifications are not badges.{" "}
-            <em>Documented proof of how we produce.</em>
+            Responsibility, <em>in practice.</em>
           </h1>
           <p className="jr-hero__sub rv">
-            Certified to GOTS, GRS, RWS and OCS, and working with certified
-            supply-chain partners — traceability, audited processes, social
-            compliance and environmental responsibility.
+            For us, sustainability is not a separate part of manufacturing.
+            It is part of how we make decisions — from the materials and
+            components we source to the resources we use, the waste we
+            recover and the conditions in which our products are made.
+          </p>
+          <p className="jr-hero__sub rv">
+            Our approach is practical, continuously evolving and supported by
+            recognised standards that bring greater traceability,
+            accountability and transparency to the way we work.
           </p>
         </div>
       </header>
 
-      {/* ---- mission ---- */}
+      {/* ---- block 1: a continuous commitment (same background as the hero) ---- */}
       <section className="studio section sect--cream">
         <div className="studio__grid" style={{ alignItems: "start" }}>
           <div className="studio__body about-lead">
-            <div className="label">The mission</div>
+            <div className="label">A continuous commitment</div>
             <h2 className="rv">
-              Certification was <em>the instrument.</em>
+              Built into <em>the way we work.</em>
             </h2>
           </div>
           <div className="studio__body">
             <p className="rv">
-              In 2017 the company restructured, and certification was the
-              instrument. It required the professionalisation of processes, the
-              documentation of the supply chain and investment in a more traceable
-              way of producing. At a moment when European manufacturing was under
-              pressure from low-cost production, certification allowed us to state
-              clearly — and evidence — what producing in Europe means: traceability,
-              audited processes, social compliance and environmental
-              responsibility.
+              Responsible manufacturing is not a fixed destination or a
+              collection of isolated initiatives. It requires us to
+              continually examine how we work, understand our impact and
+              identify where we can do better.
             </p>
             <p className="rv">
-              We did not adopt new values. We used certification to structure and
-              verify the ones the company already held. GOTS came first, in 2017,
-              with in-person auditing every year since. GRS and RWS followed in
-              2022, and OCS completes the current scope.
+              Our environmental and social policies provide a framework for
+              that process, with objectives and improvement initiatives
+              reviewed annually.
             </p>
             <p className="rv">
-              Madalena Beça Knitwear is certified to GOTS, GRS, RWS and OCS
-              standards and works with certified supply-chain partners. Certified
-              production is developed according to the selected materials, project
-              scope and required transaction documentation.
+              We believe that responsibility is strengthened by
+              participation. For that reason, our team is trained to
+              understand the standards and requirements relevant to our work
+              and to apply them with care and consistency in their
+              day-to-day practice.
+            </p>
+            <p className="note rv">
+              Progress is not a finished state. It is a way of working.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ---- what this means for your brand ---- */}
-      <section className="why section sect--wool">
+      {/* ---- block 2: responsible sourcing ---- */}
+      <section className="section sect--wool" style={{ padding: "14vh 0" }}>
         <div className="sect-head">
-          <span className="sect-head__num">In practice</span>
+          <span className="sect-head__num">Responsible sourcing</span>
           <h2 className="sect-head__title">
-            What this means <em>for your brand.</em>
+            Better decisions require <em>better information.</em>
           </h2>
         </div>
-        <div
+        <p
+          className="rv"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(230px,1fr))",
-            gap: "clamp(24px,3vw,50px)",
-            maxWidth: "1500px",
-            margin: "0 auto",
-            padding: "0 clamp(20px,5vw,72px)",
+            maxWidth: "620px",
+            margin: "4vh clamp(20px,5vw,72px) 0",
+            fontSize: "15px",
+            lineHeight: 1.8,
+            letterSpacing: ".02em",
+            color: "rgba(28,25,19,.62)",
           }}
         >
-          {MEANS.map((point, i) => (
-            <div className="why__item rv" key={i}>
-              <i>{String(i + 1).padStart(2, "0")}</i>
-              <h3>{point}</h3>
-            </div>
-          ))}
-        </div>
+          Our responsibility extends beyond our own facilities and into the
+          supply chain behind every product. We work with certified suppliers
+          and continually develop our understanding of the materials,
+          components and solutions available to support different product
+          and sustainability requirements. This knowledge allows us to have
+          informed conversations with our clients, understand their
+          priorities and support the choices appropriate to each project —
+          without imposing a single approach to responsible product
+          development.
+        </p>
       </section>
 
       {/* ---- certified supply chain (reuses the home Certs section) ---- */}
@@ -171,14 +171,73 @@ export default function SustainabilityPage() {
         </div>
       </section>
 
+      {/* ---- block: recognised by Global Standard ---- */}
+      <section className="section sect--wool" style={{ padding: "14vh 0" }}>
+        <div className="sect-head">
+          <span className="sect-head__num">Recognised by Global Standard</span>
+          <h2 className="sect-head__title">
+            Featured in the <em>GOTS Annual Report 2025.</em>
+          </h2>
+        </div>
+        <div style={{ maxWidth: "700px", margin: "4vh clamp(20px,5vw,72px) 0" }}>
+          <p
+            className="rv"
+            style={{
+              fontSize: "15px",
+              lineHeight: 1.8,
+              letterSpacing: ".02em",
+              color: "rgba(28,25,19,.62)",
+            }}
+          >
+            In 2025, Madalena Beça was invited to contribute to the Global
+            Standard Annual Report, sharing our experience of certification
+            and the role it has played in strengthening transparency,
+            accountability and continuous improvement within our company.
+          </p>
+          <blockquote className="jr-quote rv">
+            &ldquo;Sustainability is not a marketing exercise but a
+            responsibility that shapes how we work every day.&rdquo;
+          </blockquote>
+          <p className="jr-article__author rv" style={{ marginTop: 0 }}>
+            Tatiana de Beça Teixeira — Head of Commercial &amp; Marketing
+            Strategy
+            <br />
+            Madalena Beça Knitwear — Global Standard Annual Report 2025
+          </p>
+          <a
+            className="btn rv"
+            style={{ marginTop: "30px" }}
+            href="#"
+            data-hover=""
+          >
+            <span>Read the report</span>
+            <i />
+          </a>
+        </div>
+      </section>
+
       {/* ---- closing CTA (bridges into the contact footer) ---- */}
       <section className="cta section">
         <div className="label cta__label rv">Sustainability</div>
         <p className="cta__txt rv">
-          Discuss certification. <em>We will confirm the route for your project.</em>
+          Your standards. <em>Our responsibility.</em>
+        </p>
+        <p
+          className="rv"
+          style={{
+            maxWidth: "520px",
+            margin: "3vh auto 0",
+            fontSize: "15px",
+            lineHeight: 1.8,
+            color: "rgba(28,25,19,.62)",
+          }}
+        >
+          Every brand approaches responsible sourcing differently. We bring
+          the knowledge, manufacturing experience and certified capabilities
+          to support the requirements of each project.
         </p>
         <a className="btn cta__btn rv" href="/start-a-project" data-hover="">
-          <span>Discuss certification</span>
+          <span>Start a project</span>
           <i />
         </a>
       </section>

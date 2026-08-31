@@ -1,59 +1,66 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Studio Design — Client-Specific Knitwear Development · Madalena Beça Knitwear",
+  title: "Studio — MBK · Madalena Beça Knitwear",
   description:
-    "Studio Design is client-specific knitwear development: creative and technical support made to measure, connecting creativity to manufacturability — from a reference or sketch to a garment that can be made.",
+    "Where ideas take shape in knit. Alongside manufacturing, our in-house Studio brings together creative sensitivity and technical knitwear expertise to support the development of each collection.",
 };
 
-const PROCESS = [
+const ROLE = [
   {
     n: "01",
-    title: "Brief & references",
-    body: "Clients arrive at different points. Some send a complete tech pack; others send a photograph, a yarn and a measurement. Both are workable — they simply begin at a different place in the same process.",
+    cat: "Yarn",
+    lead: "Material is part of the design.",
+    body: "We help explore yarns, compositions, colours and qualities in relation to the intended character and performance of the product.",
   },
   {
     n: "02",
-    title: "Yarn routes",
-    body: "We research and compare yarn routes against your target price, your colour and quantity structure and your delivery window — including stock-service qualities, minimums per colour and small-lot surcharges.",
+    cat: "Structure",
+    lead: "Knit is built, not cut.",
+    body: "Stitches, gauges, constructions and proportions are developed with an understanding of how each choice shapes the finished garment.",
   },
   {
     n: "03",
-    title: "Programming & swatches",
-    body: "Each style is programmed for the gauge and construction it requires. We develop stitch structures and swatches, and translate measurement charts into knitting programs.",
+    cat: "Development",
+    lead: "Ideas become tangible.",
+    body: "From swatches and trials to prototypes and refinements, development gives form to the creative direction of the project.",
   },
   {
     n: "04",
-    title: "Fit & approval",
-    body: "We check fit and behaviour on a finished garment, after washing rather than before. Adjustments are documented, and the version that enters production is the version you approved.",
+    cat: "Fit & Detail",
+    lead: "The difference is often in the last few centimetres.",
+    body: "Proportion, finishing and detail are refined with the precision required to bring the intended product to life.",
   },
 ];
 
-const SWATCHES = [
-  { src: "/images/studio-swatch-1.jpg", alt: "Round texture swatches pinned to a mood board", cap: "Stitch structures" },
-  { src: "/images/studio-swatch-2.jpg", alt: "Pointing out a texture swatch on a mood board", cap: "Swatch development" },
-  { src: "/images/studio-swatch-3.jpg", alt: "Reviewing a knit sample against the pattern on a tablet", cap: "Fit & measurement" },
+const CAPABILITIES = [
+  { src: "/images/studio-swatch-1.jpg", alt: "Round texture swatches pinned to a mood board", cat: "Texture", desc: "Stitch & structure" },
+  { src: "/images/studio-swatch-2.jpg", alt: "Pointing out a texture swatch on a mood board", cat: "Material", desc: "Yarn & swatch development" },
+  { src: "/images/studio-swatch-3.jpg", alt: "Reviewing a knit sample against the pattern on a tablet", cat: "Form", desc: "Fit & proportion" },
 ];
 
 export default function StudioPage() {
   return (
     <>
-      {/* ---- page hero (reuses the Journal hero type system) ---- */}
+      {/* ---- page hero ---- */}
       <header className="jr">
         <div className="jr-hero">
-          <div className="label rv">Studio Design</div>
+          <div className="label rv">Studio</div>
           <h1 className="jr-hero__title rv">
-            Client-specific knitwear <em>development.</em>
+            Where ideas take shape <em>in knit.</em>
           </h1>
           <p className="jr-hero__sub rv">
-            Client-specific development, not generic white-label collections —
-            creative and technical support, made to measure, from the first
-            reference to a garment that can be made.
+            Alongside manufacturing, our in-house Studio brings together
+            creative sensitivity and technical knitwear expertise to support
+            the development of each collection. From exploring a new
+            construction or yarn to developing a product from an early
+            reference, we adapt our involvement to what each brand and each
+            project requires.
           </p>
         </div>
       </header>
 
-      {/* ---- block 1: creativity connected to manufacturability ---- */}
+      {/* ---- block 1: the approach (same background as the hero) ---- */}
       <section className="studio section sect--cream">
         <div className="studio__grid">
           <div className="studio__imgwrap">
@@ -67,64 +74,54 @@ export default function StudioPage() {
           <div className="studio__body">
             <div className="label">The approach</div>
             <h2 className="rv">
-              Creativity connected to <em>manufacturability.</em>
+              Creative thinking. <em>Technical understanding.</em>
             </h2>
+            <p className="rv">Every project begins somewhere different.</p>
             <p className="rv">
-              Most factories are asked to execute a style. We are asked to help
-              decide what the style should be.
+              Some arrive fully developed and ready to move into sampling.
+              Others begin with a sketch, a reference, a yarn, an existing
+              garment or an idea still being explored.
             </p>
+            <p className="rv">Our role adapts accordingly.</p>
             <p className="rv">
-              Studio Design is where a reference, a sketch or an idea becomes a
-              knitwear product that can be made — in the right yarn, at the right
-              gauge, at a price the collection can carry and within the season it
-              belongs to. It sits before production rather than beside it, and it
-              exists because the decisions taken at that stage determine almost
-              everything that follows.
-            </p>
-            <p className="rv">
-              Clients arrive at different points. Some send a complete tech pack.
-              Others send a photograph, a yarn and a measurement. Both are
-              workable; they simply begin at a different place in the same
-              process. Where a client wants it, the studio can contribute to a
-              specific collection.
-            </p>
-            <p className="rv">
-              What we bring is judgement, not authorship. We ask who the product
-              is for, what it needs to retail at, where it sits in the
-              collection, how many colours and sizes it carries and whether the
-              style is meant to return next season — because those answers change
-              the technical route. A style built for one drop is not developed the
-              same way as a style intended to be replenished.
+              The Studio can work closely with a brand&rsquo;s design and
+              product teams, or simply bring its technical perspective where
+              useful — translating creative intention into knitwear while
+              respecting the identity, requirements and direction of the
+              collection.
             </p>
             <p className="note rv">
-              Studio Design is client-specific work. It does not offer a seasonal
-              collection for open selection, it does not replace the client&rsquo;s
-              creative direction, and not every client needs it.
+              Because development and manufacturing sit side by side, ideas
+              are considered with both creativity and production in mind from
+              the beginning.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ---- process: how the studio works (reuses the Why grid pattern) ---- */}
+      {/* ---- block 2: the studio's role ---- */}
       <section className="why section sect--wool">
         <div className="sect-head">
-          <span className="sect-head__num">The process</span>
+          <span className="sect-head__num">The Studio&rsquo;s role</span>
           <h2 className="sect-head__title">
-            How the studio <em>thinks and collaborates.</em>
+            Expertise that can enter <em>wherever it is needed.</em>
           </h2>
         </div>
         <div className="why__grid">
-          {PROCESS.map((it) => (
+          {ROLE.map((it) => (
             <div className="why__item rv" key={it.n}>
               <i>{it.n}</i>
-              <h3>{it.title}</h3>
+              <div className="label" style={{ margin: "10px 0 6px" }}>
+                {it.cat}
+              </div>
+              <h3>{it.lead}</h3>
               <p>{it.body}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ---- block 2: the yarn decides more than the handfeel (reversed) ---- */}
+      {/* ---- block 3: yarn, development & technique (reversed) ---- */}
       <section className="studio section sect--cream">
         <div
           className="studio__grid"
@@ -133,30 +130,32 @@ export default function StudioPage() {
           <div className="studio__body">
             <div className="label">Yarn, development &amp; technique</div>
             <h2 className="rv">
-              The yarn decides more than <em>the handfeel.</em>
+              A yarn is never <em>just a yarn.</em>
             </h2>
             <p className="rv">
-              Yarn determines weight, price, availability, certification
-              eligibility and how a garment behaves after washing. We research and
-              compare routes against your target price, your colour and quantity
-              structure and your delivery window — including stock-service
-              qualities, minimums per colour and the surcharges that apply to
-              small lots.
+              In knitwear, material, structure and construction are
+              inseparable.
             </p>
             <p className="rv">
-              From there the work is technical. Each style is programmed for the
-              gauge and construction it requires. We develop stitch structures and
-              swatches, translate measurement charts into knitting programs, and
-              check fit and behaviour on a finished garment, after washing rather
-              than before.
+              A change in fibre, count, gauge or stitch can transform the
+              weight, touch, drape, appearance and behaviour of a garment.
+              Understanding those relationships is at the heart of our
+              Studio.
             </p>
             <p className="rv">
-              When a measurement, yarn, gauge or construction appears unlikely to
-              produce the intended result, we raise it before proceeding, explain
-              why and propose alternatives for approval. The objective is to avoid
-              foreseeable prototypes, delays and costs — not to redesign your
-              product. Comments are tracked, adjustments are documented, and the
-              version that enters production is the version you approved.
+              Our team brings together knowledge of yarn, programming,
+              construction and garment development to explore the most
+              appropriate route for each project — whether that means
+              interpreting an established specification or developing
+              something new alongside the client.
+            </p>
+            <p className="rv">
+              When our experience suggests another route may better serve the
+              intended result, we bring it forward for consideration.
+            </p>
+            <p className="rv" style={{ fontWeight: 500, color: "var(--ink)" }}>
+              The creative direction remains yours. Our technical perspective
+              is there to help realise it.
             </p>
           </div>
           <div className="studio__imgwrap">
@@ -170,33 +169,77 @@ export default function StudioPage() {
         </div>
       </section>
 
-      {/* ---- swatch strip ---- */}
+      {/* ---- block 4: visual capabilities ---- */}
       <section className="swatches">
         <div className="swatches__grid">
-          {SWATCHES.map((s) => (
+          {CAPABILITIES.map((s) => (
             <figure className="rv" key={s.src}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={s.src} alt={s.alt} />
-              <figcaption>{s.cap}</figcaption>
+              <figcaption>
+                <b>{s.cat}</b>
+                <span>{s.desc}</span>
+              </figcaption>
             </figure>
           ))}
         </div>
       </section>
 
+      {/* ---- block 5: the relationship between studio and factory ---- */}
+      <section className="section sect--wool" style={{ padding: "14vh 0" }}>
+        <div className="sect-head">
+          <span className="sect-head__num">
+            The relationship between Studio and Factory
+          </span>
+          <h2 className="sect-head__title">
+            From idea to industry — <em>born where it will be made.</em>
+          </h2>
+        </div>
+        <p
+          className="rv"
+          style={{
+            maxWidth: "620px",
+            margin: "4vh clamp(20px,5vw,72px) 0",
+            fontSize: "15px",
+            lineHeight: 1.8,
+            letterSpacing: ".02em",
+            color: "rgba(28,25,19,.62)",
+          }}
+        >
+          The Studio is not separate from our manufacturing floor.
+          Development, technical expertise and production belong to the same
+          company, allowing ideas to move naturally between the people who
+          conceive, interpret, programme, sample and ultimately make the
+          garment. That proximity creates continuity from development into
+          production — and gives our clients one partner from the first
+          conversation to the finished piece.
+        </p>
+      </section>
+
       {/* ---- closing CTA (bridges into the contact footer) ---- */}
       <section className="cta section">
-        <div className="label cta__label rv">Studio Design</div>
+        <div className="label cta__label rv">Studio</div>
         <p className="cta__txt rv">
-          Brief Studio Design.{" "}
-          <em>Tell us where your product currently stands.</em>
+          Bring us what <em>you&rsquo;re working on.</em>
+        </p>
+        <p
+          className="rv"
+          style={{
+            maxWidth: "480px",
+            margin: "3vh auto 0",
+            fontSize: "15px",
+            lineHeight: 1.8,
+            color: "rgba(28,25,19,.62)",
+          }}
+        >
+          Whether your product is already defined or still taking shape,
+          tell us what you would like to make.
         </p>
         <a className="btn cta__btn rv" href="/start-a-project" data-hover="">
           <span>Start a Project</span>
           <i />
         </a>
       </section>
-
-      {/* The Contact section (site-wide footer) closes the page — rendered by the layout. */}
     </>
   );
 }
