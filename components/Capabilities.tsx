@@ -1,4 +1,4 @@
-const ITEMS = [
+export const ITEMS = [
   {
     n: "01",
     title: "Review & Quotation",
@@ -26,7 +26,7 @@ const ITEMS = [
   },
 ];
 
-const MEDIA = [
+export const MEDIA = [
   { src: "/images/cap-design.jpg", alt: "Review and quotation" },
   { src: "/images/cap-knitting.jpg", alt: "Development and sampling" },
   { src: "/images/cap-confection.jpg", alt: "Approval and planning" },

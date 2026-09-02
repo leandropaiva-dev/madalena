@@ -210,6 +210,15 @@ html.lenis,html.lenis body{height:auto}
 .caps__count{position:absolute;right:-8px;bottom:-30px;font-family:var(--serif);font-size:clamp(60px,7vw,110px);color:rgba(28,25,19,.08);line-height:1}
 @media(max-width:900px){.caps__grid{grid-template-columns:1fr}.caps__media{height:52vh;order:-1}}
 
+.caps__mediacol{display:flex;flex-direction:column}
+.caps__mediacol .caps__count{right:-8px;bottom:auto;top:-8px}
+.caps__desc{margin-top:30px;font-size:14.5px;line-height:1.8;color:rgba(28,25,19,.62);
+  max-width:520px;font-weight:300;letter-spacing:.02em}
+@media(max-width:900px){.caps__mediacol{order:-1}}
+
+.caps--showcase .caps__media{height:auto;aspect-ratio:16/9}
+.caps--showcase .caps__item h3{font-size:clamp(18px,2vw,32px)}
+
 /* ============ CERTS ============ */
 .certs{position:relative;color:var(--wool);overflow:hidden}
 .certs__bg{position:absolute;inset:0;background-size:cover;background-position:center bottom}
@@ -264,6 +273,11 @@ html.lenis,html.lenis body{height:auto}
 .why__item p{font-size:13.5px;line-height:1.8;color:rgba(28,25,19,.6);letter-spacing:.02em}
 @media(max-width:900px){.why__grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.why__grid{grid-template-columns:1fr}}
+
+.why__grid--five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:1100px){.why__grid--five{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.why__grid--five{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.why__grid--five{grid-template-columns:1fr}}
 
 /* ============ CONTACT ============ */
 .contact{background:var(--charcoal);color:var(--wool);position:relative;overflow:hidden}

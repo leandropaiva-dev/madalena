@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Capabilities from "@/components/Capabilities";
+import ProcessGrid from "@/components/ProcessGrid";
+import ProcessShowcase from "@/components/ProcessShowcase";
 
 export const metadata: Metadata = {
   title: "How We Work — MBK · Madalena Beça Knitwear",
@@ -63,14 +64,19 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
-      {/* ---- block 2: the process (identical pinned sequence as the homepage) ---- */}
-      <Capabilities />
+      {/* ---- block 2: the process — static grid, all 5 stages visible at once ---- */}
+      <ProcessGrid />
+
+      {/* ---- block 2b (draft alternative for comparison): list left, photo right,
+           description below the photo — same visual language as the homepage
+           Capabilities block, but click-to-switch instead of scroll-pinned ---- */}
+      <ProcessShowcase />
 
       {/* ---- block 3: craft ---- */}
       <section className="studio section sect--cream">
         <div className="studio__grid studio__grid--wide-text">
           <div className="studio__body">
-            <div className="label">Craft</div>
+            <div className="label">Know-how</div>
             <h2 className="rv">
               What time in one place <em>produces.</em>
             </h2>

@@ -152,16 +152,41 @@ export default function SustainabilityPage() {
       {/* ---- standards intro ---- */}
       <section className="section sect--cream" style={{ padding: "15vh 0 3vh" }}>
         <div className="sect-head">
-          <span className="sect-head__num">The standards</span>
+          <span className="sect-head__num">CERTIFIED &amp; TRACEABLE</span>
           <h2 className="sect-head__title">
-            Four certifications, <em>one traceable chain.</em>
+            Standards that make <em>responsibility measurable.</em>
           </h2>
         </div>
+        <p
+          className="rv"
+          style={{
+            maxWidth: "620px",
+            margin: "4vh clamp(20px,5vw,72px) 0",
+            fontSize: "15px",
+            lineHeight: 1.8,
+            letterSpacing: ".02em",
+            color: "rgba(28,25,19,.62)",
+          }}
+        >
+          Independent certification provides a recognised framework for
+          traceability, environmental responsibility and social
+          accountability across textile supply chains. Madalena Beça is
+          certified under four internationally recognised textile standards:
+        </p>
       </section>
 
       {/* ---- certifications accordion ---- */}
       <section className="section sect--cream" style={{ padding: "0 0 3vh" }}>
         <CertAccordion certs={CERTS} />
+
+        <p
+          className="note rv"
+          style={{ maxWidth: "640px", margin: "4vh auto 0", textAlign: "center" }}
+        >
+          Certification of individual products depends on the materials,
+          supply chain and certification requirements applicable to each
+          project.
+        </p>
 
         {/* ---- Ecocert licence — the standalone, high-contrast callout ---- */}
         <div className="ecocert rv">
