@@ -142,52 +142,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ---- block 4: who we are (pre-existing content, not covered by the
-           document — kept as the implicit "Section 5" between Continuity of
-           knowledge (4) and the CTA (6)) ---- */}
-      <section className="studio section sect--wool">
-        <div className="studio__grid" style={{ alignItems: "start" }}>
-          <div className="studio__body about-lead">
-            <div className="label">Who we are</div>
-            <h2 className="rv">
-              One factory. <em>One accountable partner.</em>
-            </h2>
-            <p className="note rv" style={{ marginTop: "24px" }}>
-              Founded 1998 · Penafiel, Portugal
-            </p>
-          </div>
-          <div className="studio__body">
-            <p className="rv">
-              We are neither an impersonal industrial operation nor an
-              inaccessible luxury house. We are an independent, specialised
-              manufacturer where clients work directly with the teams
-              developing, planning and producing their knitwear.
-            </p>
-            <p className="rv">
-              Development, production and quality control sit within one
-              factory structure. That means one accountable partner for the
-              garment, a closer connection between what is developed and
-              what is made, and a direct line to the people making it.
-            </p>
-            <p className="rv">
-              It also means our judgement works in two directions. Yarn,
-              gauge and construction reach into price, availability,
-              certification and timing, and a sample deadline is usually
-              connected to a campaign, a showroom or a launch. Our role is
-              to understand those connections, explain the available routes
-              and help you make an informed decision.
-            </p>
-            <p className="rv">
-              We work best with brands that intend to stay. Knowledge
-              accumulates across collections — how a yarn behaved, why a
-              measurement was adjusted, which construction held in
-              production — and the relationship becomes more informed each
-              season.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ---- closing CTA (bridges into the contact footer) ---- */}
       <section className="cta section">
         <div className="label cta__label rv">MBK</div>
