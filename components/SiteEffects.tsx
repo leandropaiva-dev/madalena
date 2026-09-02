@@ -529,18 +529,6 @@ function init(
       });
     })();
 
-    /* ============ CERTS PARALLAX ============ */
-    gsap.to("#certsBg", {
-      yPercent: 16,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#responsibility",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
     /* ============ STUDIO IMAGE PARALLAX ============ */
     gsap.fromTo(
       "#studioImg",

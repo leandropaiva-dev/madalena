@@ -8,7 +8,6 @@ import Capabilities from "@/components/Capabilities";
 import Certs from "@/components/Certs";
 import Studio from "@/components/Studio";
 import Gallery from "@/components/Gallery";
-import Why from "@/components/Why";
 import Contact from "@/components/Contact";
 import SiteEffects from "@/components/SiteEffects";
 
@@ -25,7 +24,6 @@ export default function Home() {
       <Certs />
       <Studio />
       <Gallery />
-      <Why />
       <Contact />
       <SiteEffects />
     </>

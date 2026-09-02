@@ -3,7 +3,7 @@ export default function Loader() {
     <div className="loader" id="loader">
       <div className="loader__logo">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo-madalena.webp" alt="Madalena Beça Knitwear" />
+        <img src="/logo-madalena.png" alt="Madalena Beça Knitwear" />
       </div>
       <div className="loader__bar">
         <i id="loaderBar"></i>

@@ -118,7 +118,7 @@ const posts: JournalPost[] = [
       "The unhurried beauty of natural tones — and why we keep returning to the undyed palette.",
     category: "Materials",
     date: "2026-03-09",
-    cover: "/images/gal-02.jpg",
+    cover: "/images/studio-swatch-1.jpg",
     author: "Madalena Beça",
     readingTime: "5 min",
     body: [
@@ -136,7 +136,7 @@ const posts: JournalPost[] = [
       "In an industry built for speed, a case for the deliberate pace of small, expert making.",
     category: "Know-how",
     date: "2025-12-14",
-    cover: "/images/craft-women.jpg",
+    cover: "/images/about-finishing.jpg",
     author: "Madalena Beça",
     readingTime: "6 min",
     body: [
@@ -173,7 +173,7 @@ const posts: JournalPost[] = [
       "Our Organic Content Standard certification has been renewed, keeping our certified chain complete for another year.",
     category: "Responsibility",
     date: "2026-02-11",
-    cover: "/images/gal-08.jpg",
+    cover: "/images/about-quality.jpg",
     author: "Madalena Beça",
     readingTime: "3 min",
     body: [
@@ -190,7 +190,7 @@ const posts: JournalPost[] = [
       "We'll be showing new knit developments and meeting partners old and new. Come say hello.",
     category: "News",
     date: "2025-11-05",
-    cover: "/images/gal-04.jpg",
+    cover: "/images/studio-swatch-2.jpg",
     author: "Studio Team",
     readingTime: "3 min",
     body: [
