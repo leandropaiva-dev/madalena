@@ -232,7 +232,8 @@ export default function SustainabilityPage() {
           <a
             className="btn rv"
             style={{ marginTop: "30px" }}
-            href="#"
+            href="/report.pdf"
+            download
             data-hover=""
           >
             <span>Read the report</span>
