@@ -48,8 +48,19 @@ export default function ArticlePage({
       </header>
 
       <div className="jr-article__cover">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={post.cover} alt={post.title} />
+        {post.coverVideo ? (
+          <video
+            src={post.coverVideo}
+            poster={post.cover}
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={post.cover} alt={post.title} />
+        )}
       </div>
 
       <div className="jr-article__body">
@@ -60,6 +71,15 @@ export default function ArticlePage({
           <blockquote className="jr-quote">{post.pullQuote}</blockquote>
         )}
       </div>
+
+      {post.gallery && post.gallery.length > 0 && (
+        <div className="jr-article__gallery">
+          {post.gallery.map((src, i) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={src} src={src} alt={`${post.title} — photo ${i + 1}`} loading="lazy" />
+          ))}
+        </div>
+      )}
 
       <section className="jr-more">
         <div className="sect-head">
