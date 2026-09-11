@@ -155,7 +155,11 @@ function init(
         scene.add(rim);
 
         const texLoader = new THREE.TextureLoader();
-        const knitTex = texLoader.load("/images/knit-texture.jpg");
+        // the reduced-motion path draws a single frame, so it has to repaint
+        // once the texture resolves — the animation loop gets that for free
+        const knitTex = texLoader.load("/images/knit-texture.jpg", () => {
+          if (prefersReduced) renderFrame(0);
+        });
         knitTex.wrapS = knitTex.wrapT = THREE.MirroredRepeatWrapping;
         knitTex.repeat.set(1.9, 1.3);
         knitTex.center.set(0.5, 0.5);
@@ -188,39 +192,31 @@ function init(
           tmx = 0,
           tmy = 0,
           ripple = 0;
-        on(window, "mousemove", (e) => {
-          const me = e as MouseEvent;
-          tmx = (me.clientX / innerWidth - 0.5) * 2;
-          tmy = (me.clientY / innerHeight - 0.5) * 2;
-          ripple = Math.min(1, ripple + 0.022);
-        });
-
         let scrollY = 0;
-        on(
-          window,
-          "scroll",
-          () => {
-            scrollY = window.scrollY;
-          },
-          { passive: true }
-        );
+        if (!prefersReduced) {
+          on(window, "mousemove", (e) => {
+            const me = e as MouseEvent;
+            tmx = (me.clientX / innerWidth - 0.5) * 2;
+            tmy = (me.clientY / innerHeight - 0.5) * 2;
+            ripple = Math.min(1, ripple + 0.022);
+          });
+          on(
+            window,
+            "scroll",
+            () => {
+              scrollY = window.scrollY;
+            },
+            { passive: true }
+          );
+        }
 
         const clock = new THREE.Clock();
-        const resize = () => {
-          renderer.setSize(innerWidth, innerHeight);
-          camera.aspect = innerWidth / innerHeight;
-          camera.updateProjectionMatrix();
-        };
-        on(window, "resize", resize);
-        resize();
 
-        (function tick() {
-          rafId = requestAnimationFrame(tick);
-          const t = clock.getElapsedTime();
+        const renderFrame = (t: number) => {
           mx += (tmx - mx) * 0.05;
           my += (tmy - my) * 0.05;
           ripple *= 0.985;
-          const amp = prefersReduced ? 0.1 : 0.34 + ripple * 0.5;
+          const amp = 0.34 + ripple * 0.5;
           const arr = pos.array as Float32Array;
           for (let i = 0; i < pos.count; i++) {
             const ix = i * 3;
@@ -247,7 +243,27 @@ function init(
           camera.position.x = mx * 0.3;
           camera.lookAt(0, -0.9 - scrollY * 0.0009, 0);
           renderer.render(scene, camera);
-        })();
+        };
+
+        const resize = () => {
+          renderer.setSize(innerWidth, innerHeight);
+          camera.aspect = innerWidth / innerHeight;
+          camera.updateProjectionMatrix();
+          // no animation loop is running in reduced motion, so repaint here
+          if (prefersReduced) renderFrame(0);
+        };
+        on(window, "resize", resize);
+        resize();
+
+        if (prefersReduced) {
+          // Same knit imagery, held as a single still frame.
+          renderFrame(0);
+        } else {
+          (function tick() {
+            rafId = requestAnimationFrame(tick);
+            renderFrame(clock.getElapsedTime());
+          })();
+        }
       } catch (e) {
         canvas.style.background =
           "radial-gradient(120% 90% at 60% 80%, #E4DDD0 0%, #F2EDE4 60%)";
@@ -260,48 +276,78 @@ function init(
       const bar = document.getElementById("loaderBar");
       if (!pct || !bar) return;
       const o = { v: 0 };
+      const setProgress = () => {
+        pct.textContent = String(Math.round(o.v)).padStart(2, "0");
+        bar.style.transform = `scaleX(${o.v / 100})`;
+      };
+
+      /* --- reduced motion: cross-fades only, no travel, no curtain slide --- */
+      if (prefersReduced) {
+        gsap.set(["#heroTitle .line span", "#heroLede", "#heroFoot"], {
+          y: 0,
+          opacity: 0,
+        });
+        gsap
+          .timeline()
+          .to(o, { v: 100, duration: 0.5, ease: "none", onUpdate: setProgress })
+          .to("#loader", { opacity: 0, duration: 0.4, ease: "none" })
+          .to(
+            ["#heroTitle .line span", "#heroLede", "#heroFoot"],
+            { opacity: 1, duration: 0.5, stagger: 0.07, ease: "none" },
+            "-=.2"
+          )
+          .set("#heroTitle .line span", { willChange: "auto" })
+          .set("#loader", { display: "none" });
+        return;
+      }
+
       const tl = gsap.timeline();
       tl.to(o, {
         v: 100,
         duration: 1.5,
         ease: "power2.inOut",
-        onUpdate: () => {
-          pct.textContent = String(Math.round(o.v)).padStart(2, "0");
-          bar.style.transform = `scaleX(${o.v / 100})`;
-        },
+        onUpdate: setProgress,
       })
         .to(
           "#loader",
           { yPercent: -100, duration: 0.9, ease: "power4.inOut" },
           "+=.15"
         )
+        /* The lines rise inside a mask whose lower edge is feathered in CSS,
+           and they carry their own fade — so a line is never caught by a hard
+           clip edge part-way through the movement. */
         .from(
           "#heroTitle .line span",
-          { yPercent: 115, duration: 1.15, stagger: 0.12, ease: "power4.out" },
+          {
+            yPercent: 118,
+            opacity: 0,
+            duration: 1.3,
+            stagger: 0.14,
+            ease: "power3.out",
+          },
           "-=.45"
         )
         .to(
-          "#heroKicker",
-          { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-          "-=.7"
+          "#heroLede",
+          { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" },
+          "-=.85"
         )
         .to(
-          "#heroSub",
-          { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-          "-=.55"
+          "#heroFoot",
+          { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" },
+          "-=.65"
         )
-        .to(
-          "#heroCta",
-          { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-          "-=.55"
-        )
+        .set("#heroTitle .line span", { willChange: "auto" })
         .set("#loader", { display: "none" });
     })();
 
     /* ============ GENERIC REVEALS ============ */
     document.querySelectorAll(".rv").forEach((el) => {
-      if (el.id === "heroKicker" || el.id === "heroSub" || el.id === "heroCta")
+      if (el.id === "heroLede" || el.id === "heroFoot") return;
+      if (prefersReduced) {
+        gsap.set(el, { opacity: 1, y: 0 });
         return;
+      }
       gsap.to(el, {
         opacity: 1,
         y: 0,
@@ -567,17 +613,19 @@ function init(
     })();
 
     /* ============ HERO TITLE PARALLAX OUT ============ */
-    gsap.to(".hero__inner", {
-      yPercent: -14,
-      opacity: 0.25,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
+    if (!prefersReduced) {
+      gsap.to(".hero__inner", {
+        yPercent: -14,
+        opacity: 0.25,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
 
     ScrollTrigger.refresh();
   });

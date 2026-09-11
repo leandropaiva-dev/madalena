@@ -23,16 +23,25 @@ export default function Hero() {
             <span>knitwear</span>
           </span>
         </h1>
-        <div className="hero__sub rv" id="heroSub">
-          <span>Made in Portugal</span>
-          <span>From yarn to garment</span>
-          <span>GOTS · RWS · GRS · OCS</span>
-        </div>
-        <div className="hero__cta rv" id="heroCta">
-          <a className="btn" href="/start-a-project" data-hover="">
-            <span>Start a Project</span>
-            <i></i>
-          </a>
+
+        {/* Company descriptor — the first screen's informative layer.
+            Sits between the display title and the supporting references. */}
+        <p className="hero__lede rv" id="heroLede">
+          An independent, family-owned knitwear manufacturer in Penafiel,
+          Portugal. Since 1998 we have developed and produced flat knitwear in
+          our own facilities — from yarn to finished garment.
+        </p>
+
+        <div className="hero__foot rv" id="heroFoot">
+          <div className="hero__refs">
+            <span className="hero__ref">Made in Portugal</span>
+            <span className="hero__ref hero__ref--certs">
+              <span>GOTS</span>
+              <span>RWS</span>
+              <span>GRS</span>
+              <span>OCS</span>
+            </span>
+          </div>
         </div>
       </div>
       <div className="hero__scroll">

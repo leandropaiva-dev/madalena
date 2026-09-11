@@ -15,6 +15,7 @@
   --sand:#D8CFBF;
   --warmgrey:#A79E8F;
   --softbrown:#8A7360;
+  --softbrowndeep:#483A2F;
   --olive:#6E6B52;
   --navy:#333A4A;
   --charcoal:#211E18;
@@ -106,21 +107,81 @@ html.lenis,html.lenis body{height:auto}
 @media(min-width:901px){.navmenu{display:none}}
 
 /* ============ HERO ============ */
-.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;display:flex;align-items:center}
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;display:flex;align-items:center;
+  padding:clamp(104px,13vh,150px) 0 clamp(104px,15vh,162px)}
 #knit-canvas{position:absolute;inset:0;width:100%;height:100%}
+/* Two layers: a soft wash anchored under the text column (legibility for the
+   descriptor and references) over an eased multi-stop ramp. Both ramps decay
+   their alpha slope to zero instead of stopping dead, so the veil never leaves
+   a visible band or edge over the moving fabric. */
 .hero__veil{position:absolute;inset:0;pointer-events:none;z-index:2;
-  background:linear-gradient(180deg,var(--cream) 0%,rgba(242,237,228,.82) 30%,rgba(242,237,228,.25) 58%,rgba(242,237,228,0) 78%)}
+  background:
+    radial-gradient(120% 102% at 18% 58%,
+      rgba(242,237,228,.56) 0%,
+      rgba(242,237,228,.47) 20%,
+      rgba(242,237,228,.36) 38%,
+      rgba(242,237,228,.24) 54%,
+      rgba(242,237,228,.13) 68%,
+      rgba(242,237,228,.05) 82%,
+      rgba(242,237,228,.012) 92%,
+      rgba(242,237,228,0) 100%),
+    linear-gradient(180deg,
+    var(--cream) 0%,
+    rgba(242,237,228,.96) 12%,
+    rgba(242,237,228,.88) 24%,
+    rgba(242,237,228,.76) 36%,
+    rgba(242,237,228,.60) 46%,
+    rgba(242,237,228,.44) 54%,
+    rgba(242,237,228,.29) 62%,
+    rgba(242,237,228,.18) 70%,
+    rgba(242,237,228,.10) 78%,
+    rgba(242,237,228,.045) 86%,
+    rgba(242,237,228,.012) 94%,
+    rgba(242,237,228,0) 100%)}
 .hero__grain{position:absolute;inset:0;pointer-events:none;opacity:.5;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .04 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero__inner{position:relative;z-index:5;padding:0 clamp(20px,5vw,72px);max-width:1500px;width:100%;margin:0 auto}
 .hero__kicker{font-size:11px;letter-spacing:.5em;text-transform:uppercase;color:var(--softbrown);margin-bottom:34px;display:flex;align-items:center;gap:18px}
 .hero__kicker::before{content:'';width:52px;height:1px;background:var(--softbrown);display:inline-block}
-.hero__title{font-family:var(--serif);font-weight:400;font-size:clamp(46px,8.2vw,124px);line-height:1.04;letter-spacing:-.01em;max-width:12em}
-.hero__title .line{display:block;overflow:hidden}
-.hero__title .line span{display:inline-block;will-change:transform}
+
+/* --- display title ---
+   Sized to leave room for the company descriptor below it; flex column so the
+   per-line negative margins below cannot collapse into each other. */
+.hero__title{font-family:var(--serif);font-weight:400;
+  font-size:clamp(38px,5.6vw,84px);line-height:1.12;letter-spacing:-.01em;
+  max-width:16ch;display:flex;flex-direction:column}
+/* The reveal box is grown well past the glyph box (padding cancelled by equal
+   negative margins, so layout is untouched) and its lower edge is feathered
+   with a mask. The clip therefore fades out instead of slicing the Pinyon
+   swashes and Playfair descenders on a hard line. */
+.hero__title .line{display:block;overflow:hidden;
+  padding:.4em 0 .9em;margin:-.4em 0 -.9em;
+  -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - .34em),rgba(0,0,0,0) calc(100% - .02em));
+  mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - .34em),rgba(0,0,0,0) calc(100% - .02em));
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-size:100% 100%;mask-size:100% 100%}
+.hero__title .line span{display:inline-block;will-change:transform,opacity}
 .hero__title em{font-family:var(--script);font-style:normal;font-size:.94em;color:var(--softbrown);margin-right:.12em}
-.hero__sub{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px 46px;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:rgba(28,25,19,.62)}
-.hero__cta{margin-top:46px}
+
+/* --- company descriptor: the dominant reading layer under the title --- */
+.hero__lede{margin-top:clamp(22px,2.6vh,34px);max-width:52ch;
+  font-size:clamp(15.5px,1.15vw,18.5px);line-height:1.74;letter-spacing:.005em;
+  color:rgba(28,25,19,.9)}
+
+/* --- supporting references: hairline-separated, clearly below the lede --- */
+.hero__foot{margin-top:clamp(24px,3vh,38px);max-width:min(100%,640px);
+  padding-top:clamp(20px,2.4vh,28px);border-top:1px solid rgba(28,25,19,.14)}
+.hero__refs{display:flex;flex-wrap:wrap;align-items:center;gap:10px 30px;
+  font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(28,25,19,.86)}
+.hero__ref--certs{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;color:var(--softbrowndeep)}
+.hero__ref--certs > span{display:inline-flex;align-items:center;gap:18px}
+.hero__ref--certs > span + span::before{content:'';flex:none;
+  width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.7}
+@media(max-width:640px){
+  .hero__refs{gap:8px 20px;letter-spacing:.24em}
+}
+
 .btn{display:inline-flex;align-items:center;gap:20px;padding:19px 34px;position:relative;overflow:hidden;
   border:1px solid rgba(28,25,19,.26);font-size:11px;letter-spacing:.34em;text-transform:uppercase;
   color:var(--ink);background:none;cursor:pointer;
@@ -524,3 +585,23 @@ html.lenis,html.lenis body{height:auto}
 .enquiry__success{max-width:560px;margin:8vh auto;text-align:center}
 .enquiry__success h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,44px);letter-spacing:-.01em}
 .enquiry__success p{margin-top:18px;font-size:15.5px;line-height:1.8;color:rgba(28,25,19,.68)}
+
+/* ============ REDUCED MOTION ============ */
+/* Users who ask for less motion get the same composition and the same knit
+   imagery — the fabric is rendered as a single static frame by SiteEffects —
+   with the travel, parallax and looping cues removed. Content is visible
+   without JavaScript having to animate it in. */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+  .rv{opacity:1;transform:none}
+  /* no reveal travel, so the feathered clip is not needed either */
+  .hero__title .line{overflow:visible;padding:0;margin:0;
+    -webkit-mask-image:none;mask-image:none}
+  .hero__scroll i::after{top:0;opacity:.5}
+  .cursor{display:none}
+}
