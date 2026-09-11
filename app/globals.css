@@ -60,20 +60,25 @@ html.lenis,html.lenis body{height:auto}
 
 /* ============ NAV ============ */
 .nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;
-  justify-content:space-between;padding:26px clamp(20px,4vw,56px);
-  mix-blend-mode:difference;color:#fff}
+  justify-content:space-between;padding:22px clamp(20px,4vw,56px);
+  color:var(--ink);
+  background:rgba(242,237,228,0);border-bottom:1px solid rgba(28,25,19,0);
+  -webkit-backdrop-filter:blur(0) saturate(100%);backdrop-filter:blur(0) saturate(100%);
+  transition:background .45s ease,backdrop-filter .45s ease,-webkit-backdrop-filter .45s ease,border-color .45s ease}
+.nav.is-scrolled{background:rgba(242,237,228,.55);border-bottom-color:rgba(28,25,19,.08);
+  -webkit-backdrop-filter:blur(16px) saturate(125%);backdrop-filter:blur(16px) saturate(125%)}
 .nav__logo{display:flex;align-items:center;line-height:1}
 .nav__logoMark{display:block;height:clamp(30px,7vw,56px);aspect-ratio:6768/1560;background-color:currentColor;
   -webkit-mask:url(/logo-madalena.png) center/contain no-repeat;
   mask:url(/logo-madalena.png) center/contain no-repeat}
 .nav__links{display:flex;gap:34px;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase}
 .nav__links a{position:relative;padding:4px 0;opacity:.85}
-.nav__links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.77,0,.18,1)}
+.nav__links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.77,0,.18,1)}
 .nav__links a:hover::after{transform:scaleX(1);transform-origin:left}
 .nav__links a.is-active{opacity:1}
 .nav__links a.is-active::after{transform:scaleX(1);transform-origin:left}
-.nav__cta{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 22px;border-radius:40px;transition:background .4s,color .4s}
-.nav__cta:hover{background:#fff;color:#000}
+.nav__cta{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;border:1px solid rgba(28,25,19,.32);padding:10px 22px;border-radius:40px;transition:background .4s,color .4s}
+.nav__cta:hover{background:var(--ink);color:var(--cream)}
 .nav__left{display:flex;align-items:center;gap:16px}
 @media(max-width:900px){.nav__links{display:none}}
 

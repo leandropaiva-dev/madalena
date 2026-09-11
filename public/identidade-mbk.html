@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Madalena Beça Knitwear — Identidade de Marca</title>
+<style>
+@font-face{font-family:'Playfair Display';font-weight:400;font-style:normal;src:url('fonts/playfair-400.woff2') format('woff2');font-display:swap}
+@font-face{font-family:'Playfair Display';font-weight:500;font-style:normal;src:url('fonts/playfair-500.woff2') format('woff2');font-display:swap}
+@font-face{font-family:'Playfair Display';font-weight:400;font-style:italic;src:url('fonts/playfair-400italic.woff2') format('woff2');font-display:swap}
+@font-face{font-family:'Pinyon Script';font-weight:400;font-style:normal;src:url('fonts/pinyon-400.woff2') format('woff2');font-display:swap}
+@font-face{font-family:'Jost';font-weight:300;font-style:normal;src:url('fonts/jost-300.woff2') format('woff2');font-display:swap}
+@font-face{font-family:'Jost';font-weight:400;font-style:normal;src:url('fonts/jost-400.woff2') format('woff2');font-display:swap}
+@font-face{font-family:'Jost';font-weight:500;font-style:normal;src:url('fonts/jost-500.woff2') format('woff2');font-display:swap}
+
+:root{
+  --cream:#F2EDE4; --wool:#FAF7F1; --stone:#E4DDD0; --sand:#D8CFBF;
+  --warmgrey:#A79E8F; --softbrown:#8A7360; --olive:#6E6B52; --navy:#333A4A;
+  --charcoal:#211E18; --ink:#1C1913;
+  --serif:'Playfair Display',Georgia,serif;
+  --script:'Pinyon Script',cursive;
+  --sans:'Jost',Helvetica,Arial,sans-serif;
+  --line:rgba(28,25,19,.16);
+  --line-soft:rgba(28,25,19,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:300;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.55;overflow-x:hidden}
+::selection{background:var(--softbrown);color:var(--wool)}
+em{font-style:normal}
+
+.grain{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .035 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(22px,5vw,60px);position:relative;z-index:2}
+.section{padding:clamp(46px,7vh,74px) 0;position:relative;z-index:2;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--sans);font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--warmgrey)}
+.eyebrow.on-dark{color:rgba(250,247,241,.5)}
+.h-sec{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.8vw,46px);letter-spacing:-.01em;margin-top:14px;line-height:1.05}
+.intro{max-width:64ch;font-size:15px;line-height:1.75;color:rgba(28,25,19,.66);margin-top:20px}
+.intro.on-dark{color:rgba(250,247,241,.7)}
+.intro em{font-family:var(--script);font-size:1.3em;color:var(--softbrown)}
+
+/* ---------- CAPA ---------- */
+.cover{padding:clamp(64px,12vh,120px) 0 clamp(40px,6vh,64px);border-bottom:1px solid var(--line)}
+.cover__brand{font-family:var(--serif);font-weight:400;font-size:clamp(44px,8vw,112px);line-height:1.02;letter-spacing:-.015em}
+.cover__brand em{font-family:var(--script);color:var(--softbrown);font-size:1.02em}
+.cover__tag{margin-top:26px;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:rgba(28,25,19,.6);display:flex;flex-wrap:wrap;gap:10px 30px}
+.cover__doc{margin-top:44px;font-family:var(--serif);font-size:clamp(19px,2.4vw,26px)}
+.cover__doc small{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--warmgrey);margin-top:9px}
+
+/* ---------- ESSÊNCIA ---------- */
+.essence__txt{font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,50px);line-height:1.28;max-width:18ch;letter-spacing:-.005em;margin-top:20px}
+.essence__txt em{font-family:var(--script);color:var(--softbrown)}
+
+/* ---------- NÚMEROS ---------- */
+.figures{background:var(--charcoal);color:var(--wool);border-bottom:0}
+.figures__grid{margin-top:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(250,247,241,.14);border-block:1px solid rgba(250,247,241,.14)}
+.fig{background:var(--charcoal);padding:32px 24px}
+.fig b{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.4vw,62px);display:block;line-height:1}
+.fig span{margin-top:12px;display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,247,241,.5);line-height:1.5}
+@media(max-width:720px){.figures__grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- CORES ---------- */
+.palette{background:var(--wool)}
+.pal-grid{margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:860px){.pal-grid{grid-template-columns:repeat(2,1fr)}}
+.color{border-radius:9px;overflow:hidden;background:var(--cream);box-shadow:0 8px 22px rgba(28,25,19,.05)}
+.color__block{height:clamp(110px,16vw,150px);display:flex;align-items:flex-end;padding:14px}
+.color__block span{font-family:var(--script);font-size:26px;line-height:1}
+.color__cap{padding:14px 15px 17px}
+.color__name{font-family:var(--serif);font-size:17px;letter-spacing:-.01em}
+.color__desc{margin-top:6px;font-size:12px;line-height:1.5;color:rgba(28,25,19,.6)}
+.color__hex{margin-top:9px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--warmgrey)}
+.pal-note{margin-top:26px;max-width:62ch;font-size:13px;line-height:1.7;color:rgba(28,25,19,.6)}
+
+/* ---------- FAMÍLIAS ---------- */
+.fam-grid{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:820px){.fam-grid{grid-template-columns:1fr}}
+.fam{border:1px solid var(--line);border-radius:11px;padding:26px 24px;background:var(--wool)}
+.fam__role{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--warmgrey)}
+.fam__name{font-family:var(--serif);font-size:26px;margin:8px 0 4px;letter-spacing:-.01em}
+.fam__sample{margin:18px 0 14px;line-height:1}
+.fam__desc{font-size:13px;line-height:1.65;color:rgba(28,25,19,.66)}
+.fam__wt{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(28,25,19,.55)}
+
+/* ---------- ESCALA / HIERARQUIA ---------- */
+.hier{background:var(--cream)}
+.scale{margin-top:34px;display:flex;flex-direction:column}
+.lvl{display:grid;grid-template-columns:150px 1fr;gap:clamp(18px,3vw,44px);align-items:baseline;
+  padding:22px 0;border-top:1px solid var(--line-soft)}
+.lvl:first-child{border-top:0}
+@media(max-width:680px){.lvl{grid-template-columns:1fr;gap:8px}}
+.lvl__meta .name{font-family:var(--sans);font-weight:400;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.lvl__meta .size{font-family:var(--sans);font-weight:300;font-size:12.5px;color:var(--softbrown);margin-top:5px}
+.lvl__meta .use{font-size:11.5px;line-height:1.5;color:var(--warmgrey);margin-top:5px}
+.lvl__demo{min-width:0}
+.d-serif{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.05}
+.d-serif em{font-family:var(--script);color:var(--softbrown)}
+.d-sans{font-family:var(--sans);font-weight:300;color:rgba(28,25,19,.8)}
+.d-label{font-family:var(--sans);text-transform:uppercase;color:var(--warmgrey)}
+
+.rules{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:820px){.rules{grid-template-columns:1fr}}
+.rule{border-left:2px solid var(--sand);padding-left:18px}
+.rule h4{font-family:var(--serif);font-weight:400;font-size:19px;margin-bottom:8px}
+.rule p{font-size:13px;line-height:1.7;color:rgba(28,25,19,.66)}
+
+/* ---------- VOZ ---------- */
+.voice{background:var(--charcoal);color:var(--wool);border-bottom:0}
+.voice__pillars{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,42px)}
+@media(max-width:720px){.voice__pillars{grid-template-columns:1fr}}
+.pillar{border-top:1px solid rgba(250,247,241,.2);padding-top:18px}
+.pillar h4{font-family:var(--serif);font-weight:400;font-size:20px;margin-bottom:9px}
+.pillar p{font-size:13px;line-height:1.7;color:rgba(250,247,241,.62)}
+.voice__quotes{margin-top:44px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:720px){.voice__quotes{grid-template-columns:1fr}}
+.vq{border:1px solid rgba(250,247,241,.18);border-radius:11px;padding:26px 24px}
+.vq .src{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,247,241,.42);margin-bottom:14px}
+.vq .q{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2.2vw,26px);line-height:1.28}
+.vq .q em{font-family:var(--script);color:var(--sand)}
+.voice__words{margin-top:34px;display:flex;flex-wrap:wrap;gap:11px}
+.vword{border:1px solid rgba(250,247,241,.3);border-radius:40px;padding:10px 20px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(250,247,241,.85)}
+
+/* ---------- CERTIFICAÇÕES ---------- */
+.certs{background:var(--wool)}
+.certs__quote{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,42px);line-height:1.28;max-width:22ch;margin-top:16px}
+.certs__quote em{font-family:var(--script);color:var(--softbrown)}
+.certs__badges{margin-top:34px;display:flex;flex-wrap:wrap;gap:13px}
+.cbadge{border:1px solid rgba(28,25,19,.22);border-radius:60px;padding:15px 28px;display:flex;gap:12px;align-items:baseline}
+.cbadge b{font-family:var(--sans);font-weight:500;font-size:13px;letter-spacing:.16em}
+.cbadge span{font-size:10.5px;letter-spacing:.08em;color:var(--warmgrey)}
+.certs__lic{margin-top:24px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--softbrown)}
+
+/* ---------- LOGO ---------- */
+.logo{background:var(--cream)}
+.logo__grid{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:720px){.logo__grid{grid-template-columns:1fr}}
+.logo__box{border:1px solid var(--line);border-radius:11px;min-height:180px;display:flex;align-items:center;justify-content:center;padding:34px;position:relative}
+.logo__box--dark{background:var(--charcoal)}
+.logo__box img{max-width:min(300px,72%);height:auto}
+.logo__box .tagx{position:absolute;bottom:13px;left:17px;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--warmgrey)}
+.logo__box--dark .tagx{color:rgba(250,247,241,.5)}
+.logo__note{margin-top:26px;max-width:60ch;font-size:13px;line-height:1.75;color:rgba(28,25,19,.64)}
+
+/* ---------- FECHO ---------- */
+.close{background:var(--charcoal);color:var(--wool);text-align:center;border-bottom:0}
+.close__txt{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vw,64px);line-height:1.08;max-width:15ch;margin:0 auto;letter-spacing:-.01em}
+.close__txt em{font-family:var(--script);color:var(--sand)}
+.close__contact{margin-top:40px;display:flex;flex-direction:column;gap:5px;align-items:center;font-size:13px;letter-spacing:.08em;color:rgba(250,247,241,.8)}
+.close__contact a{color:inherit;text-decoration:none}
+.close__meta{margin-top:40px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(250,247,241,.4)}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- CAPA -->
+<header class="cover">
+  <div class="wrap">
+    <div class="eyebrow">Manual de Identidade</div>
+    <h1 class="cover__brand">Madalena&nbsp;Beça <em>Knitwear</em></h1>
+    <div class="cover__tag"><span>Malha contemporânea</span><span>Feito em Portugal</span><span>Desde 1998</span></div>
+    <div class="cover__doc">A alma da marca<small>Cores · Tipografia · Hierarquia · Tom de voz</small></div>
+  </div>
+</header>
+
+<!-- ESSÊNCIA -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">A essência</div>
+    <p class="essence__txt">Uma <em>família</em> de criadores — precisa, atenta e presente em cada etapa.</p>
+    <p class="intro">Calma, técnica e feita inteiramente nas nossas próprias instalações em Portugal. Do fio à peça, a identidade nasce daí: natural, discreta e profundamente artesanal.</p>
+  </div>
+</section>
+
+<!-- CORES -->
+<section class="section palette">
+  <div class="wrap">
+    <div class="eyebrow">A paleta</div>
+    <h2 class="h-sec">Tons de lã e terra</h2>
+    <p class="intro">Uma paleta natural e silenciosa: cremes suaves que respiram, ancorados por um castanho profundo. Nenhuma cor gritante — apenas o <em>calor</em> discreto do material.</p>
+    <div class="pal-grid">
+      <div class="color"><div class="color__block" style="background:#F2EDE4;color:#8A7360"><span>creme</span></div><div class="color__cap"><div class="color__name">Creme</div><div class="color__desc">O fundo principal do site.</div><div class="color__hex">#F2EDE4</div></div></div>
+      <div class="color"><div class="color__block" style="background:#FAF7F1;color:#A79E8F"><span>lã</span></div><div class="color__cap"><div class="color__name">Lã</div><div class="color__desc">Branco macio, para áreas de respiro.</div><div class="color__hex">#FAF7F1</div></div></div>
+      <div class="color"><div class="color__block" style="background:#D8CFBF;color:#8A7360"><span>areia</span></div><div class="color__cap"><div class="color__name">Areia</div><div class="color__desc">Acento sobre fundos escuros.</div><div class="color__hex">#D8CFBF</div></div></div>
+      <div class="color"><div class="color__block" style="background:#8A7360;color:#FAF7F1"><span>castanho</span></div><div class="color__cap"><div class="color__name">Castanho suave</div><div class="color__desc">O acento principal da marca.</div><div class="color__hex">#8A7360</div></div></div>
+      <div class="color"><div class="color__block" style="background:#A79E8F;color:#FAF7F1"><span>cinza</span></div><div class="color__cap"><div class="color__name">Cinza quente</div><div class="color__desc">Legendas e textos de apoio.</div><div class="color__hex">#A79E8F</div></div></div>
+      <div class="color"><div class="color__block" style="background:#E4DDD0;color:#8A7360"><span>pedra</span></div><div class="color__cap"><div class="color__name">Pedra</div><div class="color__desc">Tom intermédio, divisões subtis.</div><div class="color__hex">#E4DDD0</div></div></div>
+      <div class="color"><div class="color__block" style="background:#211E18;color:#D8CFBF"><span>carvão</span></div><div class="color__cap"><div class="color__name">Carvão</div><div class="color__desc">Fundo dos momentos dramáticos.</div><div class="color__hex">#211E18</div></div></div>
+      <div class="color"><div class="color__block" style="background:#1C1913;color:#D8CFBF"><span>tinta</span></div><div class="color__cap"><div class="color__name">Tinta</div><div class="color__desc">A cor de todo o texto.</div><div class="color__hex">#1C1913</div></div></div>
+    </div>
+    <p class="pal-note">Oliva (#6E6B52) e marinho (#333A4A) completam a paleta como tons de reserva, para usos pontuais.</p>
+  </div>
+</section>
+
+<!-- FAMÍLIAS -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">A tipografia</div>
+    <h2 class="h-sec">Três vozes, um só tom</h2>
+    <div class="fam-grid">
+      <div class="fam">
+        <div class="fam__role">Os títulos</div>
+        <div class="fam__name">Playfair Display</div>
+        <div class="fam__sample" style="font-family:var(--serif);font-size:52px;letter-spacing:-.015em">Aa</div>
+        <div class="fam__desc">Serifada elegante e editorial. Dá o ar refinado e intemporal — usada em todos os grandes títulos.</div>
+        <div class="fam__wt">Regular · Itálico · Medium</div>
+      </div>
+      <div class="fam">
+        <div class="fam__role">O toque manuscrito</div>
+        <div class="fam__name">Pinyon Script</div>
+        <div class="fam__sample" style="font-family:var(--script);color:var(--softbrown);font-size:66px">family</div>
+        <div class="fam__desc">Caligrafia delicada, reservada a uma única palavra por bloco. É o gesto humano de quem faz à mão.</div>
+        <div class="fam__wt">Regular</div>
+      </div>
+      <div class="fam">
+        <div class="fam__role">O texto</div>
+        <div class="fam__name">Jost</div>
+        <div class="fam__sample" style="font-family:var(--sans);font-weight:300;font-size:52px">Aa</div>
+        <div class="fam__desc">Sem-serifa leve e contemporânea. Clara e calma, dá suporte a toda a leitura sem competir.</div>
+        <div class="fam__wt">Light (padrão) · Regular · Medium</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCALA / HIERARQUIA -->
+<section class="section hier">
+  <div class="wrap">
+    <div class="eyebrow">A hierarquia</div>
+    <h2 class="h-sec">A escala de tamanhos</h2>
+    <p class="intro">Os títulos são fluidos: crescem com o ecrã, do telemóvel ao desktop. Ao lado de cada nível, o intervalo de tamanho — do menor (mobile) ao maior (ecrã grande).</p>
+
+    <div class="scale">
+      <div class="lvl">
+        <div class="lvl__meta"><div class="name">Título principal</div><div class="size">46 → 124 px</div><div class="use">Boas-vindas, a primeira frase do site</div></div>
+        <div class="lvl__demo"><div class="d-serif" style="font-size:clamp(38px,7vw,78px)"><em>Quiet</em> excellence</div></div>
+      </div>
+      <div class="lvl">
+        <div class="lvl__meta"><div class="name">Grande destaque</div><div class="size">44 → 116 px</div><div class="use">Chamadas fortes (contacto, capa de página)</div></div>
+        <div class="lvl__demo"><div class="d-serif" style="font-size:clamp(32px,5.4vw,60px)">Where your next <em>knit</em> begins</div></div>
+      </div>
+      <div class="lvl">
+        <div class="lvl__meta"><div class="name">Título de secção</div><div class="size">30 → 62 px</div><div class="use">Abertura de cada bloco de conteúdo</div></div>
+        <div class="lvl__demo"><div class="d-serif" style="font-size:clamp(27px,3.8vw,48px)">The creative heart of our factory</div></div>
+      </div>
+      <div class="lvl">
+        <div class="lvl__meta"><div class="name">Manifesto / citação</div><div class="size">26 → 54 px</div><div class="use">Frases-âncora, com entrelinha mais aberta</div></div>
+        <div class="lvl__demo"><div class="d-serif" style="font-size:clamp(22px,3vw,38px);line-height:1.32">A <em>family</em> of makers: precise and attentive.</div></div>
+      </div>
+      <div class="lvl">
+        <div class="lvl__meta"><div class="name">Subtítulo</div><div class="size">19 → 30 px</div><div class="use">Apoio a um título; introdução de artigo</div></div>
+        <div class="lvl__demo"><div class="d-serif" style="font-size:clamp(19px,2.2vw,28px);line-height:1.25">Anticipating trends, creating custom solutions</div></div>
+      </div>
+      <div class="lvl">
+        <div class="lvl__meta"><div class="name">Texto corrido</div><div class="size">14 → 16,5 px</div><div class="use">Parágrafos. Jost Light, entrelinha generosa</div></div>
+        <div class="lvl__demo"><div class="d-sans" style="font-size:16px;line-height:1.85;max-width:52ch">Inovação e saber técnico juntam-se para transformar ideias em peças únicas, combinando estética, função e qualidade.</div></div>
+      </div>
+      <div class="lvl">
+        <div class="lvl__meta"><div class="name">Etiqueta / detalhe</div><div class="size">10 → 12 px</div><div class="use">Rótulos em caixa alta, muito espaçados</div></div>
+        <div class="lvl__demo"><div class="d-label" style="font-size:11px;letter-spacing:.4em">Made in Portugal · Since 1998</div></div>
+      </div>
+    </div>
+
+    <div class="rules">
+      <div class="rule"><h4>Entrelinha</h4><p>Títulos com entrelinha justa (quase colada) para força visual. Texto corrido com entrelinha ampla, cerca de 1,8×, para leitura calma.</p></div>
+      <div class="rule"><h4>Espaçamento</h4><p>As etiquetas em maiúsculas usam grande espaço entre letras. Já os títulos são ligeiramente "apertados", para um ar sofisticado.</p></div>
+      <div class="rule"><h4>A palavra à mão</h4><p>Em cada bloco, uma palavra emotiva aparece na caligrafia Pinyon, em castanho ou areia. Nunca mais do que uma por frase.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VOZ -->
+<section class="section voice">
+  <div class="wrap">
+    <div class="eyebrow on-dark">O tom de voz</div>
+    <h2 class="h-sec">Quieto, técnico, confiante</h2>
+    <p class="intro on-dark">A marca fala pouco e diz o essencial. Frases curtas e afirmativas, sem exageros. Um orgulho tranquilo pelo que se faz.</p>
+    <div class="voice__pillars">
+      <div class="pillar"><h4>Sereno</h4><p>Nunca ruidoso. A confiança vem da calma, não do volume.</p></div>
+      <div class="pillar"><h4>Preciso</h4><p>Rigor técnico e atenção ao detalhe em cada afirmação.</p></div>
+      <div class="pillar"><h4>Humano</h4><p>Uma família de criadores. Próxima, atenta e verdadeira.</p></div>
+    </div>
+    <div class="voice__quotes">
+      <div class="vq"><div class="src">Boas-vindas</div><div class="q"><em>Quiet</em> excellence in contemporary knitwear</div></div>
+      <div class="vq"><div class="src">Responsabilidade</div><div class="q">A supply chain that respects <em>both people and the environment.</em></div></div>
+      <div class="vq"><div class="src">Estúdio</div><div class="q">The creative heart of our factory. <em>Creating tomorrow's knits.</em></div></div>
+      <div class="vq"><div class="src">Contacto</div><div class="q">Where your next <em>knit</em> begins.</div></div>
+    </div>
+    <div class="voice__words">
+      <span class="vword">Made in Portugal</span><span class="vword">From yarn to garment</span><span class="vword">Since 1998</span><span class="vword">A family of makers</span>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO -->
+<section class="section logo">
+  <div class="wrap">
+    <div class="eyebrow">O logótipo</div>
+    <h2 class="h-sec">A marca aplicada</h2>
+    <div class="logo__grid">
+      <div class="logo__box"><img src="logo-madalena.png" alt="Logótipo Madalena Beça"><span class="tagx">Sobre fundo claro</span></div>
+      <div class="logo__box logo__box--dark"><img src="logo-madalena.png" alt="Logótipo Madalena Beça" style="filter:brightness(0) invert(1)"><span class="tagx">Sobre fundo escuro</span></div>
+    </div>
+    <p class="logo__note">O logótipo adapta-se ao fundo: escuro sobre tons claros, claro sobre tons escuros. Deve ter sempre espaço livre à volta e nunca ser distorcido ou colorido fora da paleta.</p>
+  </div>
+</section>
+
+<!-- FECHO -->
+<section class="section close">
+  <div class="wrap">
+    <div class="close__txt">Where your next <em>knit</em> begins.</div>
+    <div class="close__contact">
+      <a href="mailto:info@malhasmadalena.com">info@malhasmadalena.com</a>
+      <span>@madalenabecaknitwear</span>
+    </div>
+    <div class="close__meta">Madalena Beça Têxtil, Lda · Feito em Portugal · Desde 1998</div>
+  </div>
+</section>
+
+</body>
+</html>
