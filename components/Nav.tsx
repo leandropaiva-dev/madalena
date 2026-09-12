@@ -75,7 +75,7 @@ export default function Nav() {
           ))}
         </div>
         <Link className="nav__cta" href="/start-a-project" data-hover="">
-          Let’s talk
+          Start a Project
         </Link>
       </nav>
 
@@ -100,7 +100,7 @@ export default function Nav() {
           ))}
         </div>
         <div className="navmenu__foot">
-          <Link href="/start-a-project">Let’s talk</Link>
+          <Link href="/start-a-project">Start a Project</Link>
         </div>
       </div>
     </>
