@@ -90,6 +90,8 @@ html.lenis,html.lenis body{height:auto}
 .nav__left{display:flex;align-items:center;gap:16px}
 @media(max-width:900px){.nav__links{display:none}}
 @media(max-width:900px){.nav__cta{display:none}}
+/* mobile: navbar height doubled (padding-driven) — vertical padding only */
+@media(max-width:900px){.nav{padding-top:30px;padding-bottom:30px}}
 
 /* ---- mobile menu ---- */
 .nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;
