@@ -1,29 +1,33 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Studio() {
   return (
     <section className="studio section" id="studio">
       <div className="studio__grid">
         <div className="studio__imgwrap">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/studio-yarn.jpg" alt="Comparing yarn shades from a swatch card" id="studioImg" />
+          <Image
+            src="/images/studio-yarn.jpg"
+            alt="Comparing yarn shades from a swatch card"
+            id="studioImg"
+            fill
+            sizes="(max-width:900px) 100vw, 45vw"
+            style={{ objectFit: "cover" }}
+          />
         </div>
         <div className="studio__body">
-          <div className="label">The Studio Design</div>
+          <div className="label">The Studio</div>
           <h2 className="rv">
-            The creative heart of our factory.{" "}
-            <em>Creating tomorrow&apos;s knits.</em>
+            Where ideas take shape in <em>knit.</em>
           </h2>
           <p className="rv">
-            Innovation and technical expertise come together to transform ideas
-            into unique designs. With a specialized team and state-of-the-art
-            equipment, we develop exclusive knits that combine aesthetics,
-            functionality and quality.
+            Our in-house Studio brings together yarn, programming, construction
+            and garment development, connecting creative direction with the
+            realities of production.
           </p>
-          <p className="rv">
-            Our goal is to anticipate trends, create customized solutions, and
-            support our clients through every stage of development — from concept
-            to final production.
-          </p>
-          <div className="studio__sig rv">madalena beça</div>
+          <Link href="/studio" className="studio__link" data-hover="">
+            Explore the Studio
+          </Link>
         </div>
       </div>
     </section>

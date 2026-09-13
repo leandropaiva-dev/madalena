@@ -27,9 +27,8 @@ export default function Hero() {
         {/* Company descriptor — the first screen's informative layer.
             Sits between the display title and the supporting references. */}
         <p className="hero__lede rv" id="heroLede">
-          An independent, family-owned knitwear manufacturer in Penafiel,
-          Portugal. Since 1998 we have developed and produced flat knitwear in
-          our own facilities — from yarn to finished garment.
+          Specialised flat-knit development and manufacturing for fashion
+          brands — in our own facilities in Portugal since 1998.
         </p>
 
         <div className="hero__foot rv" id="heroFoot">

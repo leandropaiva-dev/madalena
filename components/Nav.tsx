@@ -32,15 +32,6 @@ export default function Nav() {
     <>
       <nav className={"nav" + (scrolled ? " is-scrolled" : "")}>
         <div className="nav__left">
-          <button
-            className="nav__burger"
-            aria-label="Open menu"
-            aria-expanded={open}
-            onClick={() => setOpen(true)}
-          >
-            <span />
-            <span />
-          </button>
           {onHome ? (
             <a
               className="nav__logo"
@@ -77,6 +68,15 @@ export default function Nav() {
         <Link className="nav__cta" href="/start-a-project" data-hover="">
           Start a Project
         </Link>
+        <button
+          className="nav__burger"
+          aria-label="Open menu"
+          aria-expanded={open}
+          onClick={() => setOpen(true)}
+        >
+          <span />
+          <span />
+        </button>
       </nav>
 
       {/* mobile menu overlay */}
@@ -99,9 +99,9 @@ export default function Nav() {
             </Link>
           ))}
         </div>
-        <div className="navmenu__foot">
-          <Link href="/start-a-project">Start a Project</Link>
-        </div>
+        <Link className="navmenu__cta" href="/start-a-project" data-hover="">
+          Start a Project
+        </Link>
       </div>
     </>
   );

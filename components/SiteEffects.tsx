@@ -357,43 +357,6 @@ function init(
       });
     });
 
-    /* ============ MANIFESTO WORD REVEAL ============ */
-    (() => {
-      const p = document.getElementById("manifestoTxt");
-      if (!p) return;
-      const nodes = [...p.childNodes];
-      p.innerHTML = "";
-      nodes.forEach((n) => {
-        if (n.nodeType === 3) {
-          (n.textContent || "")
-            .split(/\s+/)
-            .filter(Boolean)
-            .forEach((w) => {
-              const s = document.createElement("span");
-              s.className = "w";
-              s.textContent = w;
-              p.appendChild(s);
-              p.appendChild(document.createTextNode(" "));
-            });
-        } else if (n.nodeType === 1) {
-          (n as HTMLElement).classList.add("w");
-          p.appendChild(n);
-          p.appendChild(document.createTextNode(" "));
-        }
-      });
-      gsap.to(p.querySelectorAll(".w"), {
-        opacity: 1,
-        stagger: 0.06,
-        ease: "none",
-        scrollTrigger: {
-          trigger: p,
-          start: "top 78%",
-          end: "bottom 45%",
-          scrub: true,
-        },
-      });
-    })();
-
     /* ============ STATS COUNTERS ============ */
     document.querySelectorAll<HTMLElement>("[data-count]").forEach((el) => {
       const end = parseInt(el.dataset.count as string, 10);
@@ -414,203 +377,24 @@ function init(
       });
     });
 
-    /* ============ FAN SLIDER ============ */
-    (() => {
-      const cards = [
-        ...document.querySelectorAll<HTMLElement>(".fan__card"),
-      ];
-      const stage = document.getElementById("fanStage");
-      const wordEl = document.getElementById("fanWord");
-      const microEl = document.getElementById("fanMicro");
-      const dotsWrap = document.getElementById("fanDots");
-      if (!stage || !wordEl || !microEl || !dotsWrap || !cards.length) return;
-      const DATA = [
-        { w: "women", m: "soft volumes, precise lines." },
-        { w: "men", m: "structured, calm, essential." },
-        { w: "baby", m: "tiny stitches, endless care." },
-        { w: "kids", m: "playful knits, made to last." },
-        { w: "the details", m: "small pieces, full character." },
-      ];
-      const N = cards.length;
-      let active = 0,
-        animating = false;
-
-      DATA.forEach((_, i) => {
-        const d = document.createElement("div");
-        d.className = "fan__dot" + (i === 0 ? " is-on" : "");
-        d.dataset.hover = "";
-        d.addEventListener("click", () => go(i));
-        dotsWrap.appendChild(d);
-      });
-      const dots = [...dotsWrap.children];
-
-      function layout(animate = true) {
-        const stepDeg = isMobile ? 38 : 27;
-        const R = isMobile
-          ? Math.min(innerWidth * 1.1, 520)
-          : Math.min(innerWidth * 0.58, 840);
-        cards.forEach((card, i) => {
-          let off = i - active;
-          if (off > N / 2) off -= N;
-          if (off < -N / 2) off += N;
-          const abs = Math.abs(off);
-          const a = (off * stepDeg * Math.PI) / 180;
-          const props = {
-            xPercent: -50,
-            x: Math.sin(a) * R,
-            y: (1 - Math.cos(a)) * R * 1.05,
-            rotation: off * (stepDeg * 0.78),
-            scale: off === 0 ? 1 : 0.84 - abs * 0.04,
-            opacity: abs > 2 ? 0 : off === 0 ? 1 : 0.42,
-            zIndex: 10 - abs,
-            filter: off === 0 ? "brightness(1)" : "brightness(.45)",
-          };
-          if (animate && !prefersReduced) {
-            gsap.to(card, { ...props, duration: 1.05, ease: "power4.inOut" });
-          } else gsap.set(card, props);
-          card.classList.toggle("is-active", off === 0);
-        });
-      }
-
-      function swapText(i: number) {
-        gsap.to([wordEl, microEl], {
-          yPercent: -60,
-          opacity: 0,
-          duration: 0.35,
-          ease: "power2.in",
-          onComplete: () => {
-            wordEl!.textContent = DATA[i].w;
-            microEl!.textContent = DATA[i].m;
-            gsap.fromTo(
-              [wordEl, microEl],
-              { yPercent: 60, opacity: 0 },
-              { yPercent: 0, opacity: 1, duration: 0.55, ease: "power3.out" }
-            );
-          },
-        });
-      }
-
-      function go(i: number) {
-        if (animating || i === active) return;
-        animating = true;
-        active = ((i % N) + N) % N;
-        layout();
-        swapText(active);
-        dots.forEach((d, k) => d.classList.toggle("is-on", k === active));
-        setTimeout(() => (animating = false), 750);
-      }
-
-      document
-        .getElementById("fanNext")!
-        .addEventListener("click", () => go(active + 1));
-      document
-        .getElementById("fanPrev")!
-        .addEventListener("click", () => go(active - 1));
-      let sx: number | null = null;
-      on(
-        stage,
-        "touchstart",
-        (e) => (sx = (e as TouchEvent).touches[0].clientX),
-        { passive: true }
-      );
-      on(
-        stage,
-        "touchend",
-        (e) => {
-          if (sx === null) return;
-          const dx = (e as TouchEvent).changedTouches[0].clientX - sx;
-          if (Math.abs(dx) > 40) go(active + (dx < 0 ? 1 : -1));
-          sx = null;
-        },
-        { passive: true }
-      );
-      on(window, "resize", () => layout(false));
-      layout(false);
-
-      /* subtle mouse parallax on stage */
-      if (!isMobile && !prefersReduced) {
-        on(stage, "mousemove", (e) => {
-          const me = e as MouseEvent;
-          const r = stage.getBoundingClientRect();
-          const nx = (me.clientX - r.left) / r.width - 0.5;
-          gsap.to(stage, { x: nx * 18, duration: 0.8, ease: "power2.out" });
-        });
-        on(stage, "mouseleave", () =>
-          gsap.to(stage, { x: 0, duration: 0.8 })
-        );
-      }
-    })();
-
-    /* ============ CAPABILITIES PINNED SEQUENCE ============ */
-    (() => {
-      const items = [
-        ...document.querySelectorAll<HTMLElement>(".caps__item"),
-      ];
-      const imgs = [
-        ...document.querySelectorAll<HTMLElement>(".caps__media img"),
-      ];
-      const count = document.getElementById("capsCount");
-      if (!items.length || !count) return;
-      let current = 0;
-      function setStep(i: number) {
-        if (i === current) return;
-        current = i;
-        items.forEach((el, k) => el.classList.toggle("is-active", k === i));
-        imgs.forEach((el, k) => el.classList.toggle("is-on", k === i));
-        count!.textContent = String(i + 1).padStart(2, "0");
-      }
-      items.forEach((el, i) =>
-        el.addEventListener("click", () => setStep(i))
-      );
-      ScrollTrigger.create({
-        trigger: "#capsPin",
-        start: "top top",
-        end: "+=" + items.length * 85 + "%",
-        pin: true,
-        scrub: true,
-        onUpdate: (self) =>
-          setStep(
-            Math.min(items.length - 1, Math.floor(self.progress * items.length))
-          ),
-      });
-    })();
-
     /* ============ STUDIO IMAGE PARALLAX ============ */
-    gsap.fromTo(
-      "#studioImg",
-      { scale: 1.18, yPercent: -6 },
-      {
-        scale: 1,
-        yPercent: 4,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#studio",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      }
-    );
-
-    /* ============ HORIZONTAL GALLERY ============ */
-    (() => {
-      const track = document.getElementById("galTrack");
-      const pin = document.getElementById("galPin");
-      if (!track || !pin) return;
-      const dist = () => Math.max(0, track.scrollWidth - innerWidth);
-      gsap.to(track, {
-        x: () => -dist(),
-        ease: "none",
-        scrollTrigger: {
-          trigger: pin,
-          start: "top top",
-          end: () => "+=" + (dist() + innerHeight * 0.2),
-          pin: true,
-          scrub: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-    })();
+    if (!prefersReduced) {
+      gsap.fromTo(
+        "#studioImg",
+        { scale: 1.18, yPercent: -6 },
+        {
+          scale: 1,
+          yPercent: 4,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#studio",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    }
 
     /* ============ HERO TITLE PARALLAX OUT ============ */
     if (!prefersReduced) {

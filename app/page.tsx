@@ -10,22 +10,29 @@ import Studio from "@/components/Studio";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import SiteEffects from "@/components/SiteEffects";
+import BeforeAfter from "@/components/BeforeAfter";
 
 export default function Home() {
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
       <Cursor />
       <Loader />
       <Nav />
-      <Hero />
-      <Manifesto />
-      <FanSlider />
-      <Capabilities />
-      <Certs />
-      <Studio />
-      <Gallery />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <Manifesto />
+        <FanSlider />
+        <Capabilities />
+        <Certs />
+        <Studio />
+        <Gallery />
+        <Contact />
+      </main>
       <SiteEffects />
+      <BeforeAfter />
     </>
   );
 }
