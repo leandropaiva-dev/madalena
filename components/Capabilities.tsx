@@ -51,12 +51,11 @@ export default function Capabilities() {
   return (
     <section className="hww section" id="capabilities">
       <div className="hww__head">
-        <div className="label">From yarn to garment — how we work</div>
+        <div className="label">From development to production.</div>
         <h2 className="hww__title rv">
-          From development to <em>production.</em>
+          Five stages, <em>one accountable partner.</em>
         </h2>
         <p className="hww__sub rv">
-          Five stages, one accountable partner.{" "}
           <Link href="/how-we-work" className="hww__link" data-hover="">
             Explore how we work
           </Link>

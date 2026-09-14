@@ -26,8 +26,8 @@ export default function Home() {
         <Manifesto />
         <FanSlider />
         <Capabilities />
-        <Certs />
         <Studio />
+        <Certs />
         <Gallery />
         <Contact />
       </main>

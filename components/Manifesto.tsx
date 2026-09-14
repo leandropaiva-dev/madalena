@@ -2,16 +2,17 @@ export default function Manifesto() {
   return (
     <section className="manifesto section" id="about">
       <div className="manifesto__inner">
-        <div className="label rv">MBK — in one view</div>
+        <div className="label rv">
+          Technical development. In-house manufacturing. One accountable
+          partner.
+        </div>
         <h2 className="manifesto__txt rv">
-          Technical development. In-house manufacturing.{" "}
-          <em>One accountable partner</em>.
+          A <em>family</em> of makers
         </h2>
         <div className="manifesto__body">
           <p className="rv">
-            A <em>family</em> of makers: precise, attentive and closely involved
-            in every stage of development. Made entirely in our own facilities in
-            Portugal.
+            Precise, attentive and closely involved in every stage of
+            development. Made entirely in our own facilities in Portugal.
           </p>
           <p className="rv">
             From development and programming to knitting, garment assembly,
