@@ -51,15 +51,15 @@ export default function Capabilities() {
   return (
     <section className="hww section" id="capabilities">
       <div className="hww__head">
-        <div className="label">From development to production.</div>
-        <h2 className="hww__title rv">
-          Five stages, <em>one accountable partner.</em>
-        </h2>
-        <p className="hww__sub rv">
-          <Link href="/how-we-work" className="hww__link" data-hover="">
-            Explore how we work
-          </Link>
-        </p>
+        <div>
+          <div className="label">From development to production.</div>
+          <h2 className="hww__title rv">
+            Five stages, <em>one accountable partner.</em>
+          </h2>
+        </div>
+        <Link href="/how-we-work" className="hww__link" data-hover="">
+          Explore how we work
+        </Link>
       </div>
 
       <div className="hww__grid">

@@ -294,10 +294,10 @@ html.lenis,html.lenis body{height:auto}
 
 /* ============ HOW WE WORK PREVIEW ============ */
 .hww{background:var(--wool);padding:16vh 0 14vh}
-.hww__head{max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,72px);text-align:center}
+.hww__head{max-width:1500px;margin:0 auto;padding:0 clamp(20px,5vw,72px);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
 .hww__title{font-family:var(--serif);font-weight:400;font-size:var(--fs-h2);line-height:1.12;margin-top:22px}
 .hww__title em{font-family:var(--script);font-style:normal;color:var(--softbrown)}
-.hww__sub{margin-top:24px;font-size:15px;letter-spacing:.02em;color:rgba(28,25,19,.66)}
 .hww__link{color:var(--ink);border-bottom:1px solid rgba(28,25,19,.4);padding-bottom:2px;transition:opacity .3s}
 .hww__link:hover{opacity:.6}
 .hww__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,1.7vw,28px);
@@ -309,6 +309,14 @@ html.lenis,html.lenis body{height:auto}
 .hww__steptitle{font-family:var(--serif);font-weight:400;font-size:clamp(17px,1.5vw,22px);
   line-height:1.2;margin-top:18px;min-height:2.4em}
 .hww__steptext{margin-top:10px;font-size:13.5px;line-height:1.6;color:rgba(28,25,19,.68);font-weight:400;letter-spacing:.01em}
+/* desktop only — looser, less "compressed" 5-up grid */
+@media(min-width:1025px){
+  .hww__grid{grid-template-columns:1.12fr 0.94fr 1.12fr 0.94fr 1.12fr;column-gap:clamp(14px,1.7vw,28px)}
+  .hww__imgwrap{aspect-ratio:4/5}
+  .hww__steptitle{margin-top:28px}
+  .hww__steptext{line-height:1.625}
+  .hww__title{white-space:nowrap;font-size:clamp(38px,4vw,54px)}
+}
 @media(max-width:1024px){.hww__grid{grid-template-columns:repeat(3,1fr);row-gap:clamp(30px,4vw,48px)}}
 @media(max-width:620px){.hww__grid{grid-template-columns:1fr;max-width:400px;row-gap:38px}}
 
