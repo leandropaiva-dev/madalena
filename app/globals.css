@@ -294,12 +294,12 @@ html.lenis,html.lenis body{height:auto}
 
 /* ============ HOW WE WORK PREVIEW ============ */
 .hww{background:var(--wool);padding:16vh 0 14vh}
-.hww__head{max-width:1500px;margin:0 auto;padding:0 clamp(20px,5vw,72px);
-  display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.hww__head{max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,72px);text-align:center}
 .hww__title{font-family:var(--serif);font-weight:400;font-size:var(--fs-h2);line-height:1.12;margin-top:22px}
 .hww__title em{font-family:var(--script);font-style:normal;color:var(--softbrown)}
 .hww__link{color:var(--ink);border-bottom:1px solid rgba(28,25,19,.4);padding-bottom:2px;transition:opacity .3s}
 .hww__link:hover{opacity:.6}
+.hww__sub{margin-top:24px;font-size:15px;letter-spacing:.02em;color:rgba(28,25,19,.66)}
 .hww__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,1.7vw,28px);
   max-width:1500px;margin:9vh auto 0;padding:0 clamp(20px,5vw,72px)}
 .hww__imgwrap{position:relative;aspect-ratio:3/4.2;overflow:hidden;border-radius:10px}
