@@ -345,7 +345,7 @@ html.lenis,html.lenis body{height:auto}
 .studio{background:var(--cream);padding:6vh 0}
 .studio__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,7vw,120px);align-items:center;
   max-width:1500px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
-.studio__imgwrap{position:relative;height:min(74vh,700px);overflow:hidden;border-radius:10px}
+.studio__imgwrap{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:10px}
 .studio__imgwrap img{object-fit:cover;will-change:transform;filter:saturate(.9)}
 .studio__body h2{font-family:var(--serif);font-weight:400;font-size:var(--fs-h2);line-height:1.12;margin:24px 0 30px}
 .studio__body h2 em{font-family:var(--script);font-style:normal;display:block;font-size:.9em;color:var(--softbrown);margin-top:8px}
