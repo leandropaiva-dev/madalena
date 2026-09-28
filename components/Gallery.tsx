@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/journal";
 
 export default function Gallery() {
-  const posts = getAllPosts().slice(0, 3);
+  const posts = getAllPosts().slice(0, 5);
 
   return (
     <section className="gal section" id="gallery">
