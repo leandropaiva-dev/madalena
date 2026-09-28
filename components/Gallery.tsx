@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/journal";
+import MobileCarousel from "./MobileCarousel";
 
 export default function Gallery() {
   const posts = getAllPosts().slice(0, 5);
@@ -25,7 +26,7 @@ export default function Gallery() {
         </Link>
       </div>
 
-      <div className="gal__grid">
+      <MobileCarousel className="gal__grid" count={posts.length}>
         {posts.map((post) => (
           <Link
             className="gal__item"
@@ -47,7 +48,7 @@ export default function Gallery() {
             </figcaption>
           </Link>
         ))}
-      </div>
+      </MobileCarousel>
     </section>
   );
 }

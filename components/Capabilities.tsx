@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileCarousel from "./MobileCarousel";
 
 export const ITEMS = [
   {
@@ -62,7 +63,7 @@ export default function Capabilities() {
         </p>
       </div>
 
-      <div className="hww__grid">
+      <MobileCarousel className="hww__grid" count={ITEMS.length}>
         {ITEMS.map((it, i) => (
           <div className="hww__step rv" key={it.n}>
             <div className="hww__imgwrap">
@@ -81,7 +82,7 @@ export default function Capabilities() {
             <p className="hww__steptext">{it.short}</p>
           </div>
         ))}
-      </div>
+      </MobileCarousel>
     </section>
   );
 }

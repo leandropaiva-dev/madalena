@@ -383,6 +383,22 @@ html.lenis,html.lenis body{height:auto}
 @media(max-width:1024px){.gal__grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:620px){.gal__grid{grid-template-columns:1fr;max-width:400px}}
 
+/* ===== mobile carousel — What We Make / How We Work / The Journal ===== */
+.mcar__dots{display:none}
+@media(max-width:620px){
+  .mcar__track{display:flex;grid-template-columns:none;max-width:none;margin-left:0;margin-right:0;
+    padding:16px 0;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .mcar__track::-webkit-scrollbar{display:none}
+  .mcar__track>*{flex:0 0 100%;min-width:0;scroll-snap-align:start;padding:0 20px}
+  .mcar__dots{display:flex;justify-content:center;gap:9px;margin-top:26px}
+  .mcar__dot{width:8px;height:8px;border-radius:50%;border:0;padding:0;cursor:pointer;
+    background:rgba(28,25,19,.22);transition:transform .3s ease,background .3s ease}
+  .mcar__dot.is-on{background:var(--ink);transform:scale(1.25)}
+  .breadth .mcar__dot,.gal .mcar__dot{background:rgba(250,247,241,.28)}
+  .breadth .mcar__dot.is-on,.gal .mcar__dot.is-on{background:var(--wool)}
+}
+
 /* ============ WHY ============ */
 .why{background:var(--wool);padding:18vh 0}
 .why__grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:1500px;margin:0 auto;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MobileCarousel from "./MobileCarousel";
 
 const CARDS = [
   { src: "/images/craft-women.jpg", alt: "Womenswear knit", cap: "Womenswear" },
@@ -22,7 +23,7 @@ export default function FanSlider() {
           Knitwear across <em>collections.</em>
         </h2>
       </div>
-      <div className="breadth__grid">
+      <MobileCarousel className="breadth__grid" count={CARDS.length}>
         {CARDS.map((c) => (
           <figure className="breadth__card rv" key={c.cap}>
             <div className="breadth__imgwrap">
@@ -39,7 +40,7 @@ export default function FanSlider() {
             <figcaption>{c.cap}</figcaption>
           </figure>
         ))}
-      </div>
+      </MobileCarousel>
     </section>
   );
 }
