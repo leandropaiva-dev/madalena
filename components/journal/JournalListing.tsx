@@ -24,7 +24,7 @@ export default function JournalListing({
   ];
 
   return (
-    <section className="jr">
+    <section className="jr journal-hero">
       <header className="jr-hero">
         <div className="label rv">Journal</div>
         <h1 className="jr-hero__title rv">
@@ -33,11 +33,8 @@ export default function JournalListing({
         </h1>
         <p className="jr-hero__sub rv">
           Technical knowledge, materials, responsible manufacturing and
-          perspectives from inside Madalena Beça Knitwear.
-        </p>
-        <p className="jr-hero__sub rv">
-          A place to share what is worth knowing — and occasionally, what is
-          new.
+          perspectives from inside Madalena Beça Knitwear. A place to share
+          what is worth knowing — and occasionally, what is new.
         </p>
       </header>
 

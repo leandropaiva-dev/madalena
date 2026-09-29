@@ -13,7 +13,7 @@ export interface CertItem {
 }
 
 export default function CertAccordion({ certs }: { certs: CertItem[] }) {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
 
   // Arriving from another page with a hash (e.g. /sustainability#cert-gots) —
   // open the matching item on first mount, same as the in-page "cert:open" event.

@@ -12,38 +12,40 @@ const ROLE = [
     cat: "Yarn",
     lead: "Material is part of the design.",
     body: "We help explore yarns, compositions, colours and qualities in relation to the intended character and performance of the product.",
+    img: "/images/studio-swatch-1.jpg",
+    imgAlt: "Round yarn and colour texture swatches laid out for review",
   },
   {
     n: "02",
     cat: "Structure",
     lead: "Knit is built, not cut.",
     body: "Stitches, gauges, constructions and proportions are developed with an understanding of how each choice shapes the finished garment.",
+    img: "/images/cap-design.jpg",
+    imgAlt: "Knit programming linked to stitch and structure development",
   },
   {
     n: "03",
     cat: "Development",
     lead: "Ideas become tangible.",
     body: "From swatches and trials to prototypes and refinements, development gives form to the creative direction of the project.",
+    img: "/images/studio-swatch-3.jpg",
+    imgAlt: "Reviewing a knitted sample against the pattern on a tablet",
   },
   {
     n: "04",
     cat: "Fit & Detail",
     lead: "The difference is often in the last few centimetres.",
     body: "Proportion, finishing and detail are refined with the precision required to bring the intended product to life.",
+    img: "/images/cap-fitting.jpg",
+    imgAlt: "Hand-finishing detail on a knitted garment",
   },
-];
-
-const CAPABILITIES = [
-  { src: "/images/studio-swatch-1.jpg", alt: "Round texture swatches pinned to a mood board", cat: "Texture", desc: "Stitch & structure" },
-  { src: "/images/studio-swatch-2.jpg", alt: "Pointing out a texture swatch on a mood board", cat: "Material", desc: "Yarn & swatch development" },
-  { src: "/images/studio-swatch-3.jpg", alt: "Reviewing a knit sample against the pattern on a tablet", cat: "Form", desc: "Fit & proportion" },
 ];
 
 export default function StudioPage() {
   return (
     <>
       {/* ---- page hero ---- */}
-      <header className="jr">
+      <header className="jr studio-hero">
         <div className="jr-hero">
           <div className="label rv">Studio</div>
           <h1 className="jr-hero__title rv">
@@ -61,13 +63,13 @@ export default function StudioPage() {
       </header>
 
       {/* ---- block 1: the approach (same background as the hero) ---- */}
-      <section className="studio section sect--cream">
+      <section className="studio studio-approach section sect--cream">
         <div className="studio__grid">
           <div className="studio__imgwrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/cap-design.jpg"
-              alt="Technical review in progress — analysing references, measurements and alternatives"
+              src="/images/studio-swatch-2.jpg"
+              alt="Sketching and reviewing colour and texture references against swatch cards"
               data-parallax=""
             />
           </div>
@@ -110,9 +112,13 @@ export default function StudioPage() {
         <div className="why__grid">
           {ROLE.map((it) => (
             <div className="why__item rv" key={it.n}>
-              <i>{it.n}</i>
-              <div className="label" style={{ margin: "10px 0 6px" }}>
-                {it.cat}
+              <div className="why__imgwrap">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={it.img} alt={it.imgAlt} />
+              </div>
+              <div className="why__meta">
+                <i>{it.n}</i>
+                <span className="label">{it.cat}</span>
               </div>
               <h3>{it.lead}</h3>
               <p>{it.body}</p>
@@ -166,55 +172,43 @@ export default function StudioPage() {
         </div>
       </section>
 
-      {/* ---- block 4: visual capabilities ---- */}
-      <section className="swatches">
-        <div className="swatches__grid">
-          {CAPABILITIES.map((s) => (
-            <figure className="rv" key={s.src}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={s.src} alt={s.alt} />
-              <figcaption>
-                <b>{s.cat}</b>
-                <span>{s.desc}</span>
-              </figcaption>
-            </figure>
-          ))}
+      {/* ---- block 5: studio + factory ---- */}
+      <section className="studio studio-factory section sect--wool">
+        <div className="studio__grid">
+          <div className="studio__imgwrap">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/cap-quality.jpg"
+              alt="Studio and production colleagues reviewing the same sample on the factory floor"
+              data-parallax=""
+            />
+          </div>
+          <div className="studio__body">
+            <div className="label">Studio + Factory</div>
+            <h2 className="rv">
+              Studio and factory, <em>working as one.</em>
+            </h2>
+            <p className="rv studio-factory__lede">
+              Development happens where the product will be made.
+            </p>
+            <p className="rv">
+              The Studio is not separate from our manufacturing floor.
+              Development, technical expertise and production belong to the
+              same company, allowing ideas to move directly between the
+              people who interpret, programme, sample and ultimately make the
+              garment.
+            </p>
+            <p className="rv">
+              That proximity creates continuity from development into
+              production — and gives our clients one partner from the first
+              conversation to the finished piece.
+            </p>
+          </div>
         </div>
-      </section>
-
-      {/* ---- block 5: the relationship between studio and factory ---- */}
-      <section className="section sect--wool" style={{ padding: "14vh 0" }}>
-        <div className="sect-head">
-          <span className="sect-head__num">
-            The relationship between Studio and Factory
-          </span>
-          <h2 className="sect-head__title">
-            From idea to industry — <em>born where it will be made.</em>
-          </h2>
-        </div>
-        <p
-          className="rv"
-          style={{
-            maxWidth: "620px",
-            margin: "4vh clamp(20px,5vw,72px) 0",
-            fontSize: "15px",
-            lineHeight: 1.8,
-            letterSpacing: ".02em",
-            color: "rgba(28,25,19,.62)",
-          }}
-        >
-          The Studio is not separate from our manufacturing floor.
-          Development, technical expertise and production belong to the same
-          company, allowing ideas to move naturally between the people who
-          conceive, interpret, programme, sample and ultimately make the
-          garment. That proximity creates continuity from development into
-          production — and gives our clients one partner from the first
-          conversation to the finished piece.
-        </p>
       </section>
 
       {/* ---- closing CTA (bridges into the contact footer) ---- */}
-      <section className="cta section">
+      <section className="cta studio-cta section">
         <div className="label cta__label rv">Studio</div>
         <p className="cta__txt rv">
           Bring us what <em>you&rsquo;re working on.</em>

@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ---- page hero ---- */}
-      <header className="jr">
+      <header className="jr about-hero">
         <div className="jr-hero">
           <div className="label rv">MBK — About</div>
           <h1 className="jr-hero__title rv">
@@ -36,7 +36,7 @@ export default function AboutPage() {
       </header>
 
       {/* ---- block 1: family ownership (same background as the hero) ---- */}
-      <section className="studio section sect--cream">
+      <section className="studio section sect--cream about-family">
         <div className="studio__grid">
           <div className="studio__imgwrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -68,34 +68,30 @@ export default function AboutPage() {
       </section>
 
       {/* ---- block 2: a real manufacturer (factory gallery) ---- */}
-      <section className="swatches sect--wool" style={{ paddingTop: "12vh" }}>
-        <div
-          className="sect-head"
-          style={{ maxWidth: "1500px", padding: "0", marginBottom: "6vh" }}
-        >
-          <span className="sect-head__num">A real manufacturer</span>
-          <h2 className="sect-head__title">
-            Made in our own facilities <em>in Portugal.</em>
-          </h2>
+      <section
+        className="swatches sect--wool about-gallery"
+        style={{ paddingTop: "5vh" }}
+      >
+        <div className="facilities-head">
+          <div className="sect-head">
+            <span className="sect-head__num">A real manufacturer</span>
+            <h2 className="sect-head__title">
+              Made in our own facilities <em>in Portugal.</em>
+            </h2>
+          </div>
+          <div className="facilities-head__copy">
+            <p className="rv">
+              MBK is a manufacturer, with core flat-knit development and
+              production carried out in our own facilities in Penafiel.
+            </p>
+            <p className="rv">
+              Clients work directly with the teams responsible for
+              developing and producing their knitwear. This structure gives
+              us direct visibility over production and one clear point of
+              accountability for the garment.
+            </p>
+          </div>
         </div>
-        <p
-          className="rv"
-          style={{
-            maxWidth: "620px",
-            margin: "0 0 6vh",
-            fontSize: "15px",
-            lineHeight: 1.8,
-            letterSpacing: ".02em",
-            color: "rgba(28,25,19,.62)",
-          }}
-        >
-          MBK is a manufacturer, not a sourcing agency. Our core flat-knit
-          development and production take place in our own facilities in
-          Penafiel, keeping the people responsible for the product close to
-          the people making it. That structure gives us direct responsibility
-          for what leaves the factory and clear visibility over the
-          production process.
-        </p>
         <div className="swatches__grid">
           {GALLERY.map((g) => (
             <figure className="rv" key={g.src}>
@@ -108,7 +104,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---- block 3: continuity of knowledge (text only) ---- */}
-      <section className="studio section sect--cream">
+      <section className="studio section sect--cream about-continuity">
         <div className="studio__grid" style={{ alignItems: "start" }}>
           <div className="studio__body about-lead">
             <div className="label">Continuity of knowledge</div>
@@ -118,39 +114,34 @@ export default function AboutPage() {
           </div>
           <div className="studio__body">
             <p className="rv">
-              Technical knowledge in knitwear is cumulative.
-            </p>
-            <p className="rv">
-              It comes from years of working with yarns, gauges,
-              constructions, measurements and finishing, and from
-              understanding how each decision affects the final garment.
+              Technical knowledge in knitwear is cumulative. It comes from
+              years of working with yarns, gauges, constructions,
+              measurements and finishing — and from understanding how each
+              decision affects the finished garment.
             </p>
             <p className="rv">
               That knowledge is not valuable because it belongs to the past.
               It is valuable because it is applied to the next product.
             </p>
             <p className="rv">
-              The longer we work with a brand, the more we understand its
-              product, fit, quality expectations, timelines and way of
-              working.
-            </p>
-            <p className="rv">
-              That continuity makes future development more informed and
-              helps create a stronger foundation for long-term collaboration.
+              As we work with a brand across collections, we build a deeper
+              understanding of its product, fit, quality expectations,
+              timelines and way of working. That continuity makes future
+              development more informed and collaboration more efficient.
             </p>
           </div>
         </div>
       </section>
 
       {/* ---- closing CTA (bridges into the contact footer) ---- */}
-      <section className="cta section">
+      <section className="cta section about-cta">
         <div className="label cta__label rv">MBK</div>
         <p className="cta__txt rv">
           Looking for a long-term knitwear{" "}
           <em>manufacturing partner?</em>
         </p>
         <a className="btn cta__btn rv" href="/start-a-project" data-hover="">
-          <span>Start a project</span>
+          <span>Start a Project</span>
           <i />
         </a>
       </section>

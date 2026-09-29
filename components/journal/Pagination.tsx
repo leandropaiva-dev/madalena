@@ -41,10 +41,9 @@ export default function Pagination({
           className="jr-pag__arrow"
           href={hrefFor(category, page - 1)}
           data-hover=""
-          aria-label="Previous page"
           rel="prev"
         >
-          ←
+          Previous
         </Link>
       )}
       {items.map((it, idx) =>
@@ -69,10 +68,9 @@ export default function Pagination({
           className="jr-pag__arrow"
           href={hrefFor(category, page + 1)}
           data-hover=""
-          aria-label="Next page"
           rel="next"
         >
-          →
+          Next →
         </Link>
       )}
     </nav>

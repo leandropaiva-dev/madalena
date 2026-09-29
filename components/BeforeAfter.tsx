@@ -1,17 +1,20 @@
 "use client";
 
-// TEMPORARY — client review tool. Floating toggle so the client can compare
-// the live production site ("antes") with our in-progress V4 ("depois").
-// Remove before launch (and drop it from the homepage).
+// TEMPORARY — client review tool, on every page. Floating toggle so the
+// client can compare the live production page ("antes") with our
+// in-progress V4 page ("depois"), following whatever route is open.
+// Remove before launch (and drop it from app/layout.tsx).
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
-const PROD_URL = "https://madalenaknitwear.vercel.app/";
+const PROD_ORIGIN = "https://madalenaknitwear.vercel.app";
 const STORAGE_KEY = "mbk-review-view";
 
 type Mode = "before" | "after";
 
 export default function BeforeAfter() {
+  const pathname = usePathname();
   const [mode, setMode] = useState<Mode>("after");
   const [ready, setReady] = useState(false);
 
@@ -25,15 +28,19 @@ export default function BeforeAfter() {
     if (ready) localStorage.setItem(STORAGE_KEY, mode);
   }, [mode, ready]);
 
+  if (pathname === "/comments") return null;
+
   const showBefore = mode === "before";
+  const prodUrl = pathname === "/" ? PROD_ORIGIN + "/" : PROD_ORIGIN + pathname;
 
   return (
     <>
-      {/* Kept mounted at all times so it loads once and preserves scroll
-          position — just shown/hidden instead of re-created on toggle. */}
+      {/* Re-mounted whenever the route changes, so it always mirrors the
+          production page currently being compared. */}
       {ready && (
         <iframe
-          src={PROD_URL}
+          key={pathname}
+          src={prodUrl}
           title="Site em produção (versão atual)"
           style={{
             position: "fixed",

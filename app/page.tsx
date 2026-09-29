@@ -10,7 +10,6 @@ import Studio from "@/components/Studio";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import SiteEffects from "@/components/SiteEffects";
-import BeforeAfter from "@/components/BeforeAfter";
 
 export default function Home() {
   return (
@@ -32,7 +31,6 @@ export default function Home() {
         <Contact />
       </main>
       <SiteEffects />
-      <BeforeAfter />
     </>
   );
 }
