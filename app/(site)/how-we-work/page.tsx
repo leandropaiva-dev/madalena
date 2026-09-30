@@ -1,10 +1,29 @@
 import type { Metadata } from "next";
 import ProcessGrid from "@/components/ProcessGrid";
 
+const TITLE = "How We Work — MBK · Madalena Beça Knitwear";
+const DESCRIPTION =
+  "From programming and knitting to assembly, quality control and packing — produced in our own facilities in Penafiel, Portugal. One factory, one accountable partner.";
+const OG_IMAGE = "/images/cap-knitting.jpg";
+
 export const metadata: Metadata = {
-  title: "How We Work — MBK · Madalena Beça Knitwear",
-  description:
-    "From programming and knitting to assembly, quality control and packing — produced in our own facilities in Penafiel, Portugal. One factory, one accountable partner.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/how-we-work",
+  },
+  openGraph: {
+    type: "website",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 export default function HowWeWorkPage() {

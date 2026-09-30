@@ -20,10 +20,34 @@ export function generateMetadata({
   const { category, page } = parse(searchParams);
   let title = category ? `Journal · ${category}` : "Journal";
   if (page > 1) title += ` · Page ${page}`;
+
+  const query = new URLSearchParams();
+  if (category) query.set("category", category);
+  if (page > 1) query.set("page", String(page));
+  const qs = query.toString();
+
+  const fullTitle = `${title} — Madalena Beça Knitwear`;
+  const description =
+    "Notes from the atelier — partnerships, craft and news from Madalena Beça Knitwear.";
+
   return {
-    title: `${title} — Madalena Beça Knitwear`,
-    description:
-      "Notes from the atelier — partnerships, craft and news from Madalena Beça Knitwear.",
+    title: fullTitle,
+    description,
+    alternates: {
+      canonical: qs ? `/journal?${qs}` : "/journal",
+    },
+    openGraph: {
+      type: "website",
+      title: fullTitle,
+      description,
+      images: ["/images/knit-texture.jpg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description,
+      images: ["/images/knit-texture.jpg"],
+    },
   };
 }
 

@@ -2,10 +2,29 @@ import type { Metadata } from "next";
 import Certs from "@/components/Certs";
 import CertAccordion from "@/components/CertAccordion";
 
+const TITLE = "Sustainability — Certifications · Madalena Beça Knitwear";
+const DESCRIPTION =
+  "Certifications are not badges — they are documented proof of how we choose to produce. Certified to GOTS, GRS, RWS and OCS, audited by Ecocert Greenlife, with a traceable supply chain.";
+const OG_IMAGE = "/images/gots-report-cover.jpg";
+
 export const metadata: Metadata = {
-  title: "Sustainability — Certifications · Madalena Beça Knitwear",
-  description:
-    "Certifications are not badges — they are documented proof of how we choose to produce. Certified to GOTS, GRS, RWS and OCS, audited by Ecocert Greenlife, with a traceable supply chain.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/sustainability",
+  },
+  openGraph: {
+    type: "website",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 const CERTS = [

@@ -1,9 +1,28 @@
 import type { Metadata } from "next";
 
+const TITLE = "About — MBK · Madalena Beça Knitwear";
+const DESCRIPTION =
+  "A specialised knitwear manufacturer with continuity at its core. Since 1998, Madalena Beça Knitwear has developed and produced flat knitwear in Penafiel, Portugal.";
+const OG_IMAGE = "/images/about-knitting.jpg";
+
 export const metadata: Metadata = {
-  title: "About — MBK · Madalena Beça Knitwear",
-  description:
-    "A specialised knitwear manufacturer with continuity at its core. Since 1998, Madalena Beça Knitwear has developed and produced flat knitwear in Penafiel, Portugal.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    type: "website",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 const GALLERY = [

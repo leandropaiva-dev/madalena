@@ -1,9 +1,28 @@
 import type { Metadata } from "next";
 
+const TITLE = "Studio — MBK · Madalena Beça Knitwear";
+const DESCRIPTION =
+  "Where ideas take shape in knit. Alongside manufacturing, our in-house Studio brings together creative sensitivity and technical knitwear expertise to support the development of each collection.";
+const OG_IMAGE = "/images/studio-yarn.jpg";
+
 export const metadata: Metadata = {
-  title: "Studio — MBK · Madalena Beça Knitwear",
-  description:
-    "Where ideas take shape in knit. Alongside manufacturing, our in-house Studio brings together creative sensitivity and technical knitwear expertise to support the development of each collection.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/studio",
+  },
+  openGraph: {
+    type: "website",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 const ROLE = [

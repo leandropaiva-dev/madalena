@@ -7,6 +7,7 @@ import {
   getPost,
   getRelated,
 } from "@/lib/journal";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
@@ -22,6 +23,23 @@ export function generateMetadata({
   return {
     title: `${post.title} — Journal — Madalena Beça Knitwear`,
     description: post.excerpt,
+    alternates: {
+      canonical: `/journal/${post.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.date,
+      authors: [post.author],
+      images: [post.cover],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.cover],
+    },
   };
 }
 
@@ -34,8 +52,34 @@ export default function ArticlePage({
   if (!post) notFound();
   const related = getRelated(post.slug, 3);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: `${SITE_URL}${post.cover}`,
+    datePublished: post.date,
+    author: {
+      "@type": "Person",
+      name: post.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/icon.png`,
+      },
+    },
+    mainEntityOfPage: `${SITE_URL}/journal/${post.slug}`,
+  };
+
   return (
     <article className="jr-article">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <header className="jr-article__head">
         <div className="jr-article__meta">
           <span className="jr-card__cat">{post.category}</span>

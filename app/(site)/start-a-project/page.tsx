@@ -1,10 +1,29 @@
 import type { Metadata } from "next";
 import EnquiryForm from "@/components/EnquiryForm";
 
+const TITLE = "Start a Project — MBK · Madalena Beça Knitwear";
+const DESCRIPTION =
+  "Tell us about your project — development, production or both. A few details help us direct your enquiry to the right person.";
+const OG_IMAGE = "/images/factory-packing.jpg";
+
 export const metadata: Metadata = {
-  title: "Start a Project — MBK · Madalena Beça Knitwear",
-  description:
-    "Tell us about your project — development, production or both. A few details help us direct your enquiry to the right person.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/start-a-project",
+  },
+  openGraph: {
+    type: "website",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 export default function StartAProjectPage() {
