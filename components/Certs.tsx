@@ -51,9 +51,11 @@ export default function Certs() {
           frameworks for traceability and environmental and social requirements
           across certified production.
         </p>
-        <Link href="/sustainability" className="certs__link" data-hover="">
-          Explore responsibility
-        </Link>
+        {pathname !== "/sustainability" && (
+          <Link href="/sustainability" className="certs__link" data-hover="">
+            Explore responsibility
+          </Link>
+        )}
         <div className="certs__badges">
           {BADGES.map((b, i) => (
             <button

@@ -171,22 +171,23 @@ export default function SustainabilityPage() {
             Standards that make <em>responsibility measurable.</em>
           </h2>
         </div>
-        <p
-          className="rv"
-          style={{
-            maxWidth: "620px",
-            margin: "4vh clamp(20px,5vw,72px) 0",
-            fontSize: "15px",
-            lineHeight: 1.8,
-            letterSpacing: ".02em",
-            color: "rgba(28,25,19,.62)",
-          }}
-        >
-          Independent certification provides a recognised framework for
-          traceability, environmental responsibility and social
-          accountability across textile supply chains. Madalena Beça is
-          certified under four internationally recognised textile standards:
-        </p>
+        <div style={{ maxWidth: "1500px", margin: "4vh auto 0", padding: "0 clamp(20px,5vw,72px)" }}>
+          <p
+            className="rv"
+            style={{
+              maxWidth: "620px",
+              fontSize: "15px",
+              lineHeight: 1.8,
+              letterSpacing: ".02em",
+              color: "rgba(28,25,19,.62)",
+            }}
+          >
+            Independent certification provides a recognised framework for
+            traceability, environmental responsibility and social
+            accountability across textile supply chains. Madalena Beça is
+            certified under four internationally recognised textile standards:
+          </p>
+        </div>
       </section>
 
       {/* ---- certifications accordion ---- */}
@@ -225,7 +226,7 @@ export default function SustainabilityPage() {
             <div className="sect-head">
               <span className="sect-head__num">External recognition</span>
               <h2 className="sect-head__title">
-                Featured in the GOTS Annual Report 2025.
+                Featured in the GOTS <em>Annual Report 2025.</em>
               </h2>
             </div>
             <p

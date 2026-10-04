@@ -147,7 +147,7 @@ export default function StudioPage() {
       </section>
 
       {/* ---- block 3: yarn, development & technique (reversed) ---- */}
-      <section className="studio section sect--cream">
+      <section className="studio studio-yarn section sect--cream">
         <div className="studio__grid studio__grid--wide-text">
           <div className="studio__body">
             <div className="label">Yarn, development &amp; technique</div>

@@ -414,6 +414,9 @@ html.lenis,html.lenis body{height:auto}
 #studio .studio__body h2{margin:24px 0 14px}
 #studio .studio__body p{margin-bottom:0}
 #studio .studio__link{margin-top:16px}
+/* Studio page — "A yarn is never just a yarn": smaller title than the
+   other section headings on this page */
+.studio-yarn .studio__body h2{font-size:clamp(26px,3.4vw,46px)}
 @media(max-width:900px){.studio__grid{grid-template-columns:1fr}}
 .studio__grid--wide-text{grid-template-columns:1.1fr .9fr}
 @media(max-width:900px){.studio__grid--wide-text{grid-template-columns:1fr}}
@@ -514,8 +517,13 @@ html.lenis,html.lenis body{height:auto}
 .jr-hero__sub{margin-top:30px;max-width:560px;font-size:15px;line-height:1.8;
   color:rgba(28,25,19,.62);letter-spacing:.02em}
 
-/* About hero: wider intro paragraph so it reads in ~2-3 lines, not 4 narrow
-   ones — stays left-aligned/ragged-right, never justified */
+/* About hero: full viewport banner, content vertically centred — title and
+   lede stand alone on first screen, the blocks below only appear on scroll.
+   Wider intro paragraph so it reads in ~2-3 lines, not 4 narrow ones — stays
+   left-aligned/ragged-right, never justified */
+.about-hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+  justify-content:center;padding-top:clamp(104px,15vh,150px);padding-bottom:clamp(60px,10vh,110px);
+  box-sizing:border-box}
 .about-hero .jr-hero__sub{max-width:min(880px,72vw);text-align:left}
 
 /* Studio hero: full viewport, content vertically centred; subtitle widened
@@ -525,8 +533,20 @@ html.lenis,html.lenis body{height:auto}
   box-sizing:border-box}
 .studio-hero .jr-hero__sub{max-width:min(820px,70vw);text-align:left}
 
-/* Sustainability hero: wider intro paragraphs so the first one reads in
-   ~2-3 balanced lines instead of a narrow 4-6 line block */
+/* How We Work hero: full viewport banner, same treatment as About/Studio —
+   title and lede stand alone on first screen, blocks below appear on scroll */
+.hww-hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+  justify-content:center;padding-top:clamp(104px,15vh,150px);padding-bottom:clamp(60px,10vh,110px);
+  box-sizing:border-box}
+.hww-hero .jr-hero__sub{max-width:min(820px,70vw);text-align:left}
+
+/* Sustainability hero: full viewport banner, same treatment as the other
+   section pages — title and lede stand alone on first screen, blocks below
+   appear on scroll. Wider intro paragraphs so the first one reads in ~2-3
+   balanced lines instead of a narrow 4-6 line block */
+.sust-hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+  justify-content:center;padding-top:clamp(104px,15vh,150px);padding-bottom:clamp(60px,10vh,110px);
+  box-sizing:border-box}
 .sust-hero .jr-hero__sub{max-width:min(760px,70vw);text-align:left}
 
 /* Journal hero: intentionally smaller than every other .jr-hero on the
@@ -747,27 +767,31 @@ html.lenis,html.lenis body{height:auto}
    the section above */
 .sust-cta{padding:7vh clamp(20px,5vw,72px);border-top:none}
 
-/* About — A real manufacturer: heading / copy as a two-column editorial
-   grid (instead of a full-width heading over a narrow left-aligned block).
-   No horizontal padding here — .swatches (the parent section) already pads. */
-.facilities-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,100px);
-  align-items:start;max-width:1500px;margin:0 auto 6vh}
-.facilities-head .sect-head{display:block;padding:0;margin:0;max-width:none}
+/* About — A real manufacturer: heading centered like the How We Work title
+   treatment (label + title stacked, copy centered below), instead of a
+   two-column editorial grid. No horizontal padding here — .swatches (the
+   parent section) already pads. */
+.facilities-head{max-width:1500px;margin:0 auto 6vh;text-align:center}
+.facilities-head .sect-head{display:block;padding:0;margin:0 auto;max-width:none}
 .facilities-head .sect-head__num{display:block;margin-bottom:14px}
-/* copy centered vertically against the title; copy runs the full column
-   width so it wraps into fewer, shorter lines */
-.facilities-head__copy{max-width:none;align-self:center;margin-top:32px}
+/* keep "Made in our own facilities in Portugal." on one line on desktop —
+   same font-size as everywhere else, just given the full section width */
+@media(min-width:1025px){
+  .facilities-head .sect-head__title{white-space:nowrap}
+}
+.facilities-head__copy{max-width:1150px;margin:32px auto 0;text-align:left}
 .facilities-head__copy p{font-size:15.5px;line-height:1.85;letter-spacing:.02em;
   color:rgba(28,25,19,.68);margin-bottom:18px}
 .facilities-head__copy p:last-child{margin-bottom:0}
-@media(max-width:900px){.facilities-head{grid-template-columns:1fr}}
 
-/* swatch strip — the "wall of yarns and swatches" band */
+/* swatch strip — the "wall of yarns and swatches" band. Smaller photos than
+   before: six per row on desktop (like the How We Work process grid) instead
+   of three large ones. */
 .swatches{background:var(--cream);padding:0 clamp(20px,5vw,72px) 18vh}
 /* About — tighter gap into Continuity of Knowledge below */
 .about-gallery{padding-bottom:7vh}
 .about-continuity{padding-top:3vh}
-.swatches__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,20px);
+.swatches__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.2vw,18px);
   max-width:1500px;margin:0 auto}
 .swatches figure{overflow:hidden;border-radius:8px}
 .swatches img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.9);
@@ -776,6 +800,7 @@ html.lenis,html.lenis body{height:auto}
 .swatches figcaption{margin-top:14px;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--warmgrey)}
 .swatches figcaption b{display:block;font-weight:500;color:var(--ink);margin-bottom:5px}
 .swatches figcaption span{display:block;font-size:11px;letter-spacing:.04em;text-transform:none;color:var(--warmgrey)}
+@media(max-width:1024px){.swatches__grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){.swatches__grid{grid-template-columns:1fr}}
 
 /* ============ ENQUIRY FORM ============ */
