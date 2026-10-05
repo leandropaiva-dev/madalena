@@ -100,7 +100,7 @@ export default function ProcessGrid() {
           if (e.key === "Enter" || e.key === " ") setExpanded((ex) => !ex);
         }}
       >
-        {expanded ? "Ver menos" : "Ver mais"}
+        {expanded ? "Read less" : "Read more"}
       </span>
     </section>
   );
