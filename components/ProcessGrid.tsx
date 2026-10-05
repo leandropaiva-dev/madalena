@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import MobileCarousel from "./MobileCarousel";
 import { MEDIA } from "./Capabilities";
@@ -49,6 +52,8 @@ const STAGES = [
 ];
 
 export default function ProcessGrid() {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section className="hww section sect--cream hww-process">
       <div className="hww__head">
@@ -74,14 +79,29 @@ export default function ProcessGrid() {
               {s.n}. {s.title.split(" & ")[0]} &<br />
               {s.title.split(" & ")[1]}
             </h3>
-            {s.paragraphs.map((p, j) => (
-              <p className="hww__steptext" key={j}>
-                {p}
-              </p>
-            ))}
+            <div className={"hww__textclip" + (expanded ? " is-open" : "")}>
+              {s.paragraphs.map((p, j) => (
+                <p className="hww__steptext" key={j}>
+                  {p}
+                </p>
+              ))}
+              {!expanded && <div className="hww__textfade" />}
+            </div>
           </div>
         ))}
       </MobileCarousel>
+
+      <span
+        className="hww__more"
+        role="button"
+        tabIndex={0}
+        onClick={() => setExpanded((e) => !e)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") setExpanded((ex) => !ex);
+        }}
+      >
+        {expanded ? "Ver menos" : "Ver mais"}
+      </span>
     </section>
   );
 }

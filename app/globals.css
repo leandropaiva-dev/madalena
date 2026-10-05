@@ -309,12 +309,23 @@ html.lenis,html.lenis body{height:auto}
 .hww__steptitle{font-family:var(--serif);font-weight:400;font-size:clamp(17px,1.5vw,22px);
   line-height:1.2;margin-top:18px;min-height:2.4em}
 .hww__steptext{margin-top:10px;font-size:13.5px;line-height:1.6;color:rgba(28,25,19,.68);font-weight:400;letter-spacing:.01em}
+/* How We Work process steps — clip the text to ~4 lines with a fade into
+   the section background, revealed in full by the "Ver mais" link below */
+.hww__textclip{position:relative;overflow:hidden;max-height:6.4em}
+.hww__textclip.is-open{max-height:none;overflow:visible}
+.hww__textfade{position:absolute;left:0;right:0;bottom:0;height:3.2em;
+  background:linear-gradient(to bottom, rgba(242,237,228,0) 0%, var(--cream) 85%);
+  pointer-events:none}
+.hww__more{display:block;text-align:center;margin-top:5vh;font-size:12px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink);cursor:pointer;opacity:.75;transition:opacity .3s}
+.hww__more:hover{opacity:1}
 /* desktop only — looser, less "compressed" 5-up grid */
 @media(min-width:1025px){
   .hww__grid{grid-template-columns:repeat(5,1fr);column-gap:clamp(14px,1.7vw,28px)}
   .hww__imgwrap{aspect-ratio:4/5}
   .hww__steptitle{margin-top:28px}
   .hww__steptext{line-height:1.625}
+  .hww__textclip{max-height:6.5em}
   .hww__title{white-space:nowrap;font-size:clamp(38px,4vw,54px)}
 }
 @media(max-width:1024px){.hww__grid{grid-template-columns:repeat(3,1fr);row-gap:clamp(30px,4vw,48px)}}
