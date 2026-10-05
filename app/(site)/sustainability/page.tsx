@@ -140,23 +140,32 @@ export default function SustainabilityPage() {
       {/* ---- block 2: responsible sourcing ---- */}
       <section className="section sect--wool" style={{ padding: "14vh 0" }}>
         <div className="sust-sourcing">
-          <div className="sect-head">
-            <span className="sect-head__num">Responsible sourcing</span>
-            <h2 className="sect-head__title">
-              Better decisions require <em>better information.</em>
-            </h2>
+          <div className="sust-sourcing__media">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/selection/RUIR6035.jpg"
+              alt="Reviewing certified yarn and material options"
+            />
           </div>
-          <p className="rv sust-sourcing__copy">
-            Our responsibility extends beyond our own facilities and into the
-            supply chain behind every product. We work with certified
-            suppliers and continually develop our understanding of the
-            materials, components and solutions available to support
-            different product and sustainability requirements. This
-            knowledge allows us to have informed conversations with our
-            clients, understand their priorities and support the choices
-            appropriate to each project — without imposing a single approach
-            to responsible product development.
-          </p>
+          <div className="sust-sourcing__body">
+            <div className="sect-head">
+              <span className="sect-head__num">Responsible sourcing</span>
+              <h2 className="sect-head__title">
+                Better decisions require <em>better information.</em>
+              </h2>
+            </div>
+            <p className="rv sust-sourcing__copy">
+              Our responsibility extends beyond our own facilities and into the
+              supply chain behind every product. We work with certified
+              suppliers and continually develop our understanding of the
+              materials, components and solutions available to support
+              different product and sustainability requirements. This
+              knowledge allows us to have informed conversations with our
+              clients, understand their priorities and support the choices
+              appropriate to each project — without imposing a single approach
+              to responsible product development.
+            </p>
+          </div>
         </div>
       </section>
 

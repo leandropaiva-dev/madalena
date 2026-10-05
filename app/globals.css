@@ -390,14 +390,16 @@ html.lenis,html.lenis body{height:auto}
 .sust-commitment{padding-top:12vh}
 .sust-commitment .studio__body p{max-width:640px}
 
-/* Sustainability — Responsible sourcing: one compact asymmetric band,
-   headline left / copy right, top-aligned, instead of a headline screen
-   followed by a narrow paragraph underneath */
-.sust-sourcing{display:grid;grid-template-columns:.85fr 1fr;gap:clamp(16px,2vw,32px);
-  align-items:start;max-width:1500px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
-.sust-sourcing .sect-head{display:block;padding:0;margin:0;max-width:none}
+/* Sustainability — Responsible sourcing: image + centered copy, instead of
+   the previous headline-left/copy-right band */
+.sust-sourcing{display:grid;grid-template-columns:.85fr 1fr;gap:clamp(24px,3vw,48px);
+  align-items:center;max-width:1500px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.sust-sourcing__media{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:10px}
+.sust-sourcing__media img{width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
+.sust-sourcing__body{text-align:center}
+.sust-sourcing .sect-head{display:block;padding:0;margin:0 auto;max-width:none}
 .sust-sourcing .sect-head__num{display:block;margin-bottom:14px}
-.sust-sourcing__copy{max-width:580px;margin:56px 0 0;font-size:15px;line-height:1.8;
+.sust-sourcing__copy{max-width:480px;margin:32px auto 0;font-size:15px;line-height:1.8;
   letter-spacing:.02em;color:rgba(28,25,19,.62)}
 @media(max-width:900px){.sust-sourcing{grid-template-columns:1fr}}
 
@@ -527,6 +529,14 @@ html.lenis,html.lenis body{height:auto}
 .jr-hero__title em{font-family:var(--script);font-style:normal;color:var(--softbrown);font-size:.96em}
 .jr-hero__sub{margin-top:30px;max-width:560px;font-size:15px;line-height:1.8;
   color:rgba(28,25,19,.62);letter-spacing:.02em}
+
+/* About / How We Work / Studio / Sustainability — moderately smaller hero
+   title than the site-wide default (Journal already has its own, smaller
+   override; Home uses a different hero component entirely) */
+.about-hero .jr-hero__title,
+.hww-hero .jr-hero__title,
+.studio-hero .jr-hero__title,
+.sust-hero .jr-hero__title{font-size:clamp(40px,6vw,84px)}
 
 /* About hero: full viewport banner, content vertically centred — title and
    lede stand alone on first screen, the blocks below only appear on scroll.

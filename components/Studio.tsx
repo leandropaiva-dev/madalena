@@ -7,7 +7,7 @@ export default function Studio() {
       <div className="studio__grid">
         <div className="studio__imgwrap">
           <Image
-            src="/images/studio-yarn.jpg"
+            src="/selection/RUIR6196.jpg"
             alt="Comparing yarn shades from a swatch card"
             id="studioImg"
             fill

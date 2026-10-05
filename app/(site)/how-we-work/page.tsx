@@ -55,7 +55,7 @@ export default function HowWeWorkPage() {
             <div className="hww-facility-media__main">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/about-knitting.jpg"
+                src="/selection/RUIR5914.jpg"
                 alt="Circular knitting machine in operation in our facilities"
               />
             </div>
@@ -130,7 +130,7 @@ export default function HowWeWorkPage() {
           <div className="studio__imgwrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/about-quality.jpg"
+              src="/selection/IMG_7283.jpg"
               alt="Measuring and reviewing a finished garment during quality control"
               data-parallax=""
             />

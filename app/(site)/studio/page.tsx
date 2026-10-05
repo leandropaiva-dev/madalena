@@ -31,7 +31,7 @@ const ROLE = [
     cat: "Yarn",
     lead: "Material is part of the design.",
     body: "We help explore yarns, compositions, colours and qualities in relation to the intended character and performance of the product.",
-    img: "/images/studio-swatch-1.jpg",
+    img: "/selection/IMG_7030.jpg",
     imgAlt: "Round yarn and colour texture swatches laid out for review",
   },
   {
@@ -39,7 +39,7 @@ const ROLE = [
     cat: "Structure",
     lead: "Knit is built, not cut.",
     body: "Stitches, gauges, constructions and proportions are developed with an understanding of how each choice shapes the finished garment.",
-    img: "/images/cap-design.jpg",
+    img: "/selection/IMG_7465.jpg",
     imgAlt: "Knit programming linked to stitch and structure development",
   },
   {
@@ -47,7 +47,7 @@ const ROLE = [
     cat: "Development",
     lead: "Ideas become tangible.",
     body: "From swatches and trials to prototypes and refinements, development gives form to the creative direction of the project.",
-    img: "/images/studio-swatch-3.jpg",
+    img: "/selection/IMG_7314.jpg",
     imgAlt: "Reviewing a knitted sample against the pattern on a tablet",
   },
   {
@@ -55,7 +55,7 @@ const ROLE = [
     cat: "Fit & Detail",
     lead: "The difference is often in the last few centimetres.",
     body: "Proportion, finishing and detail are refined with the precision required to bring the intended product to life.",
-    img: "/images/cap-fitting.jpg",
+    img: "/selection/IMG_7299-2.jpg",
     imgAlt: "Hand-finishing detail on a knitted garment",
   },
 ];
@@ -183,7 +183,7 @@ export default function StudioPage() {
           <div className="studio__imgwrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/studio-yarn.jpg"
+              src="/selection/IMG_7512.jpg"
               alt="Comparing yarn shades from a swatch card"
               data-parallax=""
             />

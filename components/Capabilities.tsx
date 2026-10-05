@@ -41,11 +41,11 @@ export const ITEMS = [
 ];
 
 export const MEDIA = [
-  { src: "/images/cap-design.jpg", alt: "Review and quotation" },
-  { src: "/images/cap-knitting.jpg", alt: "Development and sampling" },
-  { src: "/images/cap-confection.jpg", alt: "Approval and planning" },
-  { src: "/images/cap-quality.jpg", alt: "Production and quality control" },
-  { src: "/images/cap-fitting.jpg", alt: "Delivery and reorders" },
+  { src: "/selection/IMG_6997.jpg", alt: "Review and quotation" },
+  { src: "/selection/IMG_7204.jpg", alt: "Development and sampling" },
+  { src: "/selection/RUIR6191.jpg", alt: "Approval and planning" },
+  { src: "/selection/IMG_7011.jpg", alt: "Production and quality control" },
+  { src: "/selection/IMG_7290.jpg", alt: "Delivery and reorders" },
 ];
 
 export default function Capabilities() {
