@@ -60,7 +60,7 @@ export default function AboutPage() {
           <div className="studio__imgwrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/selection/IMG_7380.jpg"
+              src="/selection/IMG_7370.jpg"
               alt="Tatiana with her mother on the factory floor — the same family since 1998"
               data-parallax=""
             />
