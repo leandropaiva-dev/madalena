@@ -55,7 +55,7 @@ const ROLE = [
     cat: "Fit & Detail",
     lead: "The difference is often in the last few centimetres.",
     body: "Proportion, finishing and detail are refined with the precision required to bring the intended product to life.",
-    img: "/selection/IMG_7299-2.jpg",
+    img: "/images/cap-quality.jpg",
     imgAlt: "Hand-finishing detail on a knitted garment",
   },
 ];
@@ -197,8 +197,8 @@ export default function StudioPage() {
           <div className="studio__imgwrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/cap-quality.jpg"
-              alt="Studio and production colleagues reviewing the same sample on the factory floor"
+              src="/selection/IMG_6970.jpg"
+              alt="Scanning a garment's QR code tag for traceability on the factory floor"
               data-parallax=""
             />
           </div>
