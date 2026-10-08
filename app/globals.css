@@ -581,6 +581,21 @@ html.lenis,html.lenis body{height:auto}
   box-sizing:border-box}
 .sust-hero .jr-hero__sub{max-width:min(760px,70vw);text-align:left;margin-top:22px}
 
+/* About / How We Work / Studio / Sustainability hero — on desktop, indent
+   the whole hero block (eyebrow + title + lede) so it starts clear of the
+   navbar logo column instead of sharing its left edge. Logo mark is
+   clamp(15px,3.5vw,28px) tall at aspect-ratio 6768/1560 (~width 65-121px)
+   sitting at the same clamp(20px,4vw,56px) left padding as this block —
+   the extra margin below roughly matches logo width + a breathing gap.
+   Skipped on mobile/tablet where the extra indent would just eat into an
+   already-narrow column. */
+@media(min-width:901px){
+  .about-hero .jr-hero,
+  .hww-hero .jr-hero,
+  .studio-hero .jr-hero,
+  .sust-hero .jr-hero{margin-left:clamp(90px,10vw,150px)}
+}
+
 /* Journal hero: intentionally smaller than every other .jr-hero on the
    site — this is a content index, not a sales/brand page, so the opening
    should get out of the way of the article grid quickly */
