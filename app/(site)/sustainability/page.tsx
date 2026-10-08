@@ -86,7 +86,8 @@ export default function SustainabilityPage() {
         <div className="jr-hero">
           <div className="label rv">Sustainability</div>
           <h1 className="jr-hero__title rv">
-            Responsibility, <em>in practice.</em>
+            Responsibility, <br />
+            <em>in practice.</em>
           </h1>
           <p className="jr-hero__sub rv">
             For us, sustainability is not a separate part of manufacturing.
@@ -143,7 +144,7 @@ export default function SustainabilityPage() {
           <div className="sust-sourcing__media">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/selection/RUIR6035.jpg"
+              src="/selection/Responsible.jfif"
               alt="Reviewing certified yarn and material options"
             />
           </div>

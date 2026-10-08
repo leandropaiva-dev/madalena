@@ -3,7 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import MobileCarousel from "./MobileCarousel";
-import { MEDIA } from "./Capabilities";
+
+const STAGE_MEDIA = [
+  { src: "/selection/stage01.jpg", alt: "Review and quotation" },
+  { src: "/selection/stage02.jpg", alt: "Development and sampling" },
+  { src: "/selection/stage03.jpg", alt: "Approval and planning" },
+  { src: "/selection/stage04.jpg", alt: "Production and quality control" },
+  { src: "/selection/delivery.jpg", alt: "Delivery and reorders" },
+];
 
 const STAGES = [
   {
@@ -68,8 +75,8 @@ export default function ProcessGrid() {
           <div className="hww__step rv" key={s.n}>
             <div className="hww__imgwrap">
               <Image
-                src={MEDIA[i].src}
-                alt={MEDIA[i].alt}
+                src={STAGE_MEDIA[i].src}
+                alt={STAGE_MEDIA[i].alt}
                 fill
                 sizes="(max-width:640px) 100vw, (max-width:1100px) 33vw, 20vw"
                 style={{ objectFit: "cover" }}

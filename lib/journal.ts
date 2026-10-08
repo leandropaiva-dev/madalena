@@ -139,23 +139,12 @@ const baseArticles: Omit<JournalPost, "slug" | "date">[] = [
   },
 ];
 
-const publishDates = [
-  "2026-08-20",
-  "2026-07-15",
-  "2026-06-10",
-  "2026-05-05",
-  "2026-03-28",
-  "2026-02-14",
-  "2026-01-09",
-  "2025-12-02",
-  "2025-10-20",
-];
+const publishDates = ["2026-08-20", "2026-07-15", "2026-06-10", "2026-05-05"];
 
-/** 9 listing slots, cycling the 4 real articles (1,2,3,4,1,2,3,4,1) per client request. */
+/** 4 listing slots, one per real article. */
 const posts: JournalPost[] = publishDates.map((date, i) => {
-  const base = baseArticles[i % baseArticles.length];
-  const repeatIndex = Math.floor(i / baseArticles.length); // 0 = first pass, 1 = second pass...
-  const slugBase = base.title
+  const base = baseArticles[i];
+  const slug = base.title
     .toLowerCase()
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
@@ -163,7 +152,7 @@ const posts: JournalPost[] = publishDates.map((date, i) => {
     .replace(/(^-|-$)/g, "");
   return {
     ...base,
-    slug: repeatIndex === 0 ? slugBase : `${slugBase}-${repeatIndex + 1}`,
+    slug,
     date,
   };
 });

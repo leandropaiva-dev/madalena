@@ -62,7 +62,7 @@ export default function HowWeWorkPage() {
             <div className="hww-facility-media__side">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/about-assembly.jpg"
+                src="/selection/inhouse02.jpg"
                 alt="Linking a knitted panel by hand"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -130,7 +130,7 @@ export default function HowWeWorkPage() {
           <div className="studio__imgwrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/selection/IMG_7283.jpg"
+              src="/selection/knowhow.jpg"
               alt="Measuring and reviewing a finished garment during quality control"
               data-parallax=""
             />

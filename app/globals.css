@@ -372,8 +372,13 @@ html.lenis,html.lenis body{height:auto}
 .studio-factory .studio__imgwrap{aspect-ratio:4/3}
 .studio-factory__lede{font-family:var(--serif);font-weight:400;font-size:clamp(16px,1.3vw,19px);
   color:var(--ink);margin-top:-6px;margin-bottom:8px;max-width:480px}
-/* How We Work — Know-how: documentary image at 4:3 */
-.hww-knowhow .studio__imgwrap{aspect-ratio:4/3}
+/* How We Work — Know-how: image stretched to match the text column's
+   height instead of a fixed aspect-ratio. The img is taken out of flow
+   (absolute + inset:0) so its own tall natural proportions can't drive
+   the row's auto height — only the text column does that. */
+.hww-knowhow .studio__grid{align-items:stretch}
+.hww-knowhow .studio__imgwrap{aspect-ratio:auto}
+.hww-knowhow .studio__imgwrap img{position:absolute;inset:0;width:100%;height:100%}
 /* How We Work — tighter gap coming out of the five-stage process above */
 .hww-facility{padding-top:3vh}
 /* How We Work — In-house production: one strong image + two smaller
@@ -387,7 +392,7 @@ html.lenis,html.lenis body{height:auto}
 
 /* Sustainability — push "A Continuous Commitment" fully clear of the hero
    viewport so its heading never gets clipped mid-line at the fold */
-.sust-commitment{padding-top:12vh}
+.sust-commitment{padding-top:12vh;margin-top:24px}
 .sust-commitment .studio__body p{max-width:640px}
 
 /* Sustainability — Responsible sourcing: image + centered copy, instead of
@@ -538,37 +543,43 @@ html.lenis,html.lenis body{height:auto}
 .studio-hero .jr-hero__title,
 .sust-hero .jr-hero__title{font-size:clamp(40px,6vw,84px)}
 
-/* About hero: full viewport banner, content vertically centred — title and
-   lede stand alone on first screen, the blocks below only appear on scroll.
-   Wider intro paragraph so it reads in ~2-3 lines, not 4 narrow ones — stays
-   left-aligned/ragged-right, never justified */
-.about-hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+/* About hero: shorter than the viewport, content vertically centred — title
+   and lede read on the first screen, but the next section's top already
+   peeks in so the first scroll reveals it right away. Wider intro paragraph
+   so it reads in ~2-3 lines, not 4 narrow ones — stays left-aligned/
+   ragged-right, never justified */
+.about-hero{min-height:84vh;min-height:84svh;display:flex;flex-direction:column;
   justify-content:center;padding-top:clamp(104px,15vh,150px);padding-bottom:clamp(60px,10vh,110px);
   box-sizing:border-box}
 .about-hero .jr-hero__sub{max-width:min(880px,72vw);text-align:left}
 
-/* Studio hero: full viewport, content vertically centred; subtitle widened
-   so the longer intro paragraph settles into ~3 lines instead of 5-6 */
-.studio-hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+/* Studio hero: shorter than the viewport, content vertically centred;
+   subtitle widened so the longer intro paragraph settles into ~3 lines
+   instead of 5-6; next section peeks in on the first scroll */
+.studio-hero{min-height:84vh;min-height:84svh;display:flex;flex-direction:column;
   justify-content:center;padding-top:clamp(104px,15vh,150px);padding-bottom:clamp(60px,10vh,110px);
   box-sizing:border-box}
 .studio-hero .jr-hero__sub{max-width:min(820px,70vw);text-align:left}
 
-/* How We Work hero: full viewport banner, same treatment as About/Studio —
-   title and lede stand alone on first screen, blocks below appear on scroll */
-.hww-hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+/* How We Work hero: shorter than the viewport, same treatment as
+   About/Studio — title and lede read on the first screen, next section
+   peeks in on the first scroll */
+.hww-hero{min-height:84vh;min-height:84svh;display:flex;flex-direction:column;
   justify-content:center;padding-top:clamp(104px,15vh,150px);padding-bottom:clamp(60px,10vh,110px);
   box-sizing:border-box}
 .hww-hero .jr-hero__sub{max-width:min(820px,70vw);text-align:left}
 
-/* Sustainability hero: full viewport banner, same treatment as the other
-   section pages — title and lede stand alone on first screen, blocks below
-   appear on scroll. Wider intro paragraphs so the first one reads in ~2-3
-   balanced lines instead of a narrow 4-6 line block */
-.sust-hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
-  justify-content:center;padding-top:clamp(104px,15vh,150px);padding-bottom:clamp(60px,10vh,110px);
+/* Sustainability hero: shorter than the viewport, same treatment as the
+   other section pages — title and lede read on the first screen, next
+   section peeks in on the first scroll. Wider intro paragraphs so the
+   first one reads in ~2-3 balanced lines instead of a narrow 4-6 line
+   block. Padding trimmed slightly and title-to-lede gap tightened to
+   balance the two-line title (forced <br>) against the single-line
+   titles on the other section pages */
+.sust-hero{min-height:84vh;min-height:84svh;display:flex;flex-direction:column;
+  justify-content:center;padding-top:clamp(90px,13vh,140px);padding-bottom:clamp(50px,9vh,100px);
   box-sizing:border-box}
-.sust-hero .jr-hero__sub{max-width:min(760px,70vw);text-align:left}
+.sust-hero .jr-hero__sub{max-width:min(760px,70vw);text-align:left;margin-top:22px}
 
 /* Journal hero: intentionally smaller than every other .jr-hero on the
    site — this is a content index, not a sales/brand page, so the opening
@@ -626,19 +637,32 @@ html.lenis,html.lenis body{height:auto}
 .jr-pag__arrow:hover{background:var(--ink);color:var(--wool);border-color:var(--ink)}
 .jr-pag__gap{color:var(--warmgrey);padding:0 4px;letter-spacing:.1em}
 
-/* article */
-.jr-article{max-width:1500px;margin:0 auto;padding:clamp(120px,18vh,200px) clamp(20px,4vw,56px) 0}
+/* article — editorial template: contained width, controlled lead media,
+   restrained heading scale so the reading experience doesn't read as a
+   sequence of posters. Top padding kept well clear of the fixed .nav
+   (max ~90px tall on mobile) as a safe offset. */
+.jr-article{max-width:1240px;margin:0 auto;padding:clamp(136px,18vh,200px) clamp(20px,4vw,56px) 0}
 .jr-article__meta{display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;font-size:11.5px;
   letter-spacing:.26em;text-transform:uppercase;color:var(--warmgrey)}
 .jr-article__title{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.2vw,60px);
-  line-height:1.1;letter-spacing:-.01em;margin:22px 0 0;max-width:16ch}
-.jr-article__lede{font-family:var(--serif);font-weight:400;font-size:clamp(18px,1.8vw,24px);
-  line-height:1.5;color:rgba(28,25,19,.68);margin-top:26px;max-width:950px}
+  line-height:1.1;letter-spacing:-.01em;margin:22px 0 0;max-width:880px}
+.jr-article__lede{font-family:var(--serif);font-weight:400;font-size:clamp(20px,1.6vw,23px);
+  line-height:1.5;color:rgba(28,25,19,.68);margin-top:26px;max-width:900px}
 .jr-article__author{margin-top:26px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--softbrown)}
-.jr-article__cover{margin:7vh 0;overflow:hidden;border-radius:10px;max-height:680px}
-.jr-article__cover img,.jr-article__cover video{width:100%;height:100%;aspect-ratio:16/9;object-fit:cover;filter:saturate(.9)}
+/* aspect-ratio lives on the wrapper (not the media) so the box has a
+   definite height for width:100%/height:100% to resolve against —
+   keeps the lead image/video from ever rendering at its own native
+   proportions before the max-height cap kicks in */
+.jr-article__cover{position:relative;margin:7vh 0;overflow:hidden;border-radius:10px;
+  aspect-ratio:16/9;max-height:640px}
+.jr-article__cover img,.jr-article__cover video{width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
 .jr-article__body{max-width:780px;margin:0}
 .jr-article__body p{font-size:18.5px;line-height:1.65;color:rgba(28,25,19,.78);letter-spacing:.01em;margin-bottom:26px}
+.jr-article__body h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3vw,40px);
+  line-height:1.2;letter-spacing:-.01em;margin:8vh 0 18px}
+.jr-article__body h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.2vw,30px);
+  line-height:1.25;letter-spacing:-.01em;margin:6vh 0 14px}
+.jr-article__body img{width:100%;border-radius:10px;margin:5vh 0}
 .jr-quote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(24px,3vw,38px);
   line-height:1.4;color:var(--ink);margin:6vh 0;padding-left:28px;border-left:2px solid var(--sand)}
 .jr-article__gallery{display:grid;grid-template-columns:repeat(2,1fr);max-width:1040px;

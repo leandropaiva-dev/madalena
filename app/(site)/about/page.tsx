@@ -26,12 +26,12 @@ export const metadata: Metadata = {
 };
 
 const GALLERY = [
-  { src: "/images/about-programming.jpg", alt: "Programming a knit pattern at the workstation", cap: "Programming" },
-  { src: "/images/about-knitting.jpg", alt: "Operating a circular knitting machine", cap: "Knitting" },
+  { src: "/selection/programming.jpg", alt: "Programming a knit pattern at the workstation", cap: "Programming" },
+  { src: "/selection/knitting.jpg", alt: "Operating a circular knitting machine", cap: "Knitting" },
   { src: "/images/about-assembly.jpg", alt: "Linking a knitted panel by hand on an industrial machine", cap: "Assembly" },
   { src: "/images/about-quality.jpg", alt: "Measuring a finished sweater during quality control", cap: "Quality control" },
-  { src: "/images/about-finishing.jpg", alt: "Hand-finishing the edge of a knitted garment", cap: "Finishing" },
-  { src: "/images/about-packing.jpg", alt: "Folded knitwear packed and ready for dispatch", cap: "Packing" },
+  { src: "/selection/finishing.jpg", alt: "Hand-finishing the edge of a knitted garment", cap: "Finishing" },
+  { src: "/selection/packing.jpeg", alt: "Folded knitwear packed and ready for dispatch", cap: "Packing" },
 ];
 
 export default function AboutPage() {

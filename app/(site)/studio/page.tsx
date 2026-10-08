@@ -47,7 +47,7 @@ const ROLE = [
     cat: "Development",
     lead: "Ideas become tangible.",
     body: "From swatches and trials to prototypes and refinements, development gives form to the creative direction of the project.",
-    img: "/selection/IMG_7314.jpg",
+    img: "/selection/studio3.jfif",
     imgAlt: "Reviewing a knitted sample against the pattern on a tablet",
   },
   {
